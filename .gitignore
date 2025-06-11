@@ -1,9 +1,29 @@
+# Docker-related files
+docker-compose.env
+.dockerignore
+
+# Node.js and Composer dependencies
+node_modules
+vendor
+
+# IDE and editor files
 .DS_Store
-node_modules/
-package-lock.json
-.prettierrc
-assets/css/main.css
-assets/css/main.css.map
-assets/css/editor.css
-assets/css/editor.css.map
-compose.yml
+.idea
+.vscode
+
+# Logs, cache, and temporary directories
+logs
+cache
+
+# Environment-specific configuration
+.env
+
+# Parent theme
+/bootscore
+bootscore.zip
+
+# Child theme dist files
+theme/assets/css/main.css
+theme/assets/css/main.css.map
+theme/assets/css/editor.css
+theme/assets/css/editor.css.map
