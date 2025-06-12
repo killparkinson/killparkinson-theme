@@ -24,7 +24,7 @@ services:
       - ./theme:/var/www/html/wp-content/themes/kp-theme
 
   db:
-    image: mariadb:10.6
+    image: mysql:8.0
     restart: always
     environment:
       MYSQL_DATABASE: exampledb
