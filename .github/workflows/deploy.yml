@@ -1,8 +1,16 @@
 name: Sync theme
 
 on:
-  - push
-  - pull_request
+  push:
+    branches:
+      - "main"
+    paths:
+      - "theme/**"
+  pull_request:
+    branches:
+      - "main"
+    paths:
+      - "theme/**"
 
 jobs:
   sync:
