@@ -1,6 +1,6 @@
 # WordPress Development Setup with Docker & Child Theme `kp-theme`
 
-This guide outlines how to set up a local development environment for the **`kp-theme`** child theme using Docker. The setup includes the **Bootscore parent theme** and a MariaDB database.
+This guide outlines how to set up a local development environment for the **`kp-theme`** child theme using Docker. The setup includes the **Bootscore parent theme**.
 
 ## Getting Started
 
@@ -20,10 +20,10 @@ The parent theme is not included in version control. Download it from the offici
 wget https://github.com/bootscore/bootscore/releases/latest/download/bootscore.zip
 ```
 
-This will extract the **Bootscore** theme into the `./bootscore` directory.
+This will extract the **Bootscore** theme into directory.
 
 ```bash
-unzip bootscore.zip -d ./bootscore
+unzip bootscore.zip
 ```
 
 ---
@@ -43,10 +43,7 @@ This command:
 
 ### 4. Access WordPress Admin
 
-1. Open your browser and go to:
-   ```
-   http://localhost:8080
-   ```
+1. Open your browser and go to: http://localhost:8080
 2. Select language and create admin acount:
 
 ---
@@ -55,16 +52,14 @@ This command:
 
 1. Go to **Appearance > Themes** in the WordPress admin.
 2. Activate the **Bootscore** parent theme.
-3. Then activate your child theme (**kp-theme**) from the same page.
-
-> The child theme files are mounted at `./theme` and will be reflected in the container.
+3. Then activate the child theme (**bootcore child**) from the same page.
 
 ---
 
 ## Directory Structure
 
-- **`./theme/`**: Your custom child theme (`kp-theme`). Make changes here for development.
-- **`./bootscore/`**: Parent theme (Bootscore). Do not modify.
+├── ./theme/       Bootscore child theme. Make changes here for development.
+└── ./bootscore/  # Parent theme (Bootscore) is placed here after extraction.
 
 ---
 
