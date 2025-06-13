@@ -47,9 +47,7 @@ This command:
    ```
    http://localhost:8080
    ```
-2. Log in with the default credentials:
-   - **Username**: `admin`
-   - **Password**: `password` (set via `docker-compose.yml`, change if needed)
+2. Select language and create admin acount:
 
 ---
 
