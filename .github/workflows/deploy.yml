@@ -1,0 +1,19 @@
+name: Sync theme
+
+on:
+  - push
+  - pull_request
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: SSH into Staging VPS
+        uses: appleboy/ssh-action@v1
+        with:
+          hostname: ${{ secrets.HOST }}
+          username: ${{ secrets.SSH_USER }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          port: ${{ secrets.SSH_PORT }}
+          script: ./scripts/sync-staging-theme.sh
