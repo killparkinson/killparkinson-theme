@@ -35,7 +35,7 @@ docker-compose up -d
 ```
 
 This command:
-- Pulls the latest WordPress and MariaDB images.
+- Pulls the latest WordPress and Mysql images.
 - Starts a container with WordPress on port **8080** (`localhost:8080`).
 - Sets up a database named `exampledb` with user `exampleuser`.
 
