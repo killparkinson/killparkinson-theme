@@ -6,11 +6,6 @@ on:
       - "main"
     paths:
       - "theme/**"
-  pull_request:
-    branches:
-      - "main"
-    paths:
-      - "theme/**"
 
 jobs:
   sync:
