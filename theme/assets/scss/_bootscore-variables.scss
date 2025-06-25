@@ -3,3 +3,66 @@
 
 // Fonts
 $font-family-sans-serif: 'Poppins', sans-serif;
+
+// Color variables
+$grey: #717680;
+$gray-900: #181D27;
+$gray-800: #252B37;
+$gray-700: #414651;
+$gray-600: #535862;
+$gray-500: $grey;
+$gray-400: #A4A7AE;
+$gray-300: #D5D7DA;
+$gray-200: #E9EAEB;
+$gray-100: #F5F5F5;
+
+$pink: #f9339c;
+$pink-100: #fdcadc;
+$pink-200: #fba9c9;
+$pink-300: #fb8ab9;
+$pink-400: #fa67aa;
+$pink-500: $pink;
+$pink-600: #DD1E88;
+$pink-700: #c91a7b;
+$pink-800: #b3166d;
+$pink-900: #a61465;
+
+$green: #12B76A;
+$green-100: #D1FADF;
+$green-200: #A6F4C5;
+$green-300: #6CE9A6;
+$green-400: #32D583;
+$green-500: $green;
+$green-600: #039855;
+$green-700: #027A48;
+$green-800: #05603A;
+$green-900: #054F31;
+
+$orange: #F79009;
+$orange-100: #FEF0C7;
+$orange-200: #FEDF89;
+$orange-300: #FEC84B;
+$orange-400: #FDB022;
+$orange-500: $orange; 
+$orange-600: #DC6803; 
+$orange-700: #B54708;
+$orange-800: #93370D;
+$orange-900: #7A2E0E;
+
+$red: #F04438;
+$red-100: #FEE4E2;
+$red-200: #FECDCA;
+$red-300: #FDA29B;
+$red-400: #F97066;
+$red-500: $red;
+$red-600: #D92D20;
+$red-700: #B42318;
+$red-800: #912018;
+$red-900: #7A271A;
+
+// Theme colour variables
+$primary: $pink-600;
+$secondary: $gray-900;
+$success: $green-600;
+$warning: $orange-600;
+$danger: $red-600;
