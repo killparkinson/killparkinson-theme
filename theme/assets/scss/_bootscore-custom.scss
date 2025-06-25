@@ -5,3 +5,43 @@
 // Add your own code here!
 // Because this file is compiled after Bootstrap, you're also able to use Bootstrap mixins for better code.
 // Some examples can be found here: https://bootscore.me/documentation/bootstrap-css-sass
+
+/* poppins-regular - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/poppins-v23-latin-regular.woff2') format('woff2'),
+       url('../fonts/poppins-v23-latin-regular.ttf') format('truetype');
+}
+
+/* poppins-500 - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../fonts/poppins-v23-latin-500.woff2') format('woff2'),
+       url('../fonts/poppins-v23-latin-500.ttf') format('truetype');
+}
+
+/* poppins-600 - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  src: url('../fonts/poppins-v23-latin-600.woff2') format('woff2'),
+       url('../fonts/poppins-v23-latin-600.ttf') format('truetype');
+}
+
+/* poppins-700 - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/poppins-v23-latin-700.woff2') format('woff2'), 
+       url('../fonts/poppins-v23-latin-700.ttf') format('truetype');
+}
