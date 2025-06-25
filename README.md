@@ -58,9 +58,10 @@ This command:
 
 ## Directory Structure
 
-├── ./theme/       Bootscore child theme. Make changes here for development.
-└── ./bootscore/  # Parent theme (Bootscore) is placed here after extraction.
-
+```
+├── ./theme/       Bootscore child theme.
+└── ./bootscore/   Parent theme (Bootscore) is placed here after extraction.
+```
 ---
 
 ## Debugging
