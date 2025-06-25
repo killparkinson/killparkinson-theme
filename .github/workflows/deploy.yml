@@ -20,7 +20,7 @@ jobs:
       - name: SSH into Staging VPS
         uses: appleboy/ssh-action@v1
         with:
-          hostname: ${{ secrets.HOST }}
+          host: ${{ secrets.HOST }}
           username: ${{ secrets.SSH_USER }}
           password: ${{ secrets.SSH_PASSWORD }}
           port: ${{ secrets.SSH_PORT }}
