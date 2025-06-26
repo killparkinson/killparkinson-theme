@@ -5,16 +5,17 @@
 $font-family-sans-serif: 'Poppins', sans-serif;
 
 // Color variables
-$grey: #717680;
+$gray: #717680;
 $gray-900: #181D27;
 $gray-800: #252B37;
 $gray-700: #414651;
 $gray-600: #535862;
-$gray-500: $grey;
+$gray-500: $gray;
 $gray-400: #A4A7AE;
 $gray-300: #D5D7DA;
 $gray-200: #E9EAEB;
 $gray-100: #F5F5F5;
+$gray-50: #FAFAFA;
 
 $pink: #f9339c;
 $pink-100: #fdcadc;
@@ -66,3 +67,6 @@ $secondary: $gray-900;
 $success: $green-600;
 $warning: $orange-600;
 $danger: $red-600;
+
+// Spacing
+$spacer: 1rem;
