@@ -48,3 +48,10 @@ function block_flush_button($block_content) {
 }
 add_filter('bootscore/block/buttons/content', 'block_flush_button', 10, 1);
 
+/**
+ * Adjusts the navbar items positioning to the left.
+ */
+function navbar_nav_position_item() {
+  return 'me-auto';
+}
+add_filter('bootscore/class/header/navbar-nav', 'navbar_nav_position_item');
