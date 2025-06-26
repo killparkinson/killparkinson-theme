@@ -1,0 +1,44 @@
+.navbar {
+  .top-nav-widget .btn-primary {
+    margin: calc(calc(-1 * var(--#{$prefix}navbar-padding-y) - var(--#{$prefix}border-width))) 0;
+    padding: calc(2 * var(--#{$prefix}navbar-padding-y)) calc(2 * #{$btn-padding-x});
+    border-radius: 0;
+    font-weight: 700;
+  }
+
+  .nav-toggler {
+    border: 0;
+  }
+}
+
+@media (min-width: 992px) {
+  .navbar {
+    --#{$prefix}navbar-padding-y: calc(#{$spacer} * .75);
+  }
+
+  .navbar-nav {
+    --#{$prefix}navbar-nav-link-padding-x: calc(#{$spacer} * 1.25);
+  }
+
+  .navbar-expand-lg {
+    .top-nav-widget .btn-primary {
+      padding: calc(2 * var(--#{$prefix}navbar-padding-y)) calc(3 * #{$btn-padding-x});
+    }
+
+    .navbar-nav .nav-link {
+      margin-top: calc(calc(-1 * var(--#{$prefix}navbar-padding-y) - var(--#{$prefix}border-width)));
+      margin-bottom: calc(-1 * var(--#{$prefix}navbar-padding-y));
+      padding-top: calc(2 * var(--#{$prefix}navbar-padding-y));
+      padding-bottom: calc(2 * var(--#{$prefix}navbar-padding-y));
+      border-bottom: 3px solid transparent;
+
+      &:hover {
+        background-color: $gray-50;
+      }
+
+      &:focus, &.active {
+        border-bottom: 3px solid $primary;
+      }
+    }
+  }
+}
