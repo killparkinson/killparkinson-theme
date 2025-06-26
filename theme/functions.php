@@ -38,3 +38,13 @@ function header_bg_class() {
 }
 add_filter('bootscore/class/header', 'header_bg_class');
 
+/**
+ * Removes the 'mb-3' class from block buttons content.
+ * 
+ * @param string $block_content The original block content with classes.
+ */
+function block_flush_button($block_content) {
+  return str_replace('mb-3', '', $block_content);
+}
+add_filter('bootscore/block/buttons/content', 'block_flush_button', 10, 1);
+
