@@ -1,4 +1,4 @@
-name: Sync theme
+name: Deploy to staging
 
 on:
   push:
@@ -12,11 +12,20 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: SSH into Staging VPS
-        uses: appleboy/ssh-action@v1
-        with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.SSH_USER }}
-          password: ${{ secrets.SSH_PASSWORD }}
+      - uses: actions/checkout@v4
+      - name: Sync theme
+      - uses: up9cloud/action-rsync@master
+        env:
+          HOST: ${{ secrets.HOST }}
+          KEY: ${{ secrets.DEPLOY_SSH_KEY }}
+          TARGET: ${{ secrets.STAGING_TARGET }}
+          VERBOSE: true
+          USER: ${{ secrets.SSH_USER }}
           port: ${{ secrets.SSH_PORT }}
-          script: ./scripts/sync-staging-theme.sh
+          SOURCE: ./theme/
+          ARGS: -az --exclude=/.git/
+          
+          PRE_SCRIPT: |
+            echo start at:
+            date -u
+          POST_SCRIPT: "echo done at: && date -u"
