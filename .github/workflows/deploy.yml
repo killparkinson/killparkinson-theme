@@ -12,9 +12,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
-      - name: Sync theme
-      - uses: up9cloud/action-rsync@master
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Deploy to staging
+        uses: up9cloud/action-rsync@master
         env:
           HOST: ${{ secrets.HOST }}
           KEY: ${{ secrets.DEPLOY_SSH_KEY }}
