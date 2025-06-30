@@ -23,9 +23,8 @@ jobs:
           TARGET: ${{ secrets.STAGING_TARGET }}
           VERBOSE: true
           USER: ${{ secrets.SSH_USER }}
-          port: ${{ secrets.SSH_PORT }}
           SOURCE: ./theme/
-          ARGS: -az --exclude=/.git/
+          ARGS: -avz --delete --exclude=/.git/
           
           PRE_SCRIPT: |
             echo start at:
