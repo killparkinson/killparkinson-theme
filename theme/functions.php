@@ -31,6 +31,139 @@ function bootscore_child_enqueue_styles() {
 }
 
 /**
+ * Unregisters the core post excerpt block type from Gutenberg editor.
+ *
+ * This function is hooked to the 'init' action to ensure it runs during
+ * WordPress initialization.
+ */
+function custom_init() {
+    unregister_block_type('core/post-excerpt');
+}
+add_action('init', 'custom_init');
+
+/**
+ * Registers a custom post excerpt block with a custom render callback.
+ *
+ * This function registers the 'core/post-excerpt' block type and associates it
+ * with the `render_custom_post_excerpt` function for rendering.
+ */
+function register_custom_post_excerpt_block() {
+    register_block_type('core/post-excerpt', [
+        'render_callback' => 'render_custom_post_excerpt',
+    ]);
+}
+add_action('init', 'register_custom_post_excerpt_block');
+
+/**
+ * Renders a custom post excerpt with customizable attributes.
+ *
+ * This function overrides the default WordPress post excerpt rendering,
+ * allowing for dynamic styling, truncation, and "Read more" link customization.
+ *
+ * @since 1.0.0
+ *
+ * @param array $attributes {
+ *     Block attributes from the editor.
+ *
+ *     @type int    $excerptLength         Optional. The number of characters to truncate the excerpt to. Default is 55.
+ *     @type string $className             Optional. Class name for the outer container div.
+ *     @type string $excerptClassName      Optional. Class name for the paragraph containing the excerpt text.
+ *     @type string $moreText              Optional. Custom "Read more" link text to display.
+ *     @type bool   $showMoreOnNewLine     Optional. Whether to wrap the "Read more" link in a new paragraph. Default is false.
+ *     @type string $showMoreOnNewLineClassName Optional. Class name for the container paragraph of the "Read more" link.
+ *     @type string $moreTextClassName     Optional. Class name for the anchor tag of the "Read more" link.
+ *     @type string $moreTextPrefix        Optional. Text to display before the "Read more" link.
+ *     @type string $moreTextSuffix        Optional. Text to display after the "Read more" link.
+ * }
+ *
+ * @return string HTML markup for the custom excerpt.
+ */
+function render_custom_post_excerpt($attributes) {
+    // set default excerpt length if not provided
+    $excerpt_length = isset($attributes['excerptLength']) ? $attributes['excerptLength'] : 55;
+
+    // start building the outer container div
+    $excerpt = '<div';
+
+    // add class attribute if specified in block settings
+    if (isset($attributes['className'])) {
+        $excerpt .= ' class="'. $attributes['className'] . '"';
+    } else {
+        $excerpt .= '>';
+    }
+    
+    // begin paragraph tag for the excerpt text
+    $excerpt .= '<p';
+
+    // apply custom class to the paragraph if specified
+    if (isset($attributes['excerptClassName'])) {
+        $excerpt .= ' class="'. $attributes['excerptClassName'] . '">';
+    } else {
+        $excerpt .= '>';
+    }
+
+    // truncate or use full excerpt based on length
+    if (strlen(get_the_excerpt()) > $excerpt_length) {
+        // Truncate and add ellipsis if excerpt exceeds specified length
+        $excerpt .= substr(get_the_excerpt(), 0, $excerpt_length) . '…';
+    } else {
+        $excerpt .= get_the_excerpt();
+    }
+
+    // close the paragraph tag
+    $excerpt .= '</p>';
+
+    // conditionally append "Read more" link with custom styling/text
+    if (isset($attributes['moreText'])) {
+        // wrap "Read more" in a new paragraph if specified
+        if ($attributes['showMoreOnNewLine']) {
+            $excerpt .= '<p';
+
+            // apply class to the container paragraph
+            if (isset($attributes['showMoreOnNewLineClassName'])) {
+                $excerpt .= ' class="' . $attributes['showMoreOnNewLineClassName'] . '"';
+            }
+
+            $excerpt .= '>';
+        }
+
+        // build anchor tag with custom classes, prefix, and suffix
+        $excerpt .= '<a ';
+
+        if (isset($attributes['moreTextClassName'])) {
+            $excerpt .= 'class="' . $attributes['moreTextClassName'] . '" ';
+        }
+
+        $excerpt .= 'href="' . wp_get_canonical_url() .'">';
+
+        // add optional prefix text before the "Read more" link
+        if (isset($attributes['moreTextPrefix'])) {
+            $excerpt .= $attributes['moreTextPrefix'];
+        }
+
+        // insert custom "Read more" text
+        $excerpt .= $attributes['moreText'];
+
+        // add optional suffix text after the "Read more" link
+        if (isset($attributes['moreTextSuffix'])) {
+            $excerpt .=  $attributes['moreTextSuffix'];
+        }
+
+        $excerpt .= '</a>';
+
+        // close the paragraph tag if "Read more" was wrapped in a new line
+        if ($attributes['showMoreOnNewLine']) {
+            $excerpt .= '</p>';
+        }
+    }
+
+    // close the outer container div
+    $excerpt .= '</div>';
+
+    return $excerpt;
+}
+
+/**
  * Header position and bg
  */
 function header_bg_class() {
@@ -55,3 +188,25 @@ function navbar_nav_position_item() {
   return 'me-auto';
 }
 add_filter('bootscore/class/header/navbar-nav', 'navbar_nav_position_item');
+
+/**
+ * Adds Bootstrap classes to categories post terms.
+ *
+ * @param string $block_content The block content.
+ * @param array  $block         The full block, including name and attributes.
+ * @return string The filtered block content.
+ */
+function bootscore_child_block_post_categories_classes($block_content, $block) {
+
+  if (isset($block['attrs']) && $block['attrs']['term'] == 'category') {
+    $search = array(
+      '<a'
+    );
+    $replace = array(
+      '<a class="btn btn-outline-primary btn-sm" ',
+    );
+
+    return str_replace($search, $replace, $block_content);
+  }
+}
+add_filter('render_block_core/post-terms', 'bootscore_child_block_post_categories_classes', 10, 2);
