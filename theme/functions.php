@@ -188,3 +188,25 @@ function navbar_nav_position_item() {
   return 'me-auto';
 }
 add_filter('bootscore/class/header/navbar-nav', 'navbar_nav_position_item');
+
+/**
+ * Adds Bootstrap classes to categories post terms.
+ *
+ * @param string $block_content The block content.
+ * @param array  $block         The full block, including name and attributes.
+ * @return string The filtered block content.
+ */
+function bootscore_child_block_post_categories_classes($block_content, $block) {
+
+  if (isset($block['attrs']) && $block['attrs']['term'] == 'category') {
+    $search = array(
+      '<a'
+    );
+    $replace = array(
+      '<a class="btn btn-outline-primary btn-sm" ',
+    );
+
+    return str_replace($search, $replace, $block_content);
+  }
+}
+add_filter('render_block_core/post-terms', 'bootscore_child_block_post_categories_classes', 10, 2);
