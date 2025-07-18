@@ -24,6 +24,7 @@ jobs:
           USER: ${{ secrets.SSH_USER }}
           SOURCE: ./theme/
           ARGS: -az --exclude=/.git/
+          SSH_ARGS: -p 22 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no
           PRE_SCRIPT: |
             echo start at:
             date -u
