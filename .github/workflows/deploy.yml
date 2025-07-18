@@ -21,12 +21,9 @@ jobs:
           HOST: ${{ secrets.HOST }}
           KEY: ${{ secrets.DEPLOY_SSH_KEY }}
           TARGET: ${{ secrets.STAGING_TARGET }}
-          VERBOSE: true
           USER: ${{ secrets.SSH_USER }}
-          port: ${{ secrets.SSH_PORT }}
           SOURCE: ./theme/
           ARGS: -az --exclude=/.git/
-          
           PRE_SCRIPT: |
             echo start at:
             date -u
