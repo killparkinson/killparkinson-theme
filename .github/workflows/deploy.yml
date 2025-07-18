@@ -29,18 +29,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
       - name: Deploy to staging
-        uses: up9cloud/action-rsync@master
-        env:
-          HOST: ${{ secrets.HOST }}
-          KEY: ${{ secrets.DEPLOY_SSH_KEY }}
-          TARGET: ${{ secrets.STAGING_TARGET }}
-          USER: ${{ secrets.SSH_USER }}
-          SOURCE: ./theme/
-          ARGS: -az --exclude=/.git/
-          SSH_ARGS: -p 22 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no
-          PRE_SCRIPT: |
-            echo start at:
-            date -u
-          POST_SCRIPT: "echo done at: && date -u"
+        uses: burnett01/rsync-deployments@7.0.2
+        with:
+          switches: -avzr --delete
+          path: theme/
+          remote_path: ${{ secrets.STAGING_TARGET }}
+          remote_host: ${{ secrets.HOST }}
+          remote_user: ${{ secrets.SSH_USER }}
+          remote_key: ${{ secrets.DEPLOY_SSH_KEY }}
