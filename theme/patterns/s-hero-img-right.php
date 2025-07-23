@@ -36,7 +36,8 @@ defined('ABSPATH') || exit;
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"metadata":{"name":""},"className":"lead"} -->
-<p class="lead">This section features a two-column hero with a right-aligned image and CTA buttons wrapped in a container. Use it on the page-blank template.</p>
+<p class="lead">This section features a two-column hero with a right-aligned image and CTA buttons wrapped in a container. 
+    Use it on the page-blank template.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:list -->
