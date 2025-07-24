@@ -261,3 +261,6 @@ function add_footer_info_class() {
   return "text-body-secondary border-top py-4 text-center";
 }
 add_filter('bootscore/class/footer/info', 'add_footer_info_class', 10, 2);
+
+
+

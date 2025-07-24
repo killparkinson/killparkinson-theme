@@ -85,3 +85,25 @@
 .top-button {
   right: 0.5%;
 }
+
+.enable-notifications-button > a {
+  color: $secondary;
+  border-color: $secondary;
+  background-color: white;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+
+  &:hover{
+    background-color: $gray-100;
+    color: inherit;
+    border-color: $secondary;
+  }
+
+  &::before {
+    content: "\f0f3"; // Font Awesome bell unicode
+    font-family: "Font Awesome 5 Free"; // your FA font family
+    font-weight: 900; // solid style
+    margin-right: 5px;
+    display: inline-block;
+  }
+}
