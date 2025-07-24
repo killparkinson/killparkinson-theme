@@ -211,9 +211,10 @@ function bootscore_child_block_post_categories_classes($block_content, $block) {
 }
 add_filter('render_block_core/post-terms', 'bootscore_child_block_post_categories_classes', 10, 2);
 
+/**
+ * Use container-fluid class instead of container on footer
+*/
 
-
-//Use container-fluid class instead of container
 function footer_container_class($class, $context){
   if ($context === 'footer-columns') {
     return 'container-fluid';
@@ -228,14 +229,17 @@ add_filter('bootscore/class/container', 'footer_container_class', 10, 2);
 
 /**
  * Change footer column wrapper classes
- */
+*/
+
 function add_footer_class() {
   return "pt-5 pb-4";
 }
 add_filter('bootscore/class/footer/columns', 'add_footer_class', 10, 2);
 
 
-//Custom classes for each footer column in use
+/**
+ * Custom classes for each footer column in use
+*/
 function footer_col_class($string, $location) {
 
   if ($location == 'footer-1') {
@@ -256,7 +260,9 @@ function footer_col_class($string, $location) {
 
 add_filter('bootscore/class/footer/col', 'footer_col_class', 10, 2);
 
-
+/**
+ * Custom classes for footer info
+*/
 function add_footer_info_class() {
   return "text-body-secondary border-top py-4 text-center";
 }
