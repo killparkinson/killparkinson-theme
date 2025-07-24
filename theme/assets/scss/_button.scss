@@ -1,3 +1,4 @@
+// create a single button variant rather than a theme-variant since it's only use is the button so far.
 .btn-transparent {
   @include button-variant(
     $background: rgba(0,0,0,0),
