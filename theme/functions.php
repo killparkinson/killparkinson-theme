@@ -210,3 +210,54 @@ function bootscore_child_block_post_categories_classes($block_content, $block) {
   }
 }
 add_filter('render_block_core/post-terms', 'bootscore_child_block_post_categories_classes', 10, 2);
+
+
+
+//Use container-fluid class instead of container
+function footer_container_class($class, $context){
+  if ($context === 'footer-columns') {
+    return 'container-fluid';
+  }
+
+  if($context=== "footer-info") {
+    return 'container-fluid d-flex flex-md-wrap flex-wrap-reverse justify-content-md-between justify-content-center align-content-stretch align-items-md-center';
+  }
+  return $class;
+}
+add_filter('bootscore/class/container', 'footer_container_class', 10, 2);
+
+/**
+ * Change footer column wrapper classes
+ */
+function add_footer_class() {
+  return "pt-5 pb-4";
+}
+add_filter('bootscore/class/footer/columns', 'add_footer_class', 10, 2);
+
+
+//Custom classes for each footer column in use
+function footer_col_class($string, $location) {
+
+  if ($location == 'footer-1') {
+    return "col-12 col-lg-3 order-1 order-md-1";
+  }
+    if ($location == 'footer-2') {
+    return "col-12 col-lg-6 pt-4 order-3 order-md-2";
+  }
+   if ($location == 'footer-3') {
+    return "col-12 col-lg-3 pt-4 order-2 order-md-3";
+  }
+  
+  if ($location == 'footer-4') {
+    return "d-none";
+  }
+  return $string;
+}
+
+add_filter('bootscore/class/footer/col', 'footer_col_class', 10, 2);
+
+
+function add_footer_info_class() {
+  return "text-body-secondary border-top py-4 text-center";
+}
+add_filter('bootscore/class/footer/info', 'add_footer_info_class', 10, 2);

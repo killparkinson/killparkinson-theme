@@ -1,0 +1,70 @@
+footer {
+  background-color: $pink-50;
+  padding-left: 4em;
+  padding-right: 4em;
+
+  @include media-breakpoint-down(md) {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .border-top {
+    border-color: $gray-900;
+  }
+  h2 {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .widget_nav_menu {
+    .menu-our-initiave-container {
+      padding-top: 10px;
+    }
+    a {
+      color: inherit;
+      font-weight: $font-weight-semibold;
+      &:hover {
+        color: $primary;
+      }
+    }
+  }
+  .bootscore-footer-info {
+    .container-fluid > *:not(:first-child) {
+      margin-bottom: 1rem;
+    }
+    p {
+      margin-bottom: 0;
+    }
+    .bootscore-copyright {
+      display: none !important;
+    }
+    .footer_widget {
+      ul.menu {
+        display: flex;
+        li {
+          font-size: 1em;
+          padding-right: 0.5rem;
+          a {
+            color: inherit;
+            font-weight: $font-weight-semibold;
+            &:hover {
+              color: $primary;
+            }
+          }
+        }
+      }
+    }
+    .wp-block-social-links.is-layout-flex {
+      gap: 0.5rem;
+      .wp-block-social-link-anchor {
+        padding: 0;
+        color: initial;
+        fill: initial;
+      }
+    }
+  }
+}
+
+.top-button {
+  right: 0.5%;
+}
