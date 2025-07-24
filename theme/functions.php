@@ -210,3 +210,50 @@ function bootscore_child_block_post_categories_classes($block_content, $block) {
   }
 }
 add_filter('render_block_core/post-terms', 'bootscore_child_block_post_categories_classes', 10, 2);
+
+/**
+ * Custom language switcher dropdown for WordPress menus.
+ *
+ * This function modifies the language switcher menu to display a custom HTML structure
+ * with flags and names of available languages. It replaces the default menu items
+ * with a styled language switcher dropdown.
+ *
+ * @param array $items     The list of menu items.
+ * @param object $args     Menu arguments.
+ * @return string          Modified menu items or custom language switcher HTML.
+ */
+function custom_language_switcher_dropdown( $items, $args ) {
+	// check if this is the language switcher
+	if ( $args->menu->slug == 'language-switcher' ) {
+		// get the current language slug
+		$current_lang_slug = pll_current_language( 'slug' );
+
+		// get the list of languages slugs
+		$language_slugs = pll_languages_list();
+
+		if ( ! empty( $language_slugs ) ) {
+			$language_names = pll_languages_list( array( 'fields' => 'name' ) );
+			$custom_html = '<ul class="language-switcher">';
+
+			foreach ( $language_slugs as $key => $slug ) {
+				// check if this is the current language
+				$is_current = ( $slug === $current_lang_slug ) ? 'active' : '';
+
+				// display the language switcher item with flag and name
+				$custom_html .= '<li>';
+				$custom_html .= '<a href="' . pll_home_url( $slug ) . '" title="' . esc_attr( $language_names[ $key ] ) . '" class="' . $is_current . '">';
+				$custom_html .= '<img src="assets/flag-' . $slug . '.png" alt="' . esc_attr( $language_names[ $key ] ) . '">';
+				$custom_html .= '</a>';
+				$custom_html .= '</li>';
+			}
+			$custom_html .= '</ul>';
+		}
+
+		// return the custom HTML instead of the default menu
+		return $custom_html;
+	}
+
+	// for other menus, return the original items
+	return $items;
+}
+add_filter( 'wp_nav_menu_items', 'custom_language_switcher_dropdown', 10, 2 );
