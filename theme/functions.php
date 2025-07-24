@@ -233,20 +233,30 @@ function custom_language_switcher_dropdown( $items, $args ) {
 
 		if ( ! empty( $language_slugs ) ) {
 			$language_names = pll_languages_list( array( 'fields' => 'name' ) );
-			$custom_html = '<ul class="language-switcher">';
+			$language_locales = pll_languages_list( array( 'fields' => 'locale' ) );
+
+			$custom_html = '<div id="top-language-switcher" class="dropdown">';
+			$custom_html .= '<button class="btn btn-transparent dropdown-toggle text-uppercase" type="button" data-bs-toggle="dropdown" aria-expanded="false">';
+			$custom_html .= '<span class="icon-start flag flag-' . strtoupper( $current_lang_slug ) . ' flag-round flag-lg me-2"></span>';
+			$custom_html .= $current_lang_slug;
+			$custom_html .= '</button>';
+			$custom_html .= '<ul class="dropdown-menu dropdown-menu-end">';
 
 			foreach ( $language_slugs as $key => $slug ) {
 				// check if this is the current language
-				$is_current = ( $slug === $current_lang_slug ) ? 'active' : '';
+				$is_current = ( $slug === $current_lang_slug ) ? ' active' : '';
+				$lang_name = esc_attr( $language_names[ $key ] );
+				$lang_locale = esc_attr( $language_locales[ $key ] );
 
 				// display the language switcher item with flag and name
 				$custom_html .= '<li>';
-				$custom_html .= '<a href="' . pll_home_url( $slug ) . '" title="' . esc_attr( $language_names[ $key ] ) . '" class="' . $is_current . '">';
-				$custom_html .= '<img src="assets/flag-' . $slug . '.png" alt="' . esc_attr( $language_names[ $key ] ) . '">';
+				$custom_html .= '<a lang="'. $lang_locale .'" hreflang="'. $lang_locale .'" class="dropdown-item' . $is_current . '" href="' . pll_home_url( $slug ) . '" title="' . $lang_name . '">';
+				$custom_html .= '<span class="flag flag-' . strtoupper( $slug ) . ' flag-round flag-lg me-2"></span>';
+				$custom_html .= $lang_name;
 				$custom_html .= '</a>';
 				$custom_html .= '</li>';
 			}
-			$custom_html .= '</ul>';
+			$custom_html .= '</ul></div>';
 		}
 
 		// return the custom HTML instead of the default menu
