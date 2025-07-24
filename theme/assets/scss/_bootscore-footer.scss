@@ -1,4 +1,4 @@
-footer {
+.bootscore-footer {
   background-color: $pink-50;
   padding-left: 4em;
   padding-right: 4em;
@@ -11,7 +11,8 @@ footer {
   .border-top {
     border-color: $gray-900;
   }
-  h2 {
+
+  .widgettitle {
     font-size: 20px;
     font-weight: bold;
   }
@@ -20,42 +21,58 @@ footer {
     .menu-our-initiave-container {
       padding-top: 10px;
     }
-    a {
-      color: inherit;
-      font-weight: $font-weight-semibold;
-      &:hover {
-        color: $primary;
+
+    .menu-item {
+      a {
+        color: inherit;
+        font-weight: $font-weight-semibold;
+
+        &:hover {
+          background-color: $gray-200;
+        }
       }
     }
+
   }
+
   .bootscore-footer-info {
-    .container-fluid > *:not(:first-child) {
+    .container-fluid>*{
       margin-bottom: 1rem;
     }
+
     p {
       margin-bottom: 0;
     }
+
     .bootscore-copyright {
       display: none !important;
     }
+
     .footer_widget {
       ul.menu {
         display: flex;
+
         li {
-          font-size: 1em;
+          font-size: 0.95em;
+          text-wrap: nowrap;
+          &:not(:last-child){
           padding-right: 0.5rem;
+          }
           a {
             color: inherit;
             font-weight: $font-weight-semibold;
+
             &:hover {
-              color: $primary;
+              background-color: $gray-200;
             }
           }
         }
       }
     }
+
     .wp-block-social-links.is-layout-flex {
       gap: 0.5rem;
+      margin-bottom: 0;
       .wp-block-social-link-anchor {
         padding: 0;
         color: initial;
