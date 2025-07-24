@@ -1,6 +1,6 @@
 <?php
 /**
- * Title: KIP - Heading with Last Word Coloured
+ * Title: Heading with Last Word Coloured
  * Slug:  theme/s-heading-with-last-word-coloured
  * Categories: bootscore
  * https://developer.wordpress.org/themes/features/block-patterns/
