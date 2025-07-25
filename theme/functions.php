@@ -324,5 +324,18 @@ function add_footer_info_class() {
 }
 add_filter('bootscore/class/footer/info', 'add_footer_info_class', 10, 2);
 
+/**
+ * Sets the direction for the mobile menu in the offcanvas body.
+ *
+ * @param string $classNames The existing class names.
+ * @param mixed  $context   The context in which the function is called.
+ */
+function mobile_offcanvas_body_direction ($classNames, $context) {
+  if ($context == 'menu') {
+    return 'd-flex flex-column flex-lg-row';
+  }
 
+  return $classNames;
+}
+add_filter('bootscore/class/offcanvas/body', 'mobile_offcanvas_body_direction', 10, 2);
 
