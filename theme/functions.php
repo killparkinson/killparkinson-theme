@@ -212,9 +212,66 @@ function bootscore_child_block_post_categories_classes($block_content, $block) {
 add_filter('render_block_core/post-terms', 'bootscore_child_block_post_categories_classes', 10, 2);
 
 /**
- * Use container-fluid class instead of container on footer
-*/
+ * Custom language switcher dropdown for WordPress menus.
+ *
+ * This function modifies the language switcher menu to display a custom HTML structure
+ * with flags and names of available languages. It replaces the default menu items
+ * with a styled language switcher dropdown.
+ *
+ * @param array $items     The list of menu items.
+ * @param object $args     Menu arguments.
+ * @return string          Modified menu items or custom language switcher HTML.
+ */
+function custom_language_switcher_dropdown( $items, $args ) {
+	// check if this is the language switcher
+	if ( $args->menu->slug == 'language-switcher' ) {
+		// get the current language slug
+		$current_lang_slug = pll_current_language( 'slug' );
 
+		// get the list of languages slugs
+		$language_slugs = pll_languages_list();
+
+		if ( ! empty( $language_slugs ) ) {
+			$language_names = pll_languages_list( array( 'fields' => 'name' ) );
+			$language_locales = pll_languages_list( array( 'fields' => 'locale' ) );
+
+			$custom_html = '<li id="top-language-switcher" class="mx-n3 px-3 pt-3 border-top mx-lg-0 p-lg-0 border-lg-0">';
+			$custom_html .= '<div class="dropdown dropup dropdown-lg">';
+			$custom_html .= '<button class="btn btn-transparent dropdown-toggle text-uppercase" data-bs-display="static" type="button" data-bs-toggle="dropdown" aria-expanded="false">';
+			$custom_html .= '<span class="icon-start flag flag-' . strtoupper( $current_lang_slug ) . ' flag-round flag-lg me-2"></span>';
+			$custom_html .= $current_lang_slug;
+			$custom_html .= '</button>';
+			$custom_html .= '<ul class="dropdown-menu dropdown-menu-start dropdown-menu-lg-end shadow">';
+
+			foreach ( $language_slugs as $key => $slug ) {
+				// check if this is the current language
+				$is_current = ( $slug === $current_lang_slug ) ? ' active' : '';
+				$lang_name = esc_attr( $language_names[ $key ] );
+				$lang_locale = esc_attr( $language_locales[ $key ] );
+
+				// display the language switcher item with flag and name
+				$custom_html .= '<li>';
+				$custom_html .= '<a lang="'. $lang_locale .'" hreflang="'. $lang_locale .'" class="dropdown-item' . $is_current . '" href="' . pll_home_url( $slug ) . '" title="' . $lang_name . '">';
+				$custom_html .= '<span class="flag flag-' . strtoupper( $slug ) . ' flag-round flag-lg me-2"></span>';
+				$custom_html .= $lang_name;
+				$custom_html .= '</a>';
+				$custom_html .= '</li>';
+			}
+			$custom_html .= '</ul></div></li>';
+		}
+
+		// return the custom HTML instead of the default menu
+		return $custom_html;
+	}
+
+	// for other menus, return the original items
+	return $items;
+}
+add_filter( 'wp_nav_menu_items', 'custom_language_switcher_dropdown', 10, 2 );
+
+/**
+ * Use container-fluid class instead of container on footer
+ */
 function footer_container_class($class, $context){
   if ($context === 'footer-columns') {
     return 'container-fluid';
@@ -229,8 +286,7 @@ add_filter('bootscore/class/container', 'footer_container_class', 10, 2);
 
 /**
  * Change footer column wrapper classes
-*/
-
+ */
 function add_footer_class() {
   return "pt-5 pb-4";
 }
@@ -239,7 +295,7 @@ add_filter('bootscore/class/footer/columns', 'add_footer_class', 10, 2);
 
 /**
  * Custom classes for each footer column in use
-*/
+ */
 function footer_col_class($string, $location) {
 
   if ($location == 'footer-1') {
@@ -262,11 +318,31 @@ add_filter('bootscore/class/footer/col', 'footer_col_class', 10, 2);
 
 /**
  * Custom classes for footer info
-*/
+ */
 function add_footer_info_class() {
   return "text-body-secondary border-top py-4 text-center";
 }
 add_filter('bootscore/class/footer/info', 'add_footer_info_class', 10, 2);
 
+/**
+ * Sets the direction for the mobile menu in the offcanvas body.
+ *
+ * @param string $classNames The existing class names.
+ * @param mixed  $context   The context in which the function is called.
+ */
+function mobile_offcanvas_body_direction ($classNames, $context) {
+  if ($context == 'menu') {
+    return 'd-flex flex-column flex-lg-row';
+  }
 
+  return $classNames;
+}
+add_filter('bootscore/class/offcanvas/body', 'mobile_offcanvas_body_direction', 10, 2);
 
+/**
+ * Adds a flex-grow-1 class to the navbar nav.
+ */
+function grow_mobile_navbar_nav () {
+  return 'flex-grow-1';
+}
+add_filter('bootscore/class/header/navbar-nav', 'grow_mobile_navbar_nav', 10, 2);
