@@ -273,12 +273,9 @@ add_filter( 'wp_nav_menu_items', 'custom_language_switcher_dropdown', 10, 2 );
  * Use container-fluid class instead of container on footer
  */
 function footer_container_class($class, $context){
-  if ($context === 'footer-columns') {
-    return 'container-fluid';
-  }
 
   if($context=== "footer-info") {
-    return 'container-fluid d-flex flex-md-wrap flex-wrap-reverse justify-content-md-between justify-content-center align-content-stretch align-items-md-center';
+    return 'container d-flex flex-md-wrap flex-wrap-reverse justify-content-md-between justify-content-center align-content-stretch align-items-md-center';
   }
   return $class;
 }
