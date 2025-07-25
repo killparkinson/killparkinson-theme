@@ -1,12 +1,5 @@
 .bootscore-footer {
   background-color: $pink-50;
-  padding-left: 4em;
-  padding-right: 4em;
-
-  @include media-breakpoint-down(md) {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
 
   .border-top {
     border-color: $gray-900;
@@ -36,7 +29,7 @@
   }
 
   .bootscore-footer-info {
-    .container-fluid>*{
+    .container>*{
       margin-bottom: 1rem;
     }
 
