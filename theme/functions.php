@@ -235,12 +235,12 @@ function custom_language_switcher_dropdown( $items, $args ) {
 			$language_names = pll_languages_list( array( 'fields' => 'name' ) );
 			$language_locales = pll_languages_list( array( 'fields' => 'locale' ) );
 
-			$custom_html = '<div id="top-language-switcher" class="dropdown">';
-			$custom_html .= '<button class="btn btn-transparent dropdown-toggle text-uppercase" type="button" data-bs-toggle="dropdown" aria-expanded="false">';
+			$custom_html = '<div id="top-language-switcher" class="dropdown dropup dropdown-lg">';
+			$custom_html .= '<button class="btn btn-transparent dropdown-toggle text-uppercase" data-bs-display="static" type="button" data-bs-toggle="dropdown" aria-expanded="false">';
 			$custom_html .= '<span class="icon-start flag flag-' . strtoupper( $current_lang_slug ) . ' flag-round flag-lg me-2"></span>';
 			$custom_html .= $current_lang_slug;
 			$custom_html .= '</button>';
-			$custom_html .= '<ul class="dropdown-menu dropdown-menu-end">';
+			$custom_html .= '<ul class="dropdown-menu dropdown-menu-start dropdown-menu-lg-end">';
 
 			foreach ( $language_slugs as $key => $slug ) {
 				// check if this is the current language
