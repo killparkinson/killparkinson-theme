@@ -1,0 +1,14 @@
+@include media-breakpoint-up(lg) {
+  .dropdown-lg {
+    .dropdown-menu[data-bs-popper] {
+      top: 100%;
+      bottom: auto;
+      margin-bottom: 0;
+      margin-top: var(--#{$prefix}dropdown-spacer);
+    }
+
+    .dropdown-toggle {
+      @include caret(down);
+    }
+  }
+}

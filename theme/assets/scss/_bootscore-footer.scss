@@ -1,0 +1,102 @@
+.bootscore-footer {
+  background-color: $pink-50;
+
+  .border-top {
+    border-color: $gray-900;
+  }
+
+  .widgettitle {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .widget_nav_menu {
+    .menu-our-initiave-container {
+      padding-top: 10px;
+    }
+
+    .menu-item {
+      a {
+        color: inherit;
+        font-weight: $font-weight-semibold;
+
+        &:hover {
+          background-color: $gray-200;
+        }
+      }
+    }
+
+  }
+
+  .bootscore-footer-info {
+    .container>*{
+      margin-bottom: 1rem;
+    }
+
+    p {
+      margin-bottom: 0;
+    }
+
+    .bootscore-copyright {
+      display: none !important;
+    }
+
+    .footer_widget {
+      ul.menu {
+        display: flex;
+
+        li {
+          font-size: 0.95em;
+          text-wrap: nowrap;
+          &:not(:last-child){
+          padding-right: 0.5rem;
+          }
+          a {
+            color: inherit;
+            font-weight: $font-weight-semibold;
+
+            &:hover {
+              background-color: $gray-200;
+            }
+          }
+        }
+      }
+    }
+
+    .wp-block-social-links.is-layout-flex {
+      gap: 0.5rem;
+      margin-bottom: 0;
+      .wp-block-social-link-anchor {
+        padding: 0;
+        color: initial;
+        fill: initial;
+      }
+    }
+  }
+}
+
+.top-button {
+  right: 0.5%;
+}
+
+.enable-notifications-button > a {
+  color: $secondary;
+  border-color: $secondary;
+  background-color: white;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+
+  &:hover{
+    background-color: $gray-100;
+    color: inherit;
+    border-color: $secondary;
+  }
+
+  &::before {
+    content: "\f0f3"; // Font Awesome bell unicode
+    font-family: "Font Awesome 5 Free"; // your FA font family
+    font-weight: 900; // solid style
+    margin-right: 5px;
+    display: inline-block;
+  }
+}
