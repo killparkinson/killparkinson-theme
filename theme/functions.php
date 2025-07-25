@@ -339,3 +339,10 @@ function mobile_offcanvas_body_direction ($classNames, $context) {
 }
 add_filter('bootscore/class/offcanvas/body', 'mobile_offcanvas_body_direction', 10, 2);
 
+/**
+ * Adds a flex-grow-1 class to the navbar nav.
+ */
+function grow_mobile_navbar_nav () {
+  return 'flex-grow-1';
+}
+add_filter('bootscore/class/header/navbar-nav', 'grow_mobile_navbar_nav', 10, 2);
