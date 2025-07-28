@@ -346,3 +346,106 @@ function grow_mobile_navbar_nav () {
   return 'flex-grow-1';
 }
 add_filter('bootscore/class/header/navbar-nav', 'grow_mobile_navbar_nav', 10, 2);
+
+
+/**
+ * Disable Font Awesome
+ */
+add_filter('bootscore/load_fontawesome', '__return_false');
+
+/**
+ * Icon helper creates a feater SVG icon element
+ * @param string $name The name of the icon to render 
+ * @link https://feathericons.com
+ */
+function icon ($name) {
+  return '<svg class="icon"><use href="'. get_stylesheet_directory_uri() .'/assets/fonts/icon.svg#'. $name .'"></svg>';
+}
+
+/**
+ * Change nav-toggler icon
+ */
+function change_nav_toggler_icon() {
+  return icon('menu');
+}
+add_filter('bootscore/icon/menu', 'change_nav_toggler_icon');
+
+/**
+ * Change search-toggler icon
+ */
+function change_search_toggler_icon() {
+  return icon('search');
+}
+add_filter('bootscore/icon/search', 'change_search_toggler_icon');
+
+/**
+ * Change account-toggler user icon
+ */
+function change_account_toggler_icon() {
+  return icon('log-out');
+}
+add_filter('bootscore/icon/user', 'change_account_toggler_icon');
+
+/**
+ * Change cart-toggler bag icon
+ */
+function change_cart_toggler_icon() {
+  return icon('shopping-cart');
+}
+add_filter('bootscore/icon/cart', 'change_cart_toggler_icon');
+
+/**
+ * Change back-to-cart-toggler arrow icon
+ */
+function change_back_to_cart_arrow_icon() {
+  return icon('chevron-right');
+}
+add_filter('bootscore/icon/arrow-left', 'change_back_to_cart_arrow_icon');
+
+/**
+ * Change sidebar offcanvas-toggler icon
+ */
+function change_sidebar_toggler_icon() {
+  return icon('more-horizontal');
+}
+add_filter('bootscore/icon/ellipsis-vertical', 'change_sidebar_toggler_icon');
+
+/**
+ * Change WooCommerce mini-cart trash icon
+ */
+function change_trash_icon() {
+  return icon('trash');
+}
+add_filter('bootscore/icon/trash', 'change_trash_icon');
+
+/**
+ * Change star icon
+ */
+function change_star_icon() {
+  return icon('map-pin');
+}
+add_filter('bootscore/icon/star', 'change_star_icon');
+
+/**
+ * Change comments icon
+ */
+function change_comments_icon() {
+  return icon('message-square');
+}
+add_filter('bootscore/icon/comments', 'change_comments_icon');
+
+/**
+ * Change breadcrumb home icon
+ */
+function change_home_icon() {
+  return icon('home');
+}
+add_filter('bootscore/icon/home', 'change_home_icon');
+
+/**
+ * Change to-top button icon
+ */
+function change_to_top_icon() {
+  return icon('chevron-up');
+}
+add_filter('bootscore/icon/chevron-up', 'change_to_top_icon');
