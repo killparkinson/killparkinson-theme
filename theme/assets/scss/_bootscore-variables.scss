@@ -81,6 +81,30 @@ $light: $gray-100;
 $dark: $gray-900;
 $focus: rgb(44, 96, 245); // This colour is the default focus blue in Google Chrome.
 
+// Text variables
+$primary-text-emphasis:   $dark;
+$secondary-text-emphasis: $dark;
+$success-text-emphasis:   $dark;
+$info-text-emphasis:      $dark;
+$warning-text-emphasis:   $dark;
+$danger-text-emphasis:    $dark;
+
+// Bg subtle variables
+$primary-bg-subtle:       $pink-50;
+$secondary-bg-subtle:     tint-color($secondary, 80%);
+$success-bg-subtle:       $green-50;
+$info-bg-subtle:          $gray-50;
+$warning-bg-subtle:       $orange-50;
+$danger-bg-subtle:        $red-50;
+
+// Border subtle variables
+$primary-border-subtle:   $primary;
+$secondary-border-subtle: $secondary;
+$success-border-subtle:   $success;
+$info-border-subtle:      $dark;
+$warning-border-subtle:   $warning;
+$danger-border-subtle:    $dark;
+
 // Backgrounds
 $bg-body: #fff;
 
