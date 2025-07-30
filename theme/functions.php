@@ -203,7 +203,7 @@ function bootscore_child_block_post_categories_classes($block_content, $block) {
       '<a'
     );
     $replace = array(
-      '<a class="btn btn-outline-primary btn-sm" ',
+      '<a class="badge bg-primary-subtle border border-primary-subtle text-primary-emphasis text-decoration-none border border-primary" ',
     );
 
     return str_replace($search, $replace, $block_content);
