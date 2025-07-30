@@ -1,14 +1,35 @@
-// create a single button variant rather than a theme-variant since it's only use is the button so far.
-.btn-transparent {
-  @include button-variant(
-    $background: rgba(0,0,0,0),
-    $border: rgba(0,0,0,0),
-    $color: $gray-900,
-    $hover-background: $gray-300,
-    $hover-border: $gray-300,
-    $hover-color: $gray-900,
-    $active-background: $gray-300,
-    $active-border: $gray-300,
-    $active-color: $gray-900
-  );
+.btn {
+  --#{$prefix}btn-focus-box-shadow: 0 0 0 #{$btn-focus-width} #{$focus};
+}
+
+.btn-ghost-primary {
+  --#{$prefix}btn-color: var(--#{$prefix}primary);
+  --#{$prefix}btn-bg: var(--#{$prefix}body-bg);
+  --#{$prefix}btn-border-color: var(--#{$prefix}body-bg);
+  --#{$prefix}btn-hover-color: var(--#{$prefix}primary);
+  --#{$prefix}btn-hover-bg: #{$pink-25};
+  --#{$prefix}btn-hover-border-color: #{$pink-25};
+  --#{$prefix}btn-active-color: var(--#{$prefix}primary);
+  --#{$prefix}btn-active-bg: #{$pink-100};
+  --#{$prefix}btn-active-border-color: #{$pink-100};
+}
+
+.btn-ghost-secondary {
+  --#{$prefix}btn-color: var(--#{$prefix}dark);
+  --#{$prefix}btn-bg: var(--#{$prefix}body-bg);;
+  --#{$prefix}btn-border-color: var(--#{$prefix}body-bg);;
+  --#{$prefix}btn-hover-color: var(--#{$prefix}dark);
+  --#{$prefix}btn-hover-bg: #{$gray-100};
+  --#{$prefix}btn-hover-border-color: #{$gray-100};
+  --#{$prefix}btn-active-color: var(--#{$prefix}dark);
+  --#{$prefix}btn-active-bg: #{$gray-200};
+  --#{$prefix}btn-active-border-color: #{$gray-200};
+}
+
+.btn-outline-secondary {
+  --#{$prefix}btn-bg: var(--#{$prefix}body-bg);
+  --#{$prefix}btn-hover-color: var(--#{$prefix}dark);
+  --#{$prefix}btn-hover-bg: #{$gray-100};
+  --#{$prefix}btn-active-color: var(--#{$prefix}dark);
+  --#{$prefix}btn-active-bg: #{$gray-200};
 }
