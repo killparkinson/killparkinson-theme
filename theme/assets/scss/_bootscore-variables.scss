@@ -23,7 +23,8 @@ $gray-100: #F5F5F5;
 $gray-50: #FAFAFA;
 
 $pink: #f9339c;
-$pink-50: #fef0f5;
+$pink-25: #fef0f5;
+$pink-50: #fee5ed;
 $pink-100: #fdcadc;
 $pink-200: #fba9c9;
 $pink-300: #fb8ab9;
@@ -73,6 +74,12 @@ $secondary: $gray-900;
 $success: $green-600;
 $warning: $orange-600;
 $danger: $red-600;
+$light: $gray-100;
+$dark: $gray-900;
+$focus: rgb(44, 96, 245); // This colour is the default focus blue in Google Chrome.
+
+// Backgrounds
+$bg-body: #fff;
 
 // Spacing
 $spacer: 1rem;
