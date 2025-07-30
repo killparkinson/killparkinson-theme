@@ -36,6 +36,7 @@ $pink-800: #b3166d;
 $pink-900: #a61465;
 
 $green: #12B76A;
+$green-50: #ECFDF3;
 $green-100: #D1FADF;
 $green-200: #A6F4C5;
 $green-300: #6CE9A6;
@@ -47,6 +48,7 @@ $green-800: #05603A;
 $green-900: #054F31;
 
 $orange: #F79009;
+$orange-50: #FEF0C7;
 $orange-100: #FEF0C7;
 $orange-200: #FEDF89;
 $orange-300: #FEC84B;
@@ -58,6 +60,7 @@ $orange-800: #93370D;
 $orange-900: #7A2E0E;
 
 $red: #F04438;
+$red-50: #FEF3F2;
 $red-100: #FEE4E2;
 $red-200: #FECDCA;
 $red-300: #FDA29B;
@@ -77,6 +80,30 @@ $danger: $red-600;
 $light: $gray-100;
 $dark: $gray-900;
 $focus: rgb(44, 96, 245); // This colour is the default focus blue in Google Chrome.
+
+// Text variables
+$primary-text-emphasis:   $dark;
+$secondary-text-emphasis: $dark;
+$success-text-emphasis:   $dark;
+$info-text-emphasis:      $dark;
+$warning-text-emphasis:   $dark;
+$danger-text-emphasis:    $dark;
+
+// Bg subtle variables
+$primary-bg-subtle:       $pink-50;
+$secondary-bg-subtle:     tint-color($secondary, 80%);
+$success-bg-subtle:       $green-50;
+$info-bg-subtle:          $gray-50;
+$warning-bg-subtle:       $orange-50;
+$danger-bg-subtle:        $red-50;
+
+// Border subtle variables
+$primary-border-subtle:   $primary;
+$secondary-border-subtle: $secondary;
+$success-border-subtle:   $success;
+$info-border-subtle:      $dark;
+$warning-border-subtle:   $warning;
+$danger-border-subtle:    $dark;
 
 // Backgrounds
 $bg-body: #fff;
@@ -105,3 +132,7 @@ $dropdown-item-padding-x: 0.6rem;
 $dropdown-border-color: $gray-600;
 $dropdown-link-active-bg: transparent;
 $dropdown-link-active-color: $gray-900;
+
+// Badge
+$badge-border-radius: $radius;
+$badge-font-weight: 500;
