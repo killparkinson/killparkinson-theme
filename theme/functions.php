@@ -446,3 +446,28 @@ function change_to_top_icon() {
   return icon('chevron-up');
 }
 add_filter('bootscore/icon/chevron-up', 'change_to_top_icon');
+
+/**
+ * Change category badge class
+ */
+function change_category_badge_link_class($class) {
+  return 'badge bg-primary-subtle border border-primary-subtle text-primary-emphasis text-decoration-none border border-primary';
+}
+add_filter('bootscore/class/badge/category', 'change_category_badge_link_class');
+
+/**
+ * Change widget categories badge
+ */
+function change_block_widget_categories_badge($block_content, $block) {
+  
+    $search  = array(
+      '<span class="badge bg-primary-subtle text-primary-emphasis border border-primary">'
+    );
+    $replace = array(
+      '<span class="badge bg-danger-subtle text-danger-emphasis border border-danger">'
+    );  
+
+  return str_replace($search, $replace, $block_content);
+}
+add_filter('bootscore/block/categories/content', 'change_block_widget_categories_badge', 10, 2);
+
