@@ -353,10 +353,13 @@ add_filter('bootscore/load_fontawesome', '__return_false');
 /**
  * Icon helper creates a feater SVG icon element
  * @param string $name The name of the icon to render 
+ * @param string $position Position of icon
  * @link https://feathericons.com
  */
-function icon ($name) {
-  return '<svg class="icon"><use href="'. get_stylesheet_directory_uri() .'/assets/fonts/icon.svg#'. $name .'"></svg>';
+function icon ($name, $position = '') {
+  $className = $position === 'start' ? 'icon-start' : $position === 'end' ? 'icon-end' : '';
+
+  return '<svg class="icon'. $className .'"><use href="'. get_stylesheet_directory_uri() .'/assets/fonts/icon.svg#'. $name .'"></svg>';
 }
 
 /**
