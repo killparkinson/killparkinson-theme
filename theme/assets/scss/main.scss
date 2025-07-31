@@ -63,3 +63,14 @@
 @import "icon";
 @import "dropdown";
 @import "bootscore-footer";
+@import "banner-image-text";
+
+
+figure.hero-section-img{
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    img{
+        object-fit: cover;
+        object-position: center;
+    }
+}

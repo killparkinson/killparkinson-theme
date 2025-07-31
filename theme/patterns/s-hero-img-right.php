@@ -17,19 +17,15 @@ defined('ABSPATH') || exit;
 <section class="wp-block-group py-5 hide-wp-block-classes">
   <!-- wp:group {"metadata":{"name":"container h-100"},"className":"container h-100","layout":{"type":"default"}} -->
   <div class="wp-block-group container h-100">
-    <!-- wp:group {"metadata":{"name":"c - Hero image right - row h-100 hide-wp-block-classes","categories":["bootscore"],"patternName":"bootscore/hero-img-right"},"className":"row h-100 hide-wp-block-classes","layout":{"type":"default"}} -->
-    <div class="wp-block-group row h-100 hide-wp-block-classes">
+    <!-- wp:group {"metadata":{"name":"c - Hero image right - row h-100 hide-wp-block-classes banner-image-text","categories":["bootscore"],"patternName":"bootscore/hero-img-right"},"className":"row h-100 hide-wp-block-classes","layout":{"type":"default"}} -->
+    <div class="wp-block-group row align-items-stretch hide-wp-block-classes banner-image-text">
       <!-- wp:group {"metadata":{"name":"col-lg-6 mb-3 mb-lg-0 order-lg-2"},"className":"col-lg-6 mb-3 mb-lg-0 order-lg-2","layout":{"type":"default"}} -->
       <div class="wp-block-group col-lg-6 mb-3 mb-lg-0 order-lg-2">
         <!-- wp:group {"metadata":{"name":"h-100 d-flex align-items-center"},"className":"h-100 d-flex align-items-center","layout":{"type":"default"}} -->
-        <div class="wp-block-group h-100 d-flex align-items-center">
-          <!-- wp:image {"aspectRatio":"3/4","scale":"cover","className":"rounded mb-0"} -->
-          <figure class="wp-block-image rounded mb-0">
-            <img
-              src="https://dummyimage.com/1200x900/6c757d/ffffff"
-              alt=""
-              style="aspect-ratio: 3/4; object-fit: cover"
-            />
+        <div class="wp-block-group h-100 d-flex align-items-stretch">
+          <!-- wp:image {"aspectRatio":"3/4","scale":"cover","sizeSlug":"large","linkDestination":"none","className":"w-100 rounded mb-0 h-100 w-100"} -->
+          <figure class="wp-block-image size-large w-100 rounded mb-0 hero-image-right">
+            <img src="https://dummyimage.com/1200x900/6c757d/ffffff" alt="" class="img-fluid" />
           </figure>
           <!-- /wp:image -->
         </div>
@@ -79,12 +75,8 @@ defined('ABSPATH') || exit;
               <button class="btn btn-lg btn-secondary" href="#">
                 Primary Button
               </button>
-              <button
-                class="btn btn-lg btn-outline-secondary d-flex flex-row align-items-center"
-                href="#"
-              >
-                <span>Outline Secondary</span
-                ><i class="fa-solid fa-chevron-right ps-1"></i>
+              <button class="btn btn-lg btn-outline-secondary d-flex flex-row align-items-center" href="#">
+                <span>Outline Secondary</span><i class="fa-solid fa-chevron-right ps-1"></i>
               </button>
             </div>
             <!-- /wp:paragraph -->
