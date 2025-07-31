@@ -1,6 +1,6 @@
 # Buttons
 
-This documentation explains how to create button components based on (Figma button variants)[https://www.figma.com/design/KQJOUq4sxS9Iu8KBqcfJns/%F0%9F%92%A0-KiPa-Design-System-WIP?node-id=8636-55579&m=dev]. The following classes are used to style buttons according to their visual appearance and function.
+This documentation explains how to create button components based on [Figma button variants](https://www.figma.com/design/KQJOUq4sxS9Iu8KBqcfJns/%F0%9F%92%A0-KiPa-Design-System-WIP?node-id=8636-55579&m=dev). The following classes are used to style buttons according to their visual appearance and function.
 
 ## Button variants and class names
 
