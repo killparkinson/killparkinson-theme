@@ -2,16 +2,10 @@
   .dropdown-toggle {
     &::after {
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-chevron-down'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
-      background-size: 24px 24px;
-      content: '';
-      width: 24px;
-      height: 24px;
       border: none;
-      vertical-align: top;
       margin-left: 0.4rem;
       right: -5px;
       position: relative;
-      display: inline-block;
     }
 
     &.show::after {
@@ -37,11 +31,6 @@
       
       &::after {
         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb("+ to-rgb($primary) +")' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-check'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");        background-size: 24px 24px;
-        content: '';
-        width: 24px;
-        height: 24px;
-        vertical-align: top;
-        display: inline-block;
         right: -1.5rem;
         position: relative;
       }
