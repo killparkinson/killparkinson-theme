@@ -4,7 +4,7 @@ This guide outlines how to set up a local development environment for the **`kp-
 
 ## Design documentation
 
-The (design system)[docs/README.md] documentation covers how to build components and more.
+The [design system](docs/README.md) documentation covers how to build components and more.
 
 ## Getting Started
 
