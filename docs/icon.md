@@ -91,5 +91,5 @@ Here is an example of how to use an encoded SVG in CSS:
 ```
 
 ```html
-<span class="icon circle-icon"></span>
+<span class="icon-css circle-icon"></span>
 ```
