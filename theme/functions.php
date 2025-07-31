@@ -357,9 +357,13 @@ add_filter('bootscore/load_fontawesome', '__return_false');
  * @link https://feathericons.com
  */
 function icon ($name, $position = '') {
-  $className = $position === 'start' ? 'icon-start' : $position === 'end' ? 'icon-end' : '';
+  if ($position == 'start') {
+    $position = ' icon-start';
+  } else if ($position == 'end') {
+    $position = ' icon-end';
+  }
 
-  return '<svg class="icon'. $className .'"><use href="'. get_stylesheet_directory_uri() .'/assets/fonts/icon.svg#'. $name .'"></svg>';
+  return '<svg class="icon'. $position .'"><use href="'. get_stylesheet_directory_uri() .'/assets/fonts/icon.svg#'. $name .'"></svg>';
 }
 
 /**
