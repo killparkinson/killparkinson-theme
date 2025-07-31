@@ -2,6 +2,10 @@
 
 This guide outlines how to set up a local development environment for the **`kp-theme`** child theme using Docker. The setup includes the **Bootscore parent theme**.
 
+## Design documentation
+
+The design system [documentation](docs/README.md) covers how to build components and more.
+
 ## Getting Started
 
 ### 1. Clone the Repository

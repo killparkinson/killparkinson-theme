@@ -1,7 +1,25 @@
 .icon-start {
-  margin-left: -0.5rem;
+  margin-left: -0.7rem;
 }
 
 .icon-end {
-  margin-right: -0.5rem;
+  margin-right: -0.7rem;
+}
+
+.icon {
+  width: 1em;
+  height: 1em;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+}
+
+.icon-css::after {
+  content: "";
+  width: 24px;
+  height: 24px;
+  vertical-align: top;
+  display: inline-block;
 }
