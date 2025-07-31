@@ -7,11 +7,19 @@
 }
 
 .icon {
-  width: 24px;
-  height: 24px;
+  width: 1em;
+  height: 1em;
   stroke: currentColor;
   stroke-width: 2;
   stroke-linecap: round;
   stroke-linejoin: round;
   fill: none;
+}
+
+.icon-css::after {
+  content: "";
+  width: 1em;
+  height: 1em;
+  vertical-align: top;
+  display: inline-block;
 }
