@@ -245,7 +245,7 @@ function custom_language_switcher_dropdown( $items, $args ) {
 
 			foreach ( $language_slugs as $key => $slug ) {
 				// check if this is the current language
-				$is_current = ( $slug === $current_lang_slug ) ? ' active' : '';
+				$is_current = ( $slug === $current_lang_slug ) ? ' active icon-css' : '';
 				$lang_name = esc_attr( $language_names[ $key ] );
 				$lang_locale = esc_attr( $language_locales[ $key ] );
 
