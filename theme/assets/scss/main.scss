@@ -54,7 +54,6 @@
 @import "bootstrap/utilities/api";
 
 @import "bootscore-style";
-@import "bootscore-woocommerce"; // Comment or delete this line if WooCommerce styles are not needed
 
 @import "typography";
 @import "navbar";
@@ -64,13 +63,3 @@
 @import "dropdown";
 @import "bootscore-footer";
 @import "banner-image-text";
-
-
-figure.hero-section-img{
-    aspect-ratio: 4/3;
-    overflow: hidden;
-    img{
-        object-fit: cover;
-        object-position: center;
-    }
-}
