@@ -44,22 +44,6 @@ You can position icons on buttons using the classes `icon-start` and `icon-end`.
 
 The theme provides a PHP helper function called `icon()` located in `function.php`. This function simplifies the process of generating SVG icon elements.
 
-### Function definition
-
-```php
-/**
- * Icon helper creates a feather SVG icon element
- * @param string $name The name of the icon to render 
- * @param string $position Position of icon
- * @link https://feathericons.com
- */
-function icon ($name, $position = '') {
-  $className = $position === 'start' ? 'icon-start' : $position === 'end' ? 'icon-end' : '';
-
-  return '<svg class="icon'. $className .'"><use href="'. get_stylesheet_directory_uri() .'/assets/fonts/icon.svg#'. $name .'"></svg>';
-}
-```
-
 ### Usage example
 
 ```php
