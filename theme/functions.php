@@ -363,7 +363,7 @@ function icon ($name, $position = '') {
     $position = ' icon-end';
   }
 
-  return '<svg class="icon'. $position .'"><use href="'. get_stylesheet_directory_uri() .'/assets/fonts/icon.svg#'. $name .'"></svg>';
+  return '<svg class="icon'. $position .'"><use href="'. get_stylesheet_directory_uri() .'/assets/fonts/icon.svg#'. $name .'" aria-hidden="true"></svg>';
 }
 
 /**
