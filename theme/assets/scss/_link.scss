@@ -1,0 +1,46 @@
+a, .link-primary, .btn-link {
+  &:hover {
+    background-color: $pink-50;
+  }
+
+  &:active {
+    background-color: $pink-100;
+  }
+}
+
+.link-secondary, .link-info {
+  &:hover {
+    background-color: $gray-200;
+  }
+
+  &:active {
+    background-color: $gray-300;
+  }
+}
+
+.link-warning {
+  &:hover {
+    background-color: $orange-50;
+  }
+
+  &:active {
+    background-color: $orange-100;
+  }
+}
+
+.link-danger {
+  &:hover {
+    background-color: $red-50;
+  }
+
+  &:active {
+    background-color: $red-100;
+  }
+}
+
+a.text-light:h  over,
+a.text-body:hover,
+a.text-dark:hover,
+.list-group-item-action a {
+  background-color: unset;
+}

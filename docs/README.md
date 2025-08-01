@@ -6,3 +6,5 @@ This is the main documentation page for the design system.
 - [Button](./button.md)
 - [Dropdown and Select List](./dropdown-select-list.md)
 - [Icon](./icon.md)
+- [Link](./link.md)
+
