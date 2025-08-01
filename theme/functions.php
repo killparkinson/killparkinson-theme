@@ -237,8 +237,8 @@ function custom_language_switcher_dropdown( $items, $args ) {
 
 			$custom_html = '<li id="top-language-switcher" class="mx-n3 px-3 pt-3 border-top mx-lg-0 p-lg-0 border-lg-0">';
 			$custom_html .= '<div class="dropdown dropup dropdown-lg">';
-			$custom_html .= '<button class="btn btn-ghost-secondary dropdown-toggle icon-css text-uppercase" data-bs-display="static" type="button" data-bs-toggle="dropdown" aria-expanded="false">';
-			$custom_html .= '<span class="icon-start flag flag-' . strtoupper( $current_lang_slug ) . ' flag-round flag-lg me-2"></span>';
+			$custom_html .= '<button class="btn btn-ghost-secondary dropdown-toggle icon-css icon-start icon-end text-uppercase" data-bs-display="static" type="button" data-bs-toggle="dropdown" aria-expanded="false">';
+			$custom_html .= '<span class="flag flag-' . strtoupper( $current_lang_slug ) . ' flag-round flag-lg"></span>';
 			$custom_html .= $current_lang_slug;
 			$custom_html .= '</button>';
 			$custom_html .= '<ul class="dropdown-menu dropdown-menu-start dropdown-menu-lg-end shadow">';
