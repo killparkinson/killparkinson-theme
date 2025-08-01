@@ -1,6 +1,6 @@
 <?php
 /**
- * Title: KiPs - Hero image left
+ * Title: KiP - Hero image left
  * Slug: theme/s-hero-img-left
  * Categories: bootscore
  * https://developer.wordpress.org/themes/features/block-patterns/
@@ -38,17 +38,23 @@ defined('ABSPATH') || exit;
                     <!-- wp:group {"metadata":{"name":"text-block"},"className":"text-block py-6","layout":{"type":"default"}} -->
                     <div class="wp-block-group text-block py-6 ">
                         <!-- wp:heading {"metadata":{"name":"display-5 fw-bold mb-2"},"className":"display-5 fw-bold"} -->
-                        <h2 class="wp-block-heading display-5 fw-bold mb-2">Section with <span class="text-primary">hero</span></h2> <!-- /wp:heading -->
+                        <h2 class="wp-block-heading display-5 fw-bold mb-2">Section with <span
+                                class="text-primary">hero</span></h2> <!-- /wp:heading -->
 
                         <!-- wp:paragraph {"metadata":{"name":"lead"},"className":"lead"} -->
-                        <p class="lead">This section features a two-column hero with a right-aligned image and CTA buttons wrapped in a container. Use it on the page-blanktemplate.</p>
+                        <p class="lead">This section features a two-column hero with a right-aligned image and CTA
+                            buttons wrapped in a container. Use it on the page-blanktemplate.</p>
                         <!-- /wp:paragraph -->
                         <!-- wp:paragraph {"metadata":{"name":"mb-0"},"className":"mb-0 d-flex gap-2"} -->
-                        <p class="mb-0 d-flex flex-md-row flex-column gap-2"><button class="btn btn-secondary">Secondary button</button> <button
-                                class="btn btn-outline-secondary d-flex align-items-center justify-between">Tertiary button <svg
-                                    class="icon icon-end">
+                        <p class="mb-0 d-flex flex-md-row flex-column gap-2">
+                            <button class="btn btn-secondary">Secondary
+                                button</button> <button class="btn icon-end btn-outline-secondary">
+                                Button
+
+                                <svg class="icon">
                                     <use href="/wp-content/themes/kp-theme/assets/fonts/icon.svg#chevron-right" />
-                                </svg></button></p>
+                                </svg>
+                            </button></p>
                         <!-- /wp:paragraph -->
                     </div>
                     <!-- /wp:group -->
