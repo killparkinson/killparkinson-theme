@@ -117,18 +117,26 @@ $btn-border-radius: $radius;
 $btn-border-radius-sm: $radius;
 $btn-border-radius-lg: $radius;
 $btn-padding-x: 1.2rem;
-$btn-padding-y: 0.4rem;
+$btn-padding-y: .4rem;
 $btn-padding-x-lg: 1.5rem;
 $btn-font-weight: 600;
 $btn-focus-box-shadow: $focus;
+
+// Icon button
+$btn-icon-gap: .475rem;
+$btn-icon-padding-start: .8rem;
+$btn-icon-padding-end: .8rem;
+
+// Icon link
+$icon-link-icon-transition: .2s ease-in-out transform;
 
 // Focus
 $focus-ring-color: $focus;
 
 // Dropdown
 $dropdown-padding-y: 0;
-$dropdown-item-padding-y: 0.6rem;
-$dropdown-item-padding-x: 0.6rem;
+$dropdown-item-padding-y: .6rem;
+$dropdown-item-padding-x: .6rem;
 $dropdown-border-color: $gray-600;
 $dropdown-link-active-bg: transparent;
 $dropdown-link-active-color: $gray-900;

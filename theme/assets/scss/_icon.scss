@@ -1,11 +1,3 @@
-.icon-start {
-  margin-left: -0.7rem;
-}
-
-.icon-end {
-  margin-right: -0.7rem;
-}
-
 .icon {
   width: 1em;
   height: 1em;
@@ -14,12 +6,54 @@
   stroke-linecap: round;
   stroke-linejoin: round;
   fill: none;
+  vertical-align: -0.125em;
+}
+
+.icon-lg {
+  width: 1.5em;
+  height: 1.5em;
+}
+
+.icon-sm {
+  width: 0.8em;
+  height: 0.8em;
 }
 
 .icon-css::after {
-  content: "";
+  display: inline-block;
   width: 24px;
   height: 24px;
-  vertical-align: top;
-  display: inline-block;
+  vertical-align: -0.4em;
+}
+
+.btn {
+  --#{$prefix}btn-icon-gap: #{$btn-icon-gap};
+  --#{$prefix}btn-icon-padding-start: #{$btn-icon-padding-start};
+  --#{$prefix}btn-icon-padding-end: #{$btn-icon-padding-end};
+
+  &.icon-start,
+  &.icon-end {
+    display: flex;
+    gap: var(--#{$prefix}btn-icon-gap);
+
+    .icon {
+      flex-shrink: 0;
+      @include transition($icon-link-icon-transition);
+    }
+  }
+  
+  &.icon-start {
+    padding-left: var(--#{$prefix}btn-icon-padding-start);
+
+    &.icon-css::before {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      vertical-align: -0.4em;
+    }
+  }
+
+  &.icon-end {
+    padding-right: var(--#{$prefix}btn-icon-padding-end);
+  }
 }
