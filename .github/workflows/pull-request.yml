@@ -1,0 +1,14 @@
+name: Fetch main on PR
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  fetch-main:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout main branch
+      uses: actions/checkout@v4
+      with:
+        ref: main
