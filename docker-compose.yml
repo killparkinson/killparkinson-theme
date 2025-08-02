@@ -18,6 +18,8 @@ services:
         // Disable display of errors and warnings
         define( 'WP_DEBUG_DISPLAY', false );
         @ini_set( 'display_errors', 0 );
+        // Enable development env
+        define('WP_ENVIRONMENT_TYPE', 'development');
     volumes:
       - wordpress:/var/www/html
       - ./bootscore:/var/www/html/wp-content/themes/bootscore
