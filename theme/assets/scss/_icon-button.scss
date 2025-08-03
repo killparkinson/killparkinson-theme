@@ -1,0 +1,62 @@
+
+.btn {
+  --#{$prefix}btn-icon-gap: #{$btn-icon-gap};
+  --#{$prefix}btn-icon-padding-start: #{$btn-icon-padding-start};
+  --#{$prefix}btn-icon-padding-end: #{$btn-icon-padding-end};
+  --#{$prefix}btn-icon-padding-start-sm: #{$btn-icon-padding-start-sm};
+  --#{$prefix}btn-icon-padding-end-sm: #{$btn-icon-padding-end-sm};
+
+  &.icon-start,
+  &.icon-end {
+    display: flex;
+    gap: var(--#{$prefix}btn-icon-gap);
+
+    .icon {
+      flex-shrink: 0;
+      @include transition($icon-link-icon-transition);
+    }
+  }
+  
+  &.icon-start {
+    padding-left: var(--#{$prefix}btn-icon-padding-start);
+
+    &.icon-css::before {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      vertical-align: -0.4em;
+    }
+  }
+
+  &.icon-end {
+    padding-right: var(--#{$prefix}btn-icon-padding-end);
+  }
+
+  .icon {
+    width: 1.375rem;
+    height: 1.375rem;
+    vertical-align: -0.325rem;
+    align-self: center;
+  }
+
+  &.btn-sm {
+    &.icon-start {
+      padding-left: var(--#{$prefix}btn-icon-padding-start-sm);
+    }
+
+    &.icon-end {
+      padding-right: var(--#{$prefix}btn-icon-padding-end-sm);
+    }
+
+    .icon {
+      width: 1.2rem;
+      height: 1.2rem;
+      vertical-align: -0.125rem;
+    }
+  }
+
+  &.btn-lg .icon {
+    width: 1.6rem;
+    height: 1.6rem;
+  } 
+}
