@@ -14,6 +14,13 @@
   --#{$prefix}btn-active-border-color: #{$pink-100};
 }
 
+.btn-secondary {
+  --#{$prefix}btn-hover-bg: #{$gray-600};
+  --#{$prefix}btn-hover-border-color: #{$gray-600};
+  --#{$prefix}btn-active-bg: #{$gray-500};
+  --#{$prefix}btn-active-border-color: #{$gray-500};
+}
+
 .btn-ghost-secondary {
   --#{$prefix}btn-color: var(--#{$prefix}dark);
   --#{$prefix}btn-bg: var(--#{$prefix}body-bg);;
