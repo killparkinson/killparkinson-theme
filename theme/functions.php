@@ -237,8 +237,8 @@ function custom_language_switcher_dropdown( $items, $args ) {
 
 			$custom_html = '<li id="top-language-switcher" class="mx-n3 px-3 pt-3 border-top mx-lg-0 p-lg-0 border-lg-0">';
 			$custom_html .= '<div class="dropdown dropup dropdown-lg">';
-			$custom_html .= '<button class="btn btn-ghost-secondary dropdown-toggle icon-css text-uppercase" data-bs-display="static" type="button" data-bs-toggle="dropdown" aria-expanded="false">';
-			$custom_html .= '<span class="icon-start flag flag-' . strtoupper( $current_lang_slug ) . ' flag-round flag-lg me-2"></span>';
+			$custom_html .= '<button class="btn btn-ghost-secondary dropdown-toggle icon-css icon-start icon-end text-uppercase" data-bs-display="static" type="button" data-bs-toggle="dropdown" aria-expanded="false">';
+			$custom_html .= '<span class="flag flag-' . strtoupper( $current_lang_slug ) . ' flag-round flag-lg"></span>';
 			$custom_html .= $current_lang_slug;
 			$custom_html .= '</button>';
 			$custom_html .= '<ul class="dropdown-menu dropdown-menu-start dropdown-menu-lg-end shadow">';
@@ -353,17 +353,10 @@ add_filter('bootscore/load_fontawesome', '__return_false');
 /**
  * Icon helper creates a feater SVG icon element
  * @param string $name The name of the icon to render 
- * @param string $position Position of icon
  * @link https://feathericons.com
  */
-function icon ($name, $position = '') {
-  if ($position == 'start') {
-    $position = ' icon-start';
-  } else if ($position == 'end') {
-    $position = ' icon-end';
-  }
-
-  return '<svg class="icon'. $position .'"><use href="'. get_stylesheet_directory_uri() .'/assets/fonts/icon.svg#'. $name .'"></svg>';
+function icon ($name) {
+  return '<svg class="icon"><use href="'. get_stylesheet_directory_uri() .'/assets/fonts/icon.svg#'. $name .'" aria-hidden="true"></svg>';
 }
 
 /**

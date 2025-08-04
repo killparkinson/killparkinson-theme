@@ -21,10 +21,11 @@ You can position icons on buttons using the classes `icon-start` and `icon-end`.
 ### Example: icon on the start of a button
 
 ```html
-<button class="btn btn-outline-secondary">
-  <svg class="icon icon-start">
+<button class="btn icon-start btn-outline-secondary">
+  <svg class="icon">
     <use href="/wp-content/themes/kp-theme/assets/fonts/icon.svg#chevron-left" />
   </svg>
+  
   Button
 </button>
 ```
@@ -32,13 +33,31 @@ You can position icons on buttons using the classes `icon-start` and `icon-end`.
 ### Example: icon on the end of a button
 
 ```html
-<button class="btn btn-outline-secondary">
+<button class="btn icon-end btn-outline-secondary">
   Button
-  <svg class="icon icon-end">
+
+  <svg class="icon">
     <use href="/wp-content/themes/kp-theme/assets/fonts/icon.svg#chevron-right" />
   </svg>
 </button>
 ```
+
+### Example: icon on the start and end of a button
+
+```html
+<button class="btn icon-start icon-end btn-outline-secondary">
+  <svg class="icon">
+    <use href="/wp-content/themes/kp-theme/assets/fonts/icon.svg#chevron-left" />
+  </svg>
+
+  Button
+
+  <svg class="icon">
+    <use href="/wp-content/themes/kp-theme/assets/fonts/icon.svg#chevron-right" />
+  </svg>
+</button>
+```
+
 
 ## PHP icon helper function
 
@@ -51,11 +70,6 @@ icon('circle')
 ```
 
 This will generate an SVG element with the `circle` icon. You can also specify the position:
-
-```php
-icon('chevron-left', 'start')
-icon('chevron-right', 'end')
-```
 
 # Using icons in CSS
 
@@ -70,7 +84,7 @@ Here is an example of how to use an encoded SVG in CSS:
 
 ```css
 .icon-circle::after {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-chevron-down'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-chevron-down'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
 }
 ```
 
