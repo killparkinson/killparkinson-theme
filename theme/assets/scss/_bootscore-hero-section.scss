@@ -12,13 +12,3 @@
         width: 100%;
     }
 }
-
-.is-style-btn-secondary .wp-block-button__link {
-    @extend .btn;
-    @extend .btn-secondary;
-}
-
-.is-style-btn-outline-secondary .wp-block-button__link {
-    @extend .btn;
-    @extend .btn-outline-secondary;
-}
