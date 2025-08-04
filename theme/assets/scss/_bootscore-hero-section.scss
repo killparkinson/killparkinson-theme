@@ -1,0 +1,24 @@
+.hero-section-image {
+    height: 100%;
+    position: relative;
+    min-height: 350px;
+    width: 100%;
+
+    >img {
+        object-fit: cover;
+        vertical-align: top;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+    }
+}
+
+.is-style-btn-secondary .wp-block-button__link {
+    @extend .btn;
+    @extend .btn-secondary;
+}
+
+.is-style-btn-outline-secondary .wp-block-button__link {
+    @extend .btn;
+    @extend .btn-outline-secondary;
+}
