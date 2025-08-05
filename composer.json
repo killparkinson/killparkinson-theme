@@ -14,7 +14,10 @@
   },
   "scripts": {
     "lint": [
-      "vendor/bin/phpcs --report-full theme/**/*.php"
+      "vendor/bin/phpcs --report-full theme/*.php theme/**/*.php"
+    ],
+     "lint:fix": [
+      "vendor/bin/phpcbf theme/*.php theme/*.php  theme/**/*.php"
     ]
   }
 }
