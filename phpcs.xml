@@ -2,13 +2,6 @@
 <ruleset name="KPStandard">
   <description>WordPress with space indent.</description>
     <rule ref="WordPress">
-      <exclude name="Generic.WhiteSpace.DisallowSpaceIndent" />
+      <exclude name="Universal.Arrays.DisallowShortArraySyntax"/>
     </rule>
-    <rule ref="Generic.WhiteSpace.ScopeIndent">
-      <properties>
-        <property name="indent" value="2"/>
-        <property name="tabIndent" value="false"/>
-      </properties>
-    </rule>
-    <rule ref="Generic.WhiteSpace.DisallowTabIndent" />
 </ruleset>
