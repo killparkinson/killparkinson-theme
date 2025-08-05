@@ -4,9 +4,11 @@
  * Slug: bootscore-child/s-latest-posts
  * Categories: posts
  * Block Types: core/query
+ *
+ * @package Bootscore Child
  */
 
-// Exit if accessed directly
+// Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 ?>
 

@@ -165,7 +165,7 @@
     background-position: center 11.5354%;
   }
   &-GB,
- &-EN {
+  &-EN {
     background-position: center 11.7593%;
   }
   &-VA {
@@ -218,33 +218,33 @@
   }
 
   // CH specific size
-  &-CH {
+  &-CH:has(.flag-sm, .flag-md, .flag-lg, .flag-xl) {
     background-size: 153% 49494%;
   }
 
   // Rounded flags with size modifiers
-  &-CH.flag-sm {
+  &.flag-sm {
     width: 11.5px;
     height: 11.5px;
   }
-  &-CH.flag-md {
+  &.flag-md {
     width: 17px;
     height: 17px;
   }
-  &-CH.flag-lg {
+  &.flag-lg {
     width: 27px;
     height: 27px;
   }
-  &-CH.flag-xl {
+  &.flag-xl {
     width: 37px;
     height: 37px;
   }
 
   // Flags with both .flag-round and size modifiers
   &-round.flag-sm,
- &-round.flag-md,
- &-round.flag-lg,
- &-round.flag-xl {
+  &-round.flag-md,
+  &-round.flag-lg,
+  &-round.flag-xl {
     background-size: 100% 50000%;
   }
 }

@@ -1,13 +1,13 @@
 <?php
-
 /**
+ * Theme for KP.
+ *
  * @package Bootscore Child
  *
  * @version 6.0.0
  */
 
-
-// Exit if accessed directly
+// Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
 
@@ -15,19 +15,21 @@ defined( 'ABSPATH' ) || exit;
  * Enqueue scripts and styles
  */
 add_action( 'wp_enqueue_scripts', 'bootscore_child_enqueue_styles' );
+/**
+ * Enqueues styles and scripts for the child theme.
+ */
 function bootscore_child_enqueue_styles() {
+	// Compiled main.css.
+	$modified_bootscore_child_css = gmdate( 'YmdHi', filemtime( get_stylesheet_directory() . '/assets/css/main.css' ) );
+	wp_enqueue_style( 'main', get_stylesheet_directory_uri() . '/assets/css/main.css', array( 'parent-style' ), $modified_bootscore_child_css );
 
-	// Compiled main.css
-	$modified_bootscoreChildCss = date( 'YmdHi', filemtime( get_stylesheet_directory() . '/assets/css/main.css' ) );
-	wp_enqueue_style( 'main', get_stylesheet_directory_uri() . '/assets/css/main.css', array( 'parent-style' ), $modified_bootscoreChildCss );
-
-	// style.css
+	// style.css.
 	wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
 
 	// custom.js
 	// Get modification time. Enqueue file with modification date to prevent browser from loading cached scripts when file content changes.
-	$modificated_CustomJS = date( 'YmdHi', filemtime( get_stylesheet_directory() . '/assets/js/custom.js' ) );
-	wp_enqueue_script( 'custom-js', get_stylesheet_directory_uri() . '/assets/js/custom.js', array( 'jquery' ), $modificated_CustomJS, false, true );
+	$modificated_custom_js = gmdate( 'YmdHi', filemtime( get_stylesheet_directory() . '/assets/js/custom.js' ) );
+	wp_enqueue_script( 'custom-js', get_stylesheet_directory_uri() . '/assets/js/custom.js', array( 'jquery' ), $modificated_custom_js, false, true );
 }
 
 /**
@@ -48,12 +50,7 @@ add_action( 'init', 'custom_init' );
  * with the `render_custom_post_excerpt` function for rendering.
  */
 function register_custom_post_excerpt_block() {
-	register_block_type(
-		'core/post-excerpt',
-		[
-			'render_callback' => 'render_custom_post_excerpt',
-		]
-	);
+	register_block_type( 'core/post-excerpt', [ 'render_callback' => 'render_custom_post_excerpt' ] );
 }
 add_action( 'init', 'register_custom_post_excerpt_block' );
 
@@ -82,47 +79,47 @@ add_action( 'init', 'register_custom_post_excerpt_block' );
  * @return string HTML markup for the custom excerpt.
  */
 function render_custom_post_excerpt( $attributes ) {
-	// set default excerpt length if not provided
+	// set default excerpt length if not provided.
 	$excerpt_length = isset( $attributes['excerptLength'] ) ? $attributes['excerptLength'] : 55;
 
-	// start building the outer container div
+	// start building the outer container div.
 	$excerpt = '<div';
 
-	// add class attribute if specified in block settings
+	// add class attribute if specified in block settings.
 	if ( isset( $attributes['className'] ) ) {
 		$excerpt .= ' class="' . $attributes['className'] . '"';
 	} else {
 		$excerpt .= '>';
 	}
 
-	// begin paragraph tag for the excerpt text
+	// begin paragraph tag for the excerpt text.
 	$excerpt .= '<p';
 
-	// apply custom class to the paragraph if specified
+	// apply custom class to the paragraph if specified.
 	if ( isset( $attributes['excerptClassName'] ) ) {
 		$excerpt .= ' class="' . $attributes['excerptClassName'] . '">';
 	} else {
 		$excerpt .= '>';
 	}
 
-	// truncate or use full excerpt based on length
+	// truncate or use full excerpt based on length.
 	if ( strlen( get_the_excerpt() ) > $excerpt_length ) {
-		// Truncate and add ellipsis if excerpt exceeds specified length
+		// Truncate and add ellipsis if excerpt exceeds specified length.
 		$excerpt .= substr( get_the_excerpt(), 0, $excerpt_length ) . '…';
 	} else {
 		$excerpt .= get_the_excerpt();
 	}
 
-	// close the paragraph tag
+	// close the paragraph tag.
 	$excerpt .= '</p>';
 
-	// conditionally append "Read more" link with custom styling/text
+	// conditionally append "Read more" link with custom styling/text.
 	if ( isset( $attributes['moreText'] ) ) {
-		// wrap "Read more" in a new paragraph if specified
+		// wrap "Read more" in a new paragraph if specified.
 		if ( $attributes['showMoreOnNewLine'] ) {
 			$excerpt .= '<p';
 
-			// apply class to the container paragraph
+			// apply class to the container paragraph.
 			if ( isset( $attributes['showMoreOnNewLineClassName'] ) ) {
 				$excerpt .= ' class="' . $attributes['showMoreOnNewLineClassName'] . '"';
 			}
@@ -130,7 +127,7 @@ function render_custom_post_excerpt( $attributes ) {
 			$excerpt .= '>';
 		}
 
-		// build anchor tag with custom classes, prefix, and suffix
+		// build anchor tag with custom classes, prefix, and suffix.
 		$excerpt .= '<a ';
 
 		if ( isset( $attributes['moreTextClassName'] ) ) {
@@ -139,28 +136,28 @@ function render_custom_post_excerpt( $attributes ) {
 
 		$excerpt .= 'href="' . wp_get_canonical_url() . '">';
 
-		// add optional prefix text before the "Read more" link
+		// add optional prefix text before the "Read more" link.
 		if ( isset( $attributes['moreTextPrefix'] ) ) {
 			$excerpt .= $attributes['moreTextPrefix'];
 		}
 
-		// insert custom "Read more" text
+		// insert custom "Read more" text.
 		$excerpt .= $attributes['moreText'];
 
-		// add optional suffix text after the "Read more" link
+		// add optional suffix text after the "Read more" link.
 		if ( isset( $attributes['moreTextSuffix'] ) ) {
 			$excerpt .= $attributes['moreTextSuffix'];
 		}
 
 		$excerpt .= '</a>';
 
-		// close the paragraph tag if "Read more" was wrapped in a new line
+		// close the paragraph tag if "Read more" was wrapped in a new line.
 		if ( $attributes['showMoreOnNewLine'] ) {
 			$excerpt .= '</p>';
 		}
 	}
 
-	// close the outer container div
+	// close the outer container div.
 	$excerpt .= '</div>';
 
 	return $excerpt;
@@ -200,8 +197,7 @@ add_filter( 'bootscore/class/header/navbar-nav', 'navbar_nav_position_item' );
  * @return string The filtered block content.
  */
 function bootscore_child_block_post_categories_classes( $block_content, $block ) {
-
-	if ( isset( $block['attrs'] ) && $block['attrs']['term'] == 'category' ) {
+	if ( isset( $block['attrs'] ) && 'category' === $block['attrs']['term'] ) {
 		$search  = array(
 			'<a',
 		);
@@ -226,12 +222,12 @@ add_filter( 'render_block_core/post-terms', 'bootscore_child_block_post_categori
  * @return string          Modified menu items or custom language switcher HTML.
  */
 function custom_language_switcher_dropdown( $items, $args ) {
-	// check if this is the language switcher
-	if ( $args->menu->slug == 'language-switcher' ) {
-		// get the current language slug
+	// check if this is the language switcher.
+	if ( 'language-switcher' === $args->menu->slug ) {
+		// get the current language slug.
 		$current_lang_slug = pll_current_language( 'slug' );
 
-		// get the list of languages slugs
+		// get the list of languages slugs.
 		$language_slugs = pll_languages_list();
 
 		if ( ! empty( $language_slugs ) ) {
@@ -247,12 +243,12 @@ function custom_language_switcher_dropdown( $items, $args ) {
 			$custom_html .= '<ul class="dropdown-menu dropdown-menu-start dropdown-menu-lg-end shadow">';
 
 			foreach ( $language_slugs as $key => $slug ) {
-				// check if this is the current language
+				// check if this is the current language.
 				$is_current  = ( $slug === $current_lang_slug ) ? ' active icon-css' : '';
 				$lang_name   = esc_attr( $language_names[ $key ] );
 				$lang_locale = esc_attr( $language_locales[ $key ] );
 
-				// display the language switcher item with flag and name
+				// display the language switcher item with flag and name.
 				$custom_html .= '<li>';
 				$custom_html .= '<a lang="' . $lang_locale . '" hreflang="' . $lang_locale . '" class="dropdown-item' . $is_current . '" href="' . pll_home_url( $slug ) . '" title="' . $lang_name . '">';
 				$custom_html .= '<span class="flag flag-' . strtoupper( $slug ) . ' flag-round flag-lg me-2"></span>';
@@ -263,24 +259,29 @@ function custom_language_switcher_dropdown( $items, $args ) {
 			$custom_html .= '</ul></div></li>';
 		}
 
-		// return the custom HTML instead of the default menu
+		// return the custom HTML instead of the default menu.
 		return $custom_html;
 	}
 
-	// for other menus, return the original items
+	// for other menus, return the original items.
 	return $items;
 }
 add_filter( 'wp_nav_menu_items', 'custom_language_switcher_dropdown', 10, 2 );
 
 /**
  * Use container-fluid class instead of container on footer
+ *
+ * @param string $class_names The existing class name.
+ * @param string $context The context where the class is applied (e.g., 'footer-info').
+ * @return string Modified class name with container-fluid
  */
-function footer_container_class( $class, $context ) {
+function footer_container_class( $class_names, $context ) {
 
-	if ( $context === 'footer-info' ) {
+	if ( 'footer-info' === $context ) {
 		return 'container d-flex flex-md-wrap flex-wrap-reverse justify-content-md-between justify-content-center align-content-stretch align-items-md-center';
 	}
-	return $class;
+
+	return $class_names;
 }
 add_filter( 'bootscore/class/container', 'footer_container_class', 10, 2 );
 
@@ -295,25 +296,28 @@ add_filter( 'bootscore/class/footer/columns', 'add_footer_class', 10, 2 );
 
 /**
  * Custom classes for each footer column in use
+ *
+ * @param string $class_names  The default class name(s).
+ * @param string $location The footer column location (e.g., 'footer-1', 'footer-2').
+ * @return string Modified class name
  */
-function footer_col_class( $string, $location ) {
+function footer_col_class( $class_names, $location ) {
 
-	if ( $location == 'footer-1' ) {
+	if ( 'footer-1' === $location ) {
 		return 'col-12 col-lg-3 order-1 order-md-1';
 	}
-	if ( $location == 'footer-2' ) {
+	if ( 'footer-2' === $location ) {
 		return 'col-12 col-lg-6 pt-4 order-3 order-md-2';
 	}
-	if ( $location == 'footer-3' ) {
+	if ( 'footer-3' === $location ) {
 		return 'col-12 col-lg-3 pt-4 order-2 order-md-3';
 	}
 
-	if ( $location == 'footer-4' ) {
+	if ( 'footer-4' === $location ) {
 		return 'd-none';
 	}
-	return $string;
+	return $class_names;
 }
-
 add_filter( 'bootscore/class/footer/col', 'footer_col_class', 10, 2 );
 
 /**
@@ -327,15 +331,15 @@ add_filter( 'bootscore/class/footer/info', 'add_footer_info_class', 10, 2 );
 /**
  * Sets the direction for the mobile menu in the offcanvas body.
  *
- * @param string $classNames The existing class names.
+ * @param string $class_names The existing class names.
  * @param mixed  $context   The context in which the function is called.
  */
-function mobile_offcanvas_body_direction( $classNames, $context ) {
-	if ( $context == 'menu' ) {
+function mobile_offcanvas_body_direction( $class_names, $context ) {
+	if ( 'menu' === $context ) {
 		return 'd-flex flex-column flex-lg-row';
 	}
 
-	return $classNames;
+	return $class_names;
 }
 add_filter( 'bootscore/class/offcanvas/body', 'mobile_offcanvas_body_direction', 10, 2 );
 
@@ -356,7 +360,7 @@ add_filter( 'bootscore/load_fontawesome', '__return_false' );
 /**
  * Icon helper creates a feater SVG icon element
  *
- * @param string $name The name of the icon to render
+ * @param string $name The name of the icon to render.
  * @link https://feathericons.com
  */
 function icon( $name ) {
@@ -454,13 +458,17 @@ add_filter( 'bootscore/icon/chevron-up', 'change_to_top_icon' );
 /**
  * Change category badge class
  */
-function change_category_badge_link_class( $class ) {
+function change_category_badge_link_class() {
 	return 'badge bg-primary-subtle border border-primary-subtle text-primary-emphasis text-decoration-none border border-primary';
 }
 add_filter( 'bootscore/class/badge/category', 'change_category_badge_link_class' );
 
 /**
  * Change widget categories badge
+ *
+ * @param string $block_content The content of the block.
+ * @param array  $block        The block data.
+ * @return string Modified block content with updated badge style.
  */
 function change_block_widget_categories_badge( $block_content, $block ) {
 

@@ -1,6 +1,6 @@
 a,
- .link-primary,
- .btn-link {
+.link-primary,
+.btn-link {
   &:hover {
     background-color: $pink-50;
   }
@@ -11,7 +11,7 @@ a,
 }
 
 .link-secondary,
- .link-info {
+.link-info {
   &:hover {
     background-color: $gray-200;
   }
@@ -41,9 +41,9 @@ a,
   }
 }
 
-a.text-light:hover,
-a.text-body:hover,
-a.text-dark:hover,
+.text-light:hover,
+.text-body:hover,
+.text-dark:hover,
 .list-group-item-action a {
   background-color: unset;
 }
