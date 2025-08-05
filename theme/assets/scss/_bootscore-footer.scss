@@ -6,7 +6,7 @@
   }
 
   .widgettitle {
-    font-size: 20px;
+    font-size: 1.3rem;
     font-weight: 700;
   }
 
@@ -55,11 +55,6 @@
 
       font-weight: $font-weight-semibold;
       color: inherit;
-
-
-      &:hover {
-        background-color: $gray-200;
-      }
     }
 
 
