@@ -134,3 +134,28 @@ npm run lint:scss:fix
 
 This command will apply fixes to the SASS files based on the rules defined in your configuration. Note that not all linting issues can be automatically fixed, so you may need to manually review and correct some errors.
 
+## Setting up PHP lint
+
+Before running the linter, ensure you have composer 
+
+https://getcomposer.org/download/
+
+### 2. Install composer dependencies
+
+Run the following command to install the required dependencies:
+
+```bash
+composer install
+```
+
+This installs `wp-coding-standards/wpcs` and `dealerdirect/phpcodesniffer-composer-installer`, which are necessary for running the linter.
+
+### 3. Run the linter
+
+Once the dependencies are installed, you can run the linter using Composer:
+
+```bash
+composer run-script lint
+```
+
+This command executes the `lint` script defined in your `composer.json` file. The linter will check all PHP files in the `theme/` directory for compliance with WordPress coding standards.
