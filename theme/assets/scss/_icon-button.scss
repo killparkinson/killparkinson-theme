@@ -1,4 +1,3 @@
-
 .btn {
   --#{$prefix}btn-icon-gap: #{$btn-icon-gap};
   --#{$prefix}btn-icon-padding-start: #{$btn-icon-padding-start};
@@ -16,7 +15,7 @@
       @include transition($icon-link-icon-transition);
     }
   }
-  
+
   &.icon-start {
     padding-left: var(--#{$prefix}btn-icon-padding-start);
 
@@ -24,7 +23,7 @@
       display: inline-block;
       width: 24px;
       height: 24px;
-      vertical-align: -0.4em;
+      vertical-align: -.4em;
     }
   }
 
@@ -33,10 +32,10 @@
   }
 
   .icon {
+    align-self: center;
     width: 1.375rem;
     height: 1.375rem;
-    vertical-align: -0.325rem;
-    align-self: center;
+    vertical-align: -.325rem;
   }
 
   &.btn-sm {
@@ -51,12 +50,12 @@
     .icon {
       width: 1.2rem;
       height: 1.2rem;
-      vertical-align: -0.125rem;
+      vertical-align: -.125rem;
     }
   }
 
   &.btn-lg .icon {
     width: 1.6rem;
     height: 1.6rem;
-  } 
+  }
 }
