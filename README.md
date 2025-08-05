@@ -97,3 +97,65 @@ To also remove volumes (database data will be lost):
 ```bash
 docker-compose down -v
 ```
+
+## Setup Sass lint
+
+To set up Sass lint in your project using **stylelint** and the **stylelint-config-twbs-bootstrap** rules, follow these steps:
+
+### Prerequisites
+
+Ensure you have Node.js and npm installed on your system. You can download them from [https://nodejs.org](https://nodejs.org).
+
+### Step 1: Install Dependencies
+
+First, install the necessary dependencies by running the following command in your project directory:
+
+```bash
+npm install
+```
+
+This command will install all the required packages, including **stylelint** and **stylelint-config-twbs-bootstrap**, which are used for linting SASS files.
+
+### Step 2: Run Lint
+
+Once the dependencies are installed, you can run the linter by executing the following command:
+
+```bash
+npm run lint:scss
+```
+
+### Step 3: Fix Linting Errors
+
+If you want to automatically fix any linting errors, run the following command:
+
+```bash
+npm run lint:scss:fix
+```
+
+This command will apply fixes to the SASS files based on the rules defined in your configuration. Note that not all linting issues can be automatically fixed, so you may need to manually review and correct some errors.
+
+## Setting up PHP lint
+
+Before running the linter, ensure you have composer 
+
+https://getcomposer.org/download/
+
+### 2. Install composer dependencies
+
+Run the following command to install the required dependencies:
+
+```bash
+composer install
+```
+
+This installs `wp-coding-standards/wpcs` and `dealerdirect/phpcodesniffer-composer-installer`, which are necessary for running the linter.
+
+### 3. Run the linter
+
+Once the dependencies are installed, you can run the linter using Composer:
+
+```bash
+composer run-script lint
+```
+
+This command executes the `lint` script defined in your `composer.json` file. The linter will check all PHP files in the `theme/` directory for compliance with WordPress coding standards.

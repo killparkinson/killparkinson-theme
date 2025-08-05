@@ -1,0 +1,15 @@
+{
+  "name": "killparkinson-theme",
+  "version": "1.0.0",
+  "scripts": {
+    "lint:scss": "stylelint 'theme/assets/scss/*.scss'",
+    "lint:scss:fix": "stylelint --fix 'theme/assets/scss/*.scss'"
+  },
+  "devDependencies": {
+    "stylelint": "^16.23.0",
+    "stylelint-config-twbs-bootstrap": "^16.1.0"
+  },
+  "stylelint": {
+    "extends": "stylelint-config-twbs-bootstrap"
+  }
+}
