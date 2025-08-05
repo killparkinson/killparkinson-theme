@@ -2,7 +2,8 @@
   "name": "killparkinson-theme",
   "version": "1.0.0",
   "scripts": {
-    "lint:scss": "stylelint 'theme/assets/scss/*.scss' "
+    "lint:scss": "stylelint 'theme/assets/scss/*.scss'",
+    "lint:scss:fix": "stylelint --fix 'theme/assets/scss/*.scss'"
   },
   "devDependencies": {
     "stylelint": "^16.23.0",
