@@ -13,8 +13,8 @@
     }
   },
   "scripts": {
-    "install-codestandards": [
-      "PHPCSStandards\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\Plugin::run"
+    "lint": [
+      "vendor/bin/phpcs --report-full theme/**/*.php"
     ]
   }
 }
