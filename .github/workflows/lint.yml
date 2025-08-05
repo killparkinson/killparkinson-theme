@@ -43,9 +43,9 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Setup PHP
-        uses: shivampatel/setup-php@v2
+        uses: shivammathur/setup-php@v2
         with:
-          php-version: 'latest'
+          php-version: '8.3'
           ini-values: 'memory_limit=1G'
           coverage: none
           tools: cs2pr
