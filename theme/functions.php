@@ -470,7 +470,7 @@ add_filter( 'bootscore/class/badge/category', 'change_category_badge_link_class'
  * @param array  $block        The block data.
  * @return string Modified block content with updated badge style.
  */
-function change_block_widget_categories_badge( $block_content, $block ) {
+function change_block_widget_categories_badge( $block_content ) {
 
 	$search  = array(
 		'<span class="badge bg-primary-subtle text-primary-emphasis border border-primary">',
