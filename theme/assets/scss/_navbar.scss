@@ -1,9 +1,9 @@
 .navbar {
   .top-nav-widget .btn-primary {
-    margin: calc(calc(-1 * var(--#{$prefix}navbar-padding-y) - var(--#{$prefix}border-width))) 0;
     padding: calc(2 * var(--#{$prefix}navbar-padding-y)) calc(2 * #{$btn-padding-x});
-    border-radius: 0;
+    margin: calc(calc(-1 * var(--#{$prefix}navbar-padding-y) - var(--#{$prefix}border-width))) 0;
     font-weight: 700;
+    border-radius: 0;
   }
 
   .nav-toggler {
@@ -26,17 +26,18 @@
     }
 
     .navbar-nav .nav-link {
-      margin-top: calc(calc(-1 * var(--#{$prefix}navbar-padding-y) - var(--#{$prefix}border-width)));
-      margin-bottom: calc(-1 * var(--#{$prefix}navbar-padding-y));
       padding-top: calc(2 * var(--#{$prefix}navbar-padding-y));
       padding-bottom: calc(2 * var(--#{$prefix}navbar-padding-y));
+      margin-top: calc(calc(-1 * var(--#{$prefix}navbar-padding-y) - var(--#{$prefix}border-width)));
+      margin-bottom: calc(-1 * var(--#{$prefix}navbar-padding-y));
       border-bottom: 3px solid transparent;
 
       &:hover {
         background-color: $gray-50;
       }
 
-      &:focus, &.active {
+      &:focus,
+      &.active {
         border-bottom: 3px solid $primary;
       }
     }

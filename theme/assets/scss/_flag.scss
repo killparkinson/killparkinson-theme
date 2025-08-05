@@ -1,246 +1,250 @@
 .flag {
-    background-image: url('../img/flagSprite42.png');
-    background-repeat: no-repeat;
-    background-size: 100% 49494%;
-    display: inline-block;
-    overflow: hidden;
-    position: relative;
-    vertical-align: middle;
-    box-sizing: content-box;
+  position: relative;
+  box-sizing: content-box;
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: middle;
+  background-image: url("../img/flagSprite42.png");
+  background-repeat: no-repeat;
+  background-size: 100% 49494%;
 
-    &-AX {
-        background-position: center 0.2287%;
-    }
-    &-AL {
-        background-position: center 0.4524%;
-    }
-    &-AD {
-        background-position: center 0.6721%;
-    }
-    &-AM {
-        background-position: center 0.8958%;
-    }
-    &-AT {
-        background-position: center 1.1162%;
-    }
-    &-BY {
-        background-position: left 1.3379%;
-    }
-    &-BE {
-        background-position: center 1.5589%;
-    }
-    &-BA {
-        background-position: center 1.7805%;
-    }
-    &-BG {
-        background-position: center 2.0047%;
-    }
-    &-HR {
-        background-position: center 2.2247%;
-    }
-    &-CY {
-        background-position: center 2.4467%;
-    }
-    &-CZ {
-        background-position: left 2.6674%;
-    }
-    &-DK {
-        background-position: center 2.8931%;
-    }
-    &-EE {
-        background-position: center 3.1125%;
-    }
-    &-FO {
-        background-position: center 3.3325%;
-    }
-    &-FI {
-        background-position: center 3.5542%;
-    }
-    &-FR {
-        background-position: center 3.7759%;
-    }
-    &-DE {
-        background-position: center 4.0015%;
-    }
-    &-GI {
-        background-position: center 4.2229%;
-    }
-    &-GR {
-        background-position: left 4.441%;
-    }
-    &-GG {
-        background-position: center 4.66663%;
-    }
-    &-HU {
-        background-position: center 4.8844%;
-    }
-    &-IS {
-        background-position: center 5.1061%;
-    }
-    &-IE {
-        background-position: center 5.3298%;
-    }
-    &-IM {
-        background-position: center 5.5495%;
-    }
-    &-IT {
-        background-position: center 5.7712%;
-    }
-    &-JE {
-        background-position: center 5.994%;
-    }
-    &-XK {
-        background-position: center 6.2156%;
-    }
-    &-LV {
-        background-position: center 6.4363%;
-    }
-    &-LI {
-        background-position: left 6.658%;
-    }
-    &-LT {
-        background-position: center 6.8805%;
-    }
-    &-LU {
-        background-position: center 7.1038%;
-    }
-    &-MT {
-        background-position: left 7.3231%;
-    }
-    &-MD {
-        background-position: center 7.5448%;
-    }
-    &-MC {
-        background-position: center 7.7661%;
-    }
-    &-ME {
-        background-position: center 7.98937%;
-    }
-    &-NL {
-        background-position: center 8.2099%;
-    }
-    &-MK {
-        background-position: center 8.4316%;
-    }
-    &-NO {
-        background-position: center 8.6533%;
-    }
-    &-PL {
-        background-position: center 8.875%;
-    }
-    &-PT {
-        background-position: center 9.0967%;
-    }
-    &-RO {
-        background-position: center 9.322%;
-    }
-    &-RU {
-        background-position: center 9.5426%;
-    }
-    &-SM {
-        background-position: center 9.7628%;
-    }
-    &-RS {
-        background-position: center 9.9845%;
-    }
-    &-SK {
-        background-position: center 10.2052%;
-    }
-    &-SI {
-        background-position: center 10.4269%;
-    }
-    &-ES {
-        background-position: left 10.6486%;
-    }
-    &-SE {
-        background-position: center 10.8703%;
-    }
-    &-CH {
-        background-position: center 11.0945%;
-    }
-    &-TR {
-        background-position: center 11.3135%;
-    }
-    &-UA {
-        background-position: center 11.5354%;
-    }
-    &-GB, &-EN {
-        background-position: center 11.7593%;
-    }
-    &-VA {
-        background-position: right 11.9799%;
-    }
-    &-EU {
-        background-position: center 12.2005%;
-    }
+  &-AX {
+    background-position: center .2287%;
+  }
+  &-AL {
+    background-position: center .4524%;
+  }
+  &-AD {
+    background-position: center .6721%;
+  }
+  &-AM {
+    background-position: center .8958%;
+  }
+  &-AT {
+    background-position: center 1.1162%;
+  }
+  &-BY {
+    background-position: left 1.3379%;
+  }
+  &-BE {
+    background-position: center 1.5589%;
+  }
+  &-BA {
+    background-position: center 1.7805%;
+  }
+  &-BG {
+    background-position: center 2.0047%;
+  }
+  &-HR {
+    background-position: center 2.2247%;
+  }
+  &-CY {
+    background-position: center 2.4467%;
+  }
+  &-CZ {
+    background-position: left 2.6674%;
+  }
+  &-DK {
+    background-position: center 2.8931%;
+  }
+  &-EE {
+    background-position: center 3.1125%;
+  }
+  &-FO {
+    background-position: center 3.3325%;
+  }
+  &-FI {
+    background-position: center 3.5542%;
+  }
+  &-FR {
+    background-position: center 3.7759%;
+  }
+  &-DE {
+    background-position: center 4.0015%;
+  }
+  &-GI {
+    background-position: center 4.2229%;
+  }
+  &-GR {
+    background-position: left 4.441%;
+  }
+  &-GG {
+    background-position: center 4.66663%;
+  }
+  &-HU {
+    background-position: center 4.8844%;
+  }
+  &-IS {
+    background-position: center 5.1061%;
+  }
+  &-IE {
+    background-position: center 5.3298%;
+  }
+  &-IM {
+    background-position: center 5.5495%;
+  }
+  &-IT {
+    background-position: center 5.7712%;
+  }
+  &-JE {
+    background-position: center 5.994%;
+  }
+  &-XK {
+    background-position: center 6.2156%;
+  }
+  &-LV {
+    background-position: center 6.4363%;
+  }
+  &-LI {
+    background-position: left 6.658%;
+  }
+  &-LT {
+    background-position: center 6.8805%;
+  }
+  &-LU {
+    background-position: center 7.1038%;
+  }
+  &-MT {
+    background-position: left 7.3231%;
+  }
+  &-MD {
+    background-position: center 7.5448%;
+  }
+  &-MC {
+    background-position: center 7.7661%;
+  }
+  &-ME {
+    background-position: center 7.98937%;
+  }
+  &-NL {
+    background-position: center 8.2099%;
+  }
+  &-MK {
+    background-position: center 8.4316%;
+  }
+  &-NO {
+    background-position: center 8.6533%;
+  }
+  &-PL {
+    background-position: center 8.875%;
+  }
+  &-PT {
+    background-position: center 9.0967%;
+  }
+  &-RO {
+    background-position: center 9.322%;
+  }
+  &-RU {
+    background-position: center 9.5426%;
+  }
+  &-SM {
+    background-position: center 9.7628%;
+  }
+  &-RS {
+    background-position: center 9.9845%;
+  }
+  &-SK {
+    background-position: center 10.2052%;
+  }
+  &-SI {
+    background-position: center 10.4269%;
+  }
+  &-ES {
+    background-position: left 10.6486%;
+  }
+  &-SE {
+    background-position: center 10.8703%;
+  }
+  &-CH {
+    background-position: center 11.0945%;
+  }
+  &-TR {
+    background-position: center 11.3135%;
+  }
+  &-UA {
+    background-position: center 11.5354%;
+  }
+  &-GB,
+  &-EN {
+    background-position: center 11.7593%;
+  }
+  &-VA {
+    background-position: right 11.9799%;
+  }
+  &-EU {
+    background-position: center 12.2005%;
+  }
 
-    // Rounded flags
-    &-round {
-        background-size: 160%;
-        background-clip: content-box;
-        border-radius: 50%;
+  // Rounded flags
+  &-round {
+    background-clip: content-box;
+    background-size: 160%;
+    border-radius: 50%;
 
-        &.flag-sm {
-            width: 12px;
-            height: 12px;
-        }
-        &.flag-md {
-            width: 18px;
-            height: 18px;
-        }
-        &.flag-lg {
-            width: 24px;
-            height: 24px;
-        }
-        &.flag-xl {
-            width: 32px;
-            height: 32px;
-        }
+    &.flag-sm {
+      width: 12px;
+      height: 12px;
     }
+    &.flag-md {
+      width: 18px;
+      height: 18px;
+    }
+    &.flag-lg {
+      width: 24px;
+      height: 24px;
+    }
+    &.flag-xl {
+      width: 32px;
+      height: 32px;
+    }
+  }
 
-    // Size variations
-    &-sm {
-        width: 18px;
-        height: 11.5px;
-    }
-    &-md {
-        width: 27px;
-        height: 17px;
-    }
-    &-lg {
-        width: 42px;
-        height: 27px;
-    }
-    &-xl {
-        width: 60px;
-        height: 37px;
-    }
+  // Size variations
+  &-sm {
+    width: 18px;
+    height: 11.5px;
+  }
+  &-md {
+    width: 27px;
+    height: 17px;
+  }
+  &-lg {
+    width: 42px;
+    height: 27px;
+  }
+  &-xl {
+    width: 60px;
+    height: 37px;
+  }
 
-    // CH specific size
-    &-CH {
-        background-size: 153% 49494%;
-    }
+  // CH specific size
+  &-CH:has(.flag-sm, .flag-md, .flag-lg, .flag-xl) {
+    background-size: 153% 49494%;
+  }
 
-    // Rounded flags with size modifiers
-    &-CH.flag-sm {
-        width: 11.5px;
-        height: 11.5px;
-    }
-    &-CH.flag-md {
-        width: 17px;
-        height: 17px;
-    }
-    &-CH.flag-lg {
-        width: 27px;
-        height: 27px;
-    }
-    &-CH.flag-xl {
-        width: 37px;
-        height: 37px;
-    }
+  // Rounded flags with size modifiers
+  &.flag-sm {
+    width: 11.5px;
+    height: 11.5px;
+  }
+  &.flag-md {
+    width: 17px;
+    height: 17px;
+  }
+  &.flag-lg {
+    width: 27px;
+    height: 27px;
+  }
+  &.flag-xl {
+    width: 37px;
+    height: 37px;
+  }
 
-    // Flags with both .flag-round and size modifiers
-    &-round.flag-sm, &-round.flag-md, &-round.flag-lg, &-round.flag-xl {
-        background-size: 100% 50000%;
-    }
+  // Flags with both .flag-round and size modifiers
+  &-round.flag-sm,
+  &-round.flag-md,
+  &-round.flag-lg,
+  &-round.flag-xl {
+    background-size: 100% 50000%;
+  }
 }
