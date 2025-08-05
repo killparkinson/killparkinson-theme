@@ -5,11 +5,11 @@
  * Categories: bootscore
  * https://developer.wordpress.org/themes/features/block-patterns/
  *
- * @package Bootscore
+ * @package Bootscore child
  * @version 6.2.0
  */
 
-// Exit if accessed directly
+// Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
 ?>
