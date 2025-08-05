@@ -1,12 +1,12 @@
 .icon {
   width: 1em;
   height: 1em;
-  stroke: currentColor;
-  stroke-width: 2;
+  vertical-align: -.125em;
+  fill: none;
+  stroke: currentcolor;
   stroke-linecap: round;
   stroke-linejoin: round;
-  fill: none;
-  vertical-align: -0.125em;
+  stroke-width: 2;
 }
 
 .icon-lg {
@@ -15,13 +15,13 @@
 }
 
 .icon-sm {
-  width: 0.8em;
-  height: 0.8em;
+  width: .8em;
+  height: .8em;
 }
 
 .icon-css::after {
   display: inline-block;
   width: 1.375rem;
   height: 1.375rem;
-  vertical-align: -0.325em;
+  vertical-align: -.325em;
 }

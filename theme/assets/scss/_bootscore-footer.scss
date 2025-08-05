@@ -7,7 +7,7 @@
 
   .widgettitle {
     font-size: 20px;
-    font-weight: bold;
+    font-weight: 700;
   }
 
   .widget_nav_menu {
@@ -17,8 +17,8 @@
 
     .menu-item {
       a {
-        color: inherit;
         font-weight: $font-weight-semibold;
+        color: inherit;
 
         &:hover {
           background-color: $gray-200;
@@ -28,7 +28,7 @@
   }
 
   .bootscore-footer-info {
-    .container>* {
+    .container > * {
       margin-bottom: 1rem;
     }
 
@@ -45,16 +45,16 @@
         display: flex;
 
         li {
-          font-size: 0.95em;
+          font-size: .95em;
           text-wrap: nowrap;
 
           &:not(:last-child) {
-            padding-right: 0.5rem;
+            padding-right: .5rem;
           }
 
           a {
-            color: inherit;
             font-weight: $font-weight-semibold;
+            color: inherit;
 
             &:hover {
               background-color: $gray-200;
@@ -65,7 +65,7 @@
     }
 
     .wp-block-social-links.is-layout-flex {
-      gap: 0.5rem;
+      gap: .5rem;
       margin-bottom: 0;
 
       .wp-block-social-link-anchor {
@@ -78,5 +78,5 @@
 }
 
 .top-button {
-  right: 0.5%;
+  right: .5%;
 }
