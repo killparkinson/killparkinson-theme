@@ -1,0 +1,20 @@
+{
+  "name": "killparkinson/theme",
+  "description": "Kill Parkinson Wordpress theme",
+  "type": "project",
+  "require": {},
+  "require-dev": {
+    "wp-coding-standards/wpcs": "^3.0",
+    "dealerdirect/phpcodesniffer-composer-installer": "^1.1"
+  },
+  "config": {
+    "allow-plugins": {
+      "dealerdirect/phpcodesniffer-composer-installer": true
+    }
+  },
+  "scripts": {
+    "install-codestandards": [
+      "PHPCSStandards\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\Plugin::run"
+    ]
+  }
+}
