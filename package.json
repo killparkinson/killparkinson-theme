@@ -11,5 +11,8 @@
   },
   "stylelint": {
     "extends": "stylelint-config-twbs-bootstrap"
+  },
+  "dependencies": {
+    "lint": "^0.8.19"
   }
 }
