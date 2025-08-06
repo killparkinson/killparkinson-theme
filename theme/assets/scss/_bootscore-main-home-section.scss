@@ -1,0 +1,50 @@
+.min-vh-64 {
+  min-height: 65dvh;
+  padding-top: 30px;
+}
+.main-section-img-container {
+  justify-content: center;
+  .main-section-img-first,
+  .main-section-img-second {
+    background-color: $pink-50;
+    border-radius: 50%;
+
+    figure {
+      width: 100%;
+      height: 100%;
+
+      img {
+        width: calc(100% + 20px);
+        height: calc(100% + 20px);
+        object-fit: cover;
+        transform: scaleX(-1) translateY(20px)
+      }
+    }
+  }
+
+
+  .main-section-img-first{
+    width: 20rem;
+    height: 20rem;
+    margin-top: 20%;
+  }
+
+  .main-section-img-second{
+    align-self: flex-start;
+    width: 15rem;
+    height: 15rem;
+  }
+
+  @include media-breakpoint-down(md) {
+    .main-section-img-first{
+      width: 10rem;
+      height: 10rem;
+
+    }
+    .main-section-img-second{
+      width: 8rem;
+      height: 8rem;
+
+    }
+  }
+}
