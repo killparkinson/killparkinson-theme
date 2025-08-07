@@ -482,3 +482,22 @@ function change_block_widget_categories_badge( $block_content ) {
 	return str_replace( $search, $replace, $block_content );
 }
 add_filter( 'bootscore/block/categories/content', 'change_block_widget_categories_badge', 10, 2 );
+
+/**
+ * Highlight the last word of a given string with a primary text color.
+ *
+ * @param string $input The input string to process.
+ * @return string The modified string with the last word highlighted.
+ */
+function colour_last_word( $input ) {
+	$text  = wp_strip_all_tags( $input );
+	$words = preg_split( '/\s+/', trim( $text ) );
+
+	if ( count( $words ) <= 1 ) {
+		return $input;
+	}
+
+	$last_word = array_pop( $words );
+
+	return implode( ' ', $words ) . ' <span class="text-primary">' . $last_word . '</span>';
+}
