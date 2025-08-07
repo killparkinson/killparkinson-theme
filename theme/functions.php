@@ -516,3 +516,35 @@ function single_title_colour_last_word( $title ) {
 	return $title;
 }
 add_filter( 'the_title', 'title_colour_last_word', 10, 2 );
+
+/**
+ * Wraps the last word in a heading with the `colour-last-word` class and applies a primary color.
+ *
+ * @param string $block_content The content of the block.
+ * @return string Modified block content with the last word styled.
+ */
+function block_heading_colour_last_word( $block_content ) {
+	// target headings that have our helper class.
+	if ( ! str_contains( $block_content, 'colour-last-word' ) ) {
+		return $block_content;
+	}
+
+	// grab heading inner text.
+	preg_match( '/<h[1-6][^>]*?>(.*?)<\/h[1-6]>/is', $block_content, $matches );
+	if ( empty( $matches[1] ) ) {
+		return $block_content;
+	}
+
+	$text  = wp_strip_all_tags( $matches[1] );
+	$words = preg_split( '/\s+/', trim( $text ) );
+
+	if ( count( $words ) <= 1 ) {
+		return $block_content;
+	}
+
+	$last     = array_pop( $words );
+	$new_text = colour_last_word( $matches[1] );
+
+	return str_replace( $matches[1], $new_text, $block_content );
+}
+add_filter( 'render_block_core/heading', 'block_heading_colour_last_word', 10, 2 );
