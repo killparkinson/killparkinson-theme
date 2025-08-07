@@ -501,3 +501,18 @@ function colour_last_word( $input ) {
 
 	return implode( ' ', $words ) . ' <span class="text-primary">' . $last_word . '</span>';
 }
+
+/**
+ * Modifies the title of a single post to apply a color to the last word.
+ *
+ * @param string $title The original title of the post.
+ * @return string Modified title with the last word colored.
+ */
+function single_title_colour_last_word( $title ) {
+	if ( is_single() && in_the_loop() ) {
+		$title = colour_last_word( esc_html( $title ) );
+	}
+
+	return $title;
+}
+add_filter( 'the_title', 'title_colour_last_word', 10, 2 );
