@@ -14,6 +14,14 @@ defined('ABSPATH') || exit;
 
 ?>
 
+<!-- wp:buttons {"align":"wide","layout":{"type":"flex","justifyContent":"center"}} -->
+<div class="wp-block-buttons alignwide">
+	<!-- wp:button {"tagName":"button","className":"is-style-btn-secondary"} -->
+	<div class="wp-block-button is-style-btn-secondary"><button type="button"
+			class="wp-block-button__link wp-element-button">Secondary button</button></div>
+	<!-- /wp:button -->
+</div>
+<!-- /wp:buttons -->
 
 <!-- wp:paragraph {"metadata":{"name":"mb-0"},"className":"mb-0 d-flex gap-2"} -->
 <p class="mb-0 d-flex flex-md-row flex-column gap-2">

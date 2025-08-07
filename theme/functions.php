@@ -482,3 +482,19 @@ function change_block_widget_categories_badge( $block_content ) {
 	return str_replace( $search, $replace, $block_content );
 }
 add_filter( 'bootscore/block/categories/content', 'change_block_widget_categories_badge', 10, 2 );
+
+
+//register custom button styles
+add_action('init', function () {
+  register_block_style('core/button', [
+    'name' => 'btn-secondary',
+    'label' => __('Bootstrap Secondary'),
+    'inline_style' => 'btn-secondary',
+	'style_handle' => 'btn-secondary'
+  ]);
+
+  register_block_style('core/button', [
+    'name' => 'btn-outline-secondary',
+    'label' => __('Bootstrap Outline Secondary'),
+  ]);
+});
