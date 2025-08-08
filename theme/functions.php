@@ -10,6 +10,17 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
+require_once 'inc/icon-shortcode.php';
+
+/**
+ * Icon helper creates a feater SVG icon element
+ *
+ * @param string $name The name of the icon to render.
+ * @link https://feathericons.com
+ */
+function icon( $name ) {
+	return '<svg class="icon"><use href="' . get_stylesheet_directory_uri() . '/assets/fonts/icon.svg#' . $name . '" aria-hidden="true"></svg>';
+}
 
 /**
  * Enqueue scripts and styles
@@ -31,6 +42,7 @@ function bootscore_child_enqueue_styles() {
 	$modificated_custom_js = gmdate( 'YmdHi', filemtime( get_stylesheet_directory() . '/assets/js/custom.js' ) );
 	wp_enqueue_script( 'custom-js', get_stylesheet_directory_uri() . '/assets/js/custom.js', array( 'jquery' ), $modificated_custom_js, false, true );
 }
+
 
 /**
  * Unregisters the core post excerpt block type from Gutenberg editor.
@@ -356,16 +368,6 @@ add_filter( 'bootscore/class/header/navbar-nav', 'grow_mobile_navbar_nav', 10, 2
  * Disable Font Awesome
  */
 add_filter( 'bootscore/load_fontawesome', '__return_false' );
-
-/**
- * Icon helper creates a feater SVG icon element
- *
- * @param string $name The name of the icon to render.
- * @link https://feathericons.com
- */
-function icon( $name ) {
-	return '<svg class="icon"><use href="' . get_stylesheet_directory_uri() . '/assets/fonts/icon.svg#' . $name . '" aria-hidden="true"></svg>';
-}
 
 /**
  * Change nav-toggler icon
