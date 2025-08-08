@@ -502,25 +502,6 @@ function colour_last_word( $input ) {
 }
 
 /**
- * Modifies the title of a single post to apply a color to the last word.
- *
- * @param string   $title The original title of the post.
- * @param int|null $id The post ID. Defaults to null.
- * @return string Modified title with the last word colored.
- */
-function single_title_colour_last_word( $title, $id = null ) {
-	if ( ! is_admin()
-			&& in_the_loop()
-			&& is_main_query()
-			&& is_single( $id ) ) {
-		$title = colour_last_word( esc_html( $title ) );
-	}
-
-	return $title;
-}
-add_filter( 'the_title', 'single_title_colour_last_word', 10, 2 );
-
-/**
  * Wraps the last word in a heading with the `colour-last-word` class and applies a primary color.
  *
  * @param string $block_content The content of the block.
