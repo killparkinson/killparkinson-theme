@@ -11,7 +11,7 @@
 defined( 'ABSPATH' ) || exit;
 
 require_once 'inc/icon-shortcode.php';
-
+require_once 'inc/block-button-variations.php';
 /**
  * Icon helper creates a feater SVG icon element
  *

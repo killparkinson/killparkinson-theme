@@ -47,3 +47,83 @@ This documentation explains how to create button components based on [Figma butt
 ```html
 <button class="btn btn-primary btn-sm">Mini primary button</button>
 ```
+
+## Adding Button Variations
+
+### 1. Using the Block Editor
+
+1. **Add a Button Block**
+   - In the block editor, add a new Button block
+   - Select your button text
+
+2. **Access Advanced Settings**
+   - In the right sidebar, click the "Advanced" panel
+   - Find the "Additional CSS class(es)" field
+
+3. **Add CSS Classes**
+   ```
+   btn-primary btn-lg
+   ```
+
+### 2. Direct Pattern Code Editing
+
+You can also add classes directly in your pattern code:
+
+```html
+<!-- wp:button {"className":"btn-primary btn-lg"} -->
+<div class="wp-block-button btn-primary btn-lg">
+    <a class="wp-block-button__link">Primary Button</a>
+</div>
+<!-- /wp:button -->
+```
+
+### 3. Multiple Button Examples
+
+**Primary Button:**
+```html
+<!-- wp:button {"className":"btn-primary"} -->
+<div class="wp-block-button btn-primary">
+    <a class="wp-block-button__link">Primary Button</a>
+</div>
+<!-- /wp:button -->
+```
+
+**Large Secondary Button:**
+```html
+<!-- wp:button {"className":"btn-secondary btn-lg"} -->
+<div class="wp-block-button btn-secondary btn-lg">
+    <a class="wp-block-button__link">Large Secondary</a>
+</div>
+<!-- /wp:button -->
+```
+
+**Small Outline Button:**
+```html
+<!-- wp:button {"className":"btn-outline-primary btn-sm"} -->
+<div class="wp-block-button btn-outline-primary btn-sm">
+    <a class="wp-block-button__link">Small Outline</a>
+</div>
+<!-- /wp:button -->
+```
+
+### 4. Button Group Example
+
+Create a group of buttons with different variations:
+
+```html
+<!-- wp:buttons -->
+<div class="wp-block-buttons">
+    <!-- wp:button {"className":"btn-primary"} -->
+    <div class="wp-block-button btn-primary">
+        <a class="wp-block-button__link">Save</a>
+    </div>
+    <!-- /wp:button -->
+    
+    <!-- wp:button {"className":"btn-outline-secondary"} -->
+    <div class="wp-block-button btn-outline-secondary">
+        <a class="wp-block-button__link">Cancel</a>
+    </div>
+    <!-- /wp:button -->
+</div>
+<!-- /wp:buttons -->
+```
