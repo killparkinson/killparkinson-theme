@@ -14,8 +14,11 @@ defined( 'ABSPATH' ) || exit;
 
 ?>
 
-<!-- wp:heading {"metadata":{"name":"display-5 fw-bold"},"className":"display-5 fw-bold"} -->
-<h2 class="wp-block-heading display-5 fw-bold">
+<!-- wp:heading {
+	"metadata": {"name": "display-5 fw-bold colour-last-word"},
+	"className": "display-5 fw-bold colour-last-word"
+} -->
+<h2 class="wp-block-heading display-5 fw-bold colour-last-word">
 	Hero <span class="text-primary">Title</span>
 </h2>
 <!-- /wp:heading -->

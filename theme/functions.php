@@ -10,6 +10,10 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
+require_once 'inc/helpers.php';
+require_once 'inc/icon-shortcode.php';
+require_once 'inc/block-button-icons.php';
+require_once 'inc/block-button-variations.php';
 
 /**
  * Enqueue scripts and styles
@@ -31,6 +35,7 @@ function bootscore_child_enqueue_styles() {
 	$modificated_custom_js = gmdate( 'YmdHi', filemtime( get_stylesheet_directory() . '/assets/js/custom.js' ) );
 	wp_enqueue_script( 'custom-js', get_stylesheet_directory_uri() . '/assets/js/custom.js', array( 'jquery' ), $modificated_custom_js, false, true );
 }
+
 
 /**
  * Unregisters the core post excerpt block type from Gutenberg editor.
@@ -358,16 +363,6 @@ add_filter( 'bootscore/class/header/navbar-nav', 'grow_mobile_navbar_nav', 10, 2
 add_filter( 'bootscore/load_fontawesome', '__return_false' );
 
 /**
- * Icon helper creates a feater SVG icon element
- *
- * @param string $name The name of the icon to render.
- * @link https://feathericons.com
- */
-function icon( $name ) {
-	return '<svg class="icon"><use href="' . get_stylesheet_directory_uri() . '/assets/fonts/icon.svg#' . $name . '" aria-hidden="true"></svg>';
-}
-
-/**
  * Change nav-toggler icon
  */
 function change_nav_toggler_icon() {
@@ -467,7 +462,6 @@ add_filter( 'bootscore/class/badge/category', 'change_category_badge_link_class'
  * Change widget categories badge
  *
  * @param string $block_content The content of the block.
- * @param array  $block        The block data.
  * @return string Modified block content with updated badge style.
  */
 function change_block_widget_categories_badge( $block_content ) {
@@ -482,3 +476,46 @@ function change_block_widget_categories_badge( $block_content ) {
 	return str_replace( $search, $replace, $block_content );
 }
 add_filter( 'bootscore/block/categories/content', 'change_block_widget_categories_badge', 10, 2 );
+
+/**
+ * Highlight the last word of a given string with a primary text color.
+ *
+ * @param string $input The input string to process.
+ * @return string The modified string with the last word highlighted.
+ */
+function colour_last_word( $input ) {
+	$text  = wp_strip_all_tags( $input );
+	$words = preg_split( '/\s+/', trim( $text ) );
+
+	if ( count( $words ) <= 1 ) {
+		return $input;
+	}
+
+	$last_word = array_pop( $words );
+
+	return implode( ' ', $words ) . ' <span class="text-primary">' . $last_word . '</span>';
+}
+
+/**
+ * Wraps the last word in a heading with the `colour-last-word` class and applies a primary color.
+ *
+ * @param string $block_content The content of the block.
+ * @return string Modified block content with the last word styled.
+ */
+function block_heading_colour_last_word( $block_content ) {
+	// target headings that have our helper class.
+	if ( ! str_contains( $block_content, 'colour-last-word' ) ) {
+		return $block_content;
+	}
+
+	// grab heading inner text.
+	preg_match( '/<h[1-6][^>]*?>(.*?)<\/h[1-6]>/is', $block_content, $matches );
+	if ( empty( $matches[1] ) ) {
+		return $block_content;
+	}
+
+	$new_text  = colour_last_word( $matches[1] );
+
+	return str_replace( $matches[1], $new_text, $block_content );
+}
+add_filter( 'render_block_core/heading', 'block_heading_colour_last_word', 10, 2 );
