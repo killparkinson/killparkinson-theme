@@ -10,17 +10,10 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
+require_once 'inc/helpers.php';
 require_once 'inc/icon-shortcode.php';
+require_once 'inc/block-button-icons.php';
 require_once 'inc/block-button-variations.php';
-/**
- * Icon helper creates a feater SVG icon element
- *
- * @param string $name The name of the icon to render.
- * @link https://feathericons.com
- */
-function icon( $name ) {
-	return '<svg class="icon"><use href="' . get_stylesheet_directory_uri() . '/assets/fonts/icon.svg#' . $name . '" aria-hidden="true"></svg>';
-}
 
 /**
  * Enqueue scripts and styles
