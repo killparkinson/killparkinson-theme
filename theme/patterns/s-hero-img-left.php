@@ -33,8 +33,7 @@ defined( 'ABSPATH' ) || exit;
 				<div class="wp-block-group text-block w-full my-4">
 					<!-- wp:heading {"metadata":{"name":"display-5 fw-bold mb-2 colour-last-word"},"className":"display-5 fw-bold mb-2 colour-last-word"} -->
 					<h2 class="wp-block-heading display-5 fw-bold mb-2 colour-last-word">
-						Section with
-						<span class="text-primary">hero</span>
+						Section with <span class="text-primary">hero</span>
 					</h2>
 					<!-- /wp:heading -->
 

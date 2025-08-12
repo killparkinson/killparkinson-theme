@@ -31,22 +31,22 @@ function block_button_variations( $block_content ) {
 			$anchor_attrs   = $matches[3];
 			$anchor_content = $matches[4];
 
-			// Extract btn-* classes from div classes.
+			// extract btn-* classes from div classes.
 			if ( preg_match_all( '/\bbtn-[^\s"]+/', $div_classes, $btn_classes ) ) {
 				$btn_class_list = implode( ' ', $btn_classes[0] );
 
-				// Remove btn-* classes from div classes.
+				// remove btn-* classes from div classes.
 				$new_div_classes = preg_replace( '/\bbtn-[^\s"]+/', '', $div_classes );
 				$new_div_classes = trim( preg_replace( '/\s+/', ' ', $new_div_classes ) );
 
-				// Remove btn-* classes from anchor classes.
+				// remove btn-* classes from anchor classes.
 				$cleaned_anchor_classes = preg_replace( '/\bbtn-[^\s"]+/', '', $anchor_classes );
 				$cleaned_anchor_classes = trim( preg_replace( '/\s+/', ' ', $cleaned_anchor_classes ) );
 
-				// Add btn-* classes to anchor classes.
+				// add btn-* classes to anchor classes.
 				$new_anchor_classes = trim( $btn_class_list . ' ' . $cleaned_anchor_classes );
 
-				// Rebuild div class attribute.
+				// rebuild div class attribute.
 				$div_class_attr = $new_div_classes ? ' class="wp-block-button ' . $new_div_classes . '"' : ' class="wp-block-button"';
 
 				return '<div' . $div_class_attr . '>' . "\n" .
@@ -54,7 +54,7 @@ function block_button_variations( $block_content ) {
 					'</div>';
 			}
 
-			// If no btn classes found, return original.
+			// if no btn classes found, return original.
 			return $matches[0];
 		},
 		$block_content
