@@ -60,11 +60,15 @@ defined( 'ABSPATH' ) || exit;
 				<p class="lead">Join our mission to build a global, patient-led Parkinson's registry. We provide
 					anonymized data to leading researchers to help them find a cure.</p>
 				<!-- /wp:paragraph -->
-				<!-- wp:button {"className":"btn-primary btn-lg"} -->
-				<div class="wp-block-button btn-primary btn-lg">
-					<a class="wp-block-button__link wp-element-button">Primary Button</a>
+				<!-- wp:buttons -->
+				<div class="wp-block-buttons">
+					<!-- wp:button {"className":"btn-primary"} -->
+					<div class="wp-block-button btn-primary">
+						<a class="wp-block-button__link">Primary Button</a>
+					</div>
+					<!-- /wp:button -->
 				</div>
-				<!-- /wp:button -->
+				<!-- /wp:buttons -->
 			</div>
 			<!-- /wp:group -->
 		</div>
