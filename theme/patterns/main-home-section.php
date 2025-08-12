@@ -4,13 +4,13 @@
  * Slug: bootscore/c-hero-img-right
  * Categories: bootscore
  * https://developer.wordpress.org/themes/features/block-patterns/
- * 
+ *
  * @package Bootscore
  * @version 6.0.0
  */
 
-// Exit if accessed directly
-defined('ABSPATH') || exit;
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
 
 ?>
 <!-- wp:group {"metadata":{"name":"c - Hero image right - row mb-3 hide-wp-block-classes","categories":["bootscore"],"patternName":"bootscore/hero-img-right"},"className":"row h-100 mb-3 hide-wp-block-classes","layout":{"type":"default"}} -->
@@ -60,12 +60,14 @@ defined('ABSPATH') || exit;
 				<p class="lead">Join our mission to build a global, patient-led Parkinson's registry. We provide
 					anonymized data to leading researchers to help them find a cure.</p>
 				<!-- /wp:paragraph -->
-
-			<!-- wp:button {"className":"btn-primary btn-lg"} -->
-<div class="wp-block-button btn-primary btn-lg">
-    <a class="wp-block-button__link">Primary Button</a>
-</div>
-<!-- /wp:button -->
+				<!-- wp:button {"className":"btn-primary btn-lg"} -->
+				<div class="wp-block-button btn-primary btn-lg">
+					<a class="wp-block-button__link">Primary Button</a>
+				</div>
+				<!-- /wp:button -->
+				<!-- wp:paragraph {"metadata":{"name":"mb-0"},"className":"mb-0"} -->
+				<p class="mb-0"><a class="btn btn-lg btn-primary" href="#">Explore our work</a></p>
+				<!-- /wp:paragraph -->
 			</div>
 			<!-- /wp:group -->
 		</div>
