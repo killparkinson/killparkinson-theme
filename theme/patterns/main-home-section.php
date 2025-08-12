@@ -62,12 +62,9 @@ defined( 'ABSPATH' ) || exit;
 				<!-- /wp:paragraph -->
 				<!-- wp:button {"className":"btn-primary btn-lg"} -->
 				<div class="wp-block-button btn-primary btn-lg">
-					<a class="wp-block-button__link">Primary Button</a>
+					<a class="wp-block-button__link wp-element-button">Primary Button</a>
 				</div>
 				<!-- /wp:button -->
-				<!-- wp:paragraph {"metadata":{"name":"mb-0"},"className":"mb-0"} -->
-				<p class="mb-0"><a class="btn btn-lg btn-primary" href="#">Explore our work</a></p>
-				<!-- /wp:paragraph -->
 			</div>
 			<!-- /wp:group -->
 		</div>
