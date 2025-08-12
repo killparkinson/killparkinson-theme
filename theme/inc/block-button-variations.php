@@ -62,4 +62,3 @@ function block_button_variations( $block_content ) {
 }
 
 add_filter( 'bootscore/block/buttons/content', 'block_button_variations', 10, 2 );
-
