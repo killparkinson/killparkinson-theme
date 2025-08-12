@@ -24,28 +24,34 @@ defined( 'ABSPATH' ) || exit;
  */
 function block_button_variations( $block_content ) {
 	return preg_replace_callback(
-		'/<div class="wp-block-button ([^"]*)">\s*<a class="([^"]+)"([^>]*)>([^<]*(?:<[^<]*)*)<\/a>\s*<\/div>/s',
+		'/<div class="wp-block-button ([^"]*)">\s*<a class="([^"]+)"([^>]*)>(.*?)<\/a>\s*<\/div>/s',
 		function ( $matches ) {
 			$div_classes    = $matches[1];
 			$anchor_classes = $matches[2];
 			$anchor_attrs   = $matches[3];
 			$anchor_content = $matches[4];
 
-			// extract btn-* classes from div.
-			if ( preg_match_all( '/\b(btn-[^"\s]+)/', $div_classes, $btn_classes ) ) {
-				$btn_class_list = implode( ' ', $btn_classes[1] );
+			// extract btn-* classes from div classes.
+			if ( preg_match_all( '/\bbtn-[^\s"]+/', $div_classes, $btn_classes ) ) {
+				$btn_class_list = implode( ' ', $btn_classes[0] );
 
-				// remove existing btn-* classes from anchor and add new ones.
-				$cleaned_anchor_classes = preg_replace( '/\bbtn-[^"\s]+\s*/', '', $anchor_classes );
-				$new_anchor_classes     = $btn_class_list . ' ' . $cleaned_anchor_classes;
-				$new_anchor_classes     = trim( $new_anchor_classes );
+				// remove btn-* classes from div classes.
+				$new_div_classes = preg_replace( '/\bbtn-[^\s"]+/', '', $div_classes );
+				$new_div_classes = trim( preg_replace( '/\s+/', ' ', $new_div_classes ) );
 
-				// rebuild the div class attribute.
+				// remove btn-* classes from anchor classes.
+				$cleaned_anchor_classes = preg_replace( '/\bbtn-[^\s"]+/', '', $anchor_classes );
+				$cleaned_anchor_classes = trim( preg_replace( '/\s+/', ' ', $cleaned_anchor_classes ) );
+
+				// add btn-* classes to anchor classes.
+				$new_anchor_classes = trim( $btn_class_list . ' ' . $cleaned_anchor_classes );
+
+				// rebuild div class attribute.
 				$div_class_attr = $new_div_classes ? ' class="wp-block-button ' . $new_div_classes . '"' : ' class="wp-block-button"';
 
 				return '<div' . $div_class_attr . '>' . "\n" .
-								'<a class="' . $new_anchor_classes . '"' . $anchor_attrs . '>' . $anchor_content . '</a>' . "\n" .
-								'</div>';
+					'<a class="' . $new_anchor_classes . '"' . $anchor_attrs . '>' . $anchor_content . '</a>' . "\n" .
+					'</div>';
 			}
 
 			// if no btn classes found, return original.
@@ -54,4 +60,5 @@ function block_button_variations( $block_content ) {
 		$block_content
 	);
 }
+
 add_filter( 'bootscore/block/buttons/content', 'block_button_variations', 10, 2 );
