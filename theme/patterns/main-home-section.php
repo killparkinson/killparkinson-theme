@@ -61,9 +61,11 @@ defined('ABSPATH') || exit;
 					anonymized data to leading researchers to help them find a cure.</p>
 				<!-- /wp:paragraph -->
 
-				<!-- wp:paragraph {"metadata":{"name":"mb-0"},"className":"mb-0"} -->
-				<p class="mb-0"><a class="btn btn-lg btn-primary" href="#">Explore our work</a></p>
-				<!-- /wp:paragraph -->
+			<!-- wp:button {"className":"btn-primary btn-lg"} -->
+<div class="wp-block-button btn-primary btn-lg">
+    <a class="wp-block-button__link">Primary Button</a>
+</div>
+<!-- /wp:button -->
 			</div>
 			<!-- /wp:group -->
 		</div>
