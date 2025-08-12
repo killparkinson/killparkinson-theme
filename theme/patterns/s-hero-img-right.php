@@ -59,18 +59,21 @@ defined( 'ABSPATH' ) || exit;
 					</ul>
 					<!-- /wp:list -->
 
-					<!-- wp:paragraph {"metadata":{"name":"mb-0"},"className":"mb-0 d-flex gap-2"} -->
-					<p class="mb-0 d-flex flex-md-row flex-column gap-2">
-						<button class="btn btn-secondary">Secondary button</button>
-						<button class="btn icon-end btn-outline-secondary">
-							Button
+					<!-- wp:buttons -->
+					<div class="wp-block-buttons">
+						<!-- wp:button {"className":"btn-secondary"} -->
+						<div class="wp-block-button btn-secondary">
+							<a class="wp-block-button__link">Page Link</a>
+						</div>
+						<!-- /wp:button -->
 
-							<svg class="icon">
-								<use href="/wp-content/themes/kp-theme/assets/fonts/icon.svg#chevron-right" />
-							</svg>
-						</button>
-					</p>
-					<!-- /wp:paragraph -->
+						<!-- wp:button {"className":"btn-outline-secondary"} -->
+						<div class="wp-block-button btn-outline-secondary icon-end-chevron-right">
+							<a class="wp-block-button__link">Action Link</a>
+						</div>
+						<!-- /wp:button -->
+					</div>
+					<!-- /wp:buttons -->
 
 				</div>
 				<!-- /wp:group -->
