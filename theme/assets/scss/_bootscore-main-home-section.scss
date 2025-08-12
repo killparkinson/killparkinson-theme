@@ -1,31 +1,27 @@
-.main-section-img-container  {
+.main-section-img-container {
   --big-image: 20rem;
   --small-image: 15rem;
-}
 
-@include media-breakpoint-down(md) {
-  :root {
-    --big-image: 10rem;
-    --small-image: 8rem;
-  }
-}
+  display: flex;        
+  align-items: center;
+  justify-content: flex-start;
 
-.main-section-img-container {
-  padding-top: 30px;
-
-  justify-content: center;
+  // shared styles for both circles
   .main-section-img-first,
   .main-section-img-second {
     background-color: $pink-50;
     border-radius: 50%;
 
     figure {
+      margin: 0;
       img {
+        display: block;
         object-fit: cover;
       }
     }
   }
 
+  // big image
   .main-section-img-first {
     width: var(--big-image);
     height: var(--big-image);
@@ -34,6 +30,7 @@
     figure {
       width: var(--big-image);
       height: var(--big-image);
+
       img {
         width: calc(var(--big-image) + 30px);
         height: calc(var(--big-image) + 30px);
@@ -42,18 +39,27 @@
     }
   }
 
+  // small image
   .main-section-img-second {
     align-self: flex-start;
     width: var(--small-image);
     height: var(--small-image);
+
     figure {
       width: var(--small-image);
       height: var(--small-image);
+
       img {
         width: calc(var(--small-image) + 30px);
         height: calc(var(--small-image) + 30px);
         transform: scaleX(-1) translateY(-30px);
       }
     }
+  }
+
+  @include media-breakpoint-down(md) {
+    --big-image: 10rem;
+    --small-image: 8rem;
+    justify-content: center;
   }
 }
