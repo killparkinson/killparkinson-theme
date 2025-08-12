@@ -24,9 +24,9 @@ defined( 'ABSPATH' ) || exit;
  */
 function block_button_variations( $block_content ) {
 	return preg_replace_callback(
-		'/<div class="wp-block-button ([^"]*)">\s*<a class="([^"]+)"([^>]*)>([^<]*(?:<[^<]*)*)<\/a>\s*<\/div>/s',
+		'/<div class="wp-block-button\s+([^"]*)">\s*<a class="([^"]*)"([^>]*)>(.*?)<\/a>\s*<\/div>/s',
 		function ( $matches ) {
-			$div_classes    = $matches[1];
+			$div_classes = $matches[1];
 			$anchor_classes = $matches[2];
 			$anchor_attrs   = $matches[3];
 			$anchor_content = $matches[4];
@@ -36,16 +36,17 @@ function block_button_variations( $block_content ) {
 				$btn_class_list = implode( ' ', $btn_classes[1] );
 
 				// remove existing btn-* classes from anchor and add new ones.
-				$cleaned_anchor_classes = preg_replace( '/\bbtn-[^"\s]+\s*/', '', $anchor_classes );
-				$new_anchor_classes     = $btn_class_list . ' ' . $cleaned_anchor_classes;
-				$new_anchor_classes     = trim( $new_anchor_classes );
+				$cleaned_anchor_classes = preg_replace( - '/\bbtn-[^"\s]+\s*/', '', $anchor_classes );
+				$new_anchor_classes = $btn_class_list . ' ' . $cleaned_anchor_classes;
+				$new_anchor_classes = trim( $new_anchor_classes );
+				$new_div_classes = trim( preg_replace( '/\bbtn-[^"\s]+\s*/', '', $div_classes ) );
 
 				// rebuild the div class attribute.
 				$div_class_attr = $new_div_classes ? ' class="wp-block-button ' . $new_div_classes . '"' : ' class="wp-block-button"';
 
 				return '<div' . $div_class_attr . '>' . "\n" .
-								'<a class="' . $new_anchor_classes . '"' . $anchor_attrs . '>' . $anchor_content . '</a>' . "\n" .
-								'</div>';
+					'<a class="' . $new_anchor_classes . '"' . $anchor_attrs . '>' . $anchor_content . '</a>' . "\n" .
+					'</div>';
 			}
 
 			// if no btn classes found, return original.
