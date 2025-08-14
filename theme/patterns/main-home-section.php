@@ -17,10 +17,10 @@ defined( 'ABSPATH' ) || exit;
 <div class="wp-block-group row min-vh-75 mb-3 mt-6 hide-wp-block-classes">
 	<!-- wp:group {"metadata":{"name":"col-lg-6 mb-3 mb-lg-0 order-lg-2"},"className":"col-lg-6 mb-3 mb-lg-0 order-lg-2","layout":{"type":"default"}} -->
 	<div class="wp-block-group col-xl-6 mt-3 mt-lg-5 mb-3 mb-lg-0 order-xl-2">
-		<!-- wp:group {"metadata":{"name":"h-100 d-flex align-items-center"},"className":"h-100 d-flex align-items-center ","layout":{"type":"default"}} -->
-		<div class="wp-block-group d-flex align-items-center relative main-section-img-container">
-			<!-- wp:group {"className":"main-section-img-first"} -->
-			<div class="wp-block-group main-section-img-first">
+		<!-- wp:group {"metadata":{"name":"h-100 d-flex align-items-center"},"className":"h-100 d-flex align-items-center justify-content-end","layout":{"type":"default"}} -->
+		<div class="wp-block-group d-flex align-items-center justify-content-end relative main-section-img-container">
+			<!-- wp:group {"className":"main-section-img-first rounded-circle"} -->
+			<div class="wp-block-group main-section-img-first rounded-circle"">
 				<!-- wp:image {"sizeSlug":"large","className":"rounded-circle mb-0"} -->
 				<figure class="wp-block-image size-large rounded-circle mb-0 "><img
 						src="http://localhost:8080/wp-content/uploads/2025/08/52e5b36d2ace146e7fa001b2becd8b853aec7f32.png"
@@ -29,8 +29,7 @@ defined( 'ABSPATH' ) || exit;
 			</div>
 			<!-- /wp:group -->
 			<!-- wp:group {"className":"main-section-img-second"} -->
-
-			<div class="wp-block-group main-section-img-second">
+			<div class="wp-block-group main-section-img-second rounded-circle"">
 				<!-- wp:image {"sizeSlug":"large","className":"rounded-circle mb-0 bg-"} -->
 				<figure class="wp-block-image size-large rounded-circle mb-0"><img
 						src="http://localhost:8080/wp-content/uploads/2025/08/52e5b36d2ace146e7fa001b2becd8b853aec7f32.png"
