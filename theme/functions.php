@@ -515,12 +515,13 @@ function block_heading_colour_last_word( $block_content ) {
 	}
 
 	$new_text  = colour_last_word( $matches[1] );
+
 	return str_replace( $matches[1], $new_text, $block_content );
 }
 add_filter( 'render_block_core/heading', 'block_heading_colour_last_word', 10, 2 );
 
 /**
- * Custom language switcher dropdown for WordPress menus.
+ * Custom language switcher dropdown for Language Switcher widget.
  *
  * This function modifies the language switcher menu to display a custom HTML structure
  * with flags and names of available languages. It replaces the default menu items
