@@ -48,26 +48,25 @@
       &:not(:last-child) {
         padding-right: .5rem;
       }
-
-
     }
-    .menu-item > a{
-
+    .menu-item > a {
       font-weight: $font-weight-semibold;
       color: inherit;
     }
-
-
-    .wp-block-social-links.is-layout-flex {
-      gap: .5rem;
+    .wp-block-columns {
       margin-bottom: 0;
     }
-    .wp-block-social-links .wp-block-social-link-anchor {
-      padding: 0;
-      color: initial;
-      fill: initial;
-    }
+  }
 
+  .wp-block-social-links.is-layout-flex {
+    gap: .5rem;
+    justify-self: center;
+    margin-bottom: 0;
+  }
+  .wp-block-social-links .wp-block-social-link-anchor {
+    padding: 0;
+    color: initial;
+    fill: initial;
   }
 }
 
