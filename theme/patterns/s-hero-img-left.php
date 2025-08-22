@@ -60,14 +60,14 @@ defined( 'ABSPATH' ) || exit;
 
 					<!-- wp:buttons -->
 					<div class="wp-block-buttons">
-						<!-- wp:button {"className":"btn-secondary"} -->
-						<div class="wp-block-button btn-secondary">
+						<!-- wp:button {"className":"btn-secondary full-width-mobile-button"} -->
+						<div class="wp-block-button btn-secondary btn-mobile-full-width fullwidth-mobile">
 							<a class="wp-block-button__link">Page Link</a>
 						</div>
 						<!-- /wp:button -->
 
-						<!-- wp:button {"className":"btn-outline-secondary"} -->
-						<div class="wp-block-button btn-outline-secondary icon-end-chevron-right">
+						<!-- wp:button {"className":"btn-outline-secondary full-width-mobile-button"} -->
+						<div class="wp-block-button btn-outline-secondary icon-end-chevron-right btn-mobile-full-width fullwidth-mobile">
 							<a class="wp-block-button__link">Action Link</a>
 						</div>
 						<!-- /wp:button -->
