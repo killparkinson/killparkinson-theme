@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Title: KiP - Hero image right
  * Slug: theme/s-hero-img-right
