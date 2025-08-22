@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Theme for KP.
  *
@@ -549,7 +548,7 @@ function footer_language_switcher( $output, $args ) {
 		$language_locales = pll_languages_list( [ 'fields' => 'locale' ] );
 
 		$custom_html  = '<div class="fw-bold text-start">Language</div>';
-		$custom_html  .= '<div class="dropdown dropup">';
+		$custom_html .= '<div class="dropdown dropup">';
 		$custom_html .= '<button
             class="btn btn-outline-secondary rounded-1 dropdown-toggle icon-css icon-start icon-end align-items-center justify-content-between"
             style="min-width: 18rem" data-bs-display="static" type="button" data-bs-toggle="dropdown"
