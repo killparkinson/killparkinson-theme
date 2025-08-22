@@ -519,3 +519,64 @@ function block_heading_colour_last_word( $block_content ) {
 	return str_replace( $matches[1], $new_text, $block_content );
 }
 add_filter( 'render_block_core/heading', 'block_heading_colour_last_word', 10, 2 );
+
+/**
+ * Custom language switcher dropdown for Language Switcher widget.
+ *
+ * This function modifies the language switcher menu to display a custom HTML structure
+ * with flags and names of available languages. It replaces the default menu items
+ * with a styled language switcher dropdown.
+ *
+ * @param string $output     The list of menu items.
+ * @param object $args     Menu arguments.
+ * @return string          Modified menu items or custom language switcher HTML.
+ */
+function footer_language_switcher( $output, $args ) {
+    if (!$args['dropdown']) {
+        return $output;
+    }
+
+    $current_lang_slug  = pll_current_language('slug');
+    $current_lang_name  = pll_current_language('name');
+    $language_slugs     = pll_languages_list();
+
+    $custom_html = ''; // initialize to avoid "undefined variable" issues
+
+    if (!empty($language_slugs)) {
+        $language_names   = pll_languages_list(['fields' => 'name']);
+        $language_locales = pll_languages_list(['fields' => 'locale']);
+
+        $custom_html  = '<div class="dropdown dropup">';
+        $custom_html .= '<button
+            class="btn btn-outline-secondary rounded-1 dropdown-toggle icon-css icon-start icon-end align-items-center justify-content-between"
+            style="min-width: 18rem" data-bs-display="static" type="button" data-bs-toggle="dropdown"
+            aria-expanded="false">';
+        $custom_html .= '<span class="d-flex align-items-center"><span
+                    class="me-2 flag flag-' . strtoupper($current_lang_slug) . ' flag-round flag-lg"></span>';
+        $custom_html .= $current_lang_name;
+        $custom_html .= '</span>';
+        $custom_html .= '</button>';
+        $custom_html .= '<ul class="dropdown-menu shadow" style="min-width: 18rem">';
+
+        foreach ($language_slugs as $key => $slug) {
+            $is_current  = ($slug === $current_lang_slug) ? ' active icon-css' : '';
+            $lang_name   = esc_attr($language_names[$key]);
+            $lang_locale = esc_attr($language_locales[$key]);
+
+            $custom_html .= '<li>';
+            $custom_html .= '<a lang="' . $lang_locale . '" hreflang="' . $lang_locale . '"
+                    class="dropdown-item' . $is_current . '" href="' . pll_home_url($slug) . '"
+                    title="' . $lang_name . '">';
+            $custom_html .= '<span class="flag flag-' . strtoupper($slug) . ' flag-round flag-lg me-2"></span>';
+            $custom_html .= $lang_name;
+            $custom_html .= '</a>';
+            $custom_html .= '</li>';
+        }
+
+        $custom_html .= '</ul></div>';
+    }
+
+    return $custom_html ?: $output;
+}
+
+add_filter( 'pll_the_languages', 'footer_language_switcher', 10, 2 );

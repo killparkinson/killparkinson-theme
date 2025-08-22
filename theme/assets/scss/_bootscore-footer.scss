@@ -48,18 +48,20 @@
       &:not(:last-child) {
         padding-right: .5rem;
       }
-
-
     }
-    .menu-item > a{
-
+    .menu-item > a {
       font-weight: $font-weight-semibold;
       color: inherit;
     }
+    .wp-block-columns {
+      margin-bottom: 0;
+    }
+  }
 
-
+  .widget {
     .wp-block-social-links.is-layout-flex {
       gap: .5rem;
+      justify-self: center;
       margin-bottom: 0;
     }
     .wp-block-social-links .wp-block-social-link-anchor {
@@ -67,7 +69,6 @@
       color: initial;
       fill: initial;
     }
-
   }
 }
 
