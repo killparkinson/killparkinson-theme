@@ -11,8 +11,8 @@
     gap: var(--#{$prefix}btn-icon-gap);
 
     .icon {
-      justify-content: center;
       flex-shrink: 0;
+      justify-content: center;
       @include transition($icon-link-icon-transition);
     }
   }
