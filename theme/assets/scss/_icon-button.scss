@@ -28,6 +28,7 @@
   }
 
   &.icon-end {
+    justify-content: center;
     padding-right: var(--#{$prefix}btn-icon-padding-end);
   }
 
