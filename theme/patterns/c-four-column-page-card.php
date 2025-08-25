@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Kip - Page Loop
- * Slug: bootscore-child/s-pages-loop
+ * Slug: bootscore-child/c-four-column-page-card
  * Categories: bootscore
  * Block Types: core/query
  *
