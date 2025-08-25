@@ -1,7 +1,7 @@
 <?php
 /**
- * Title: Kip - Help pages
- * Slug: bootscore-child/help-pages-loop
+ * Title: Kip - Page Loop
+ * Slug: bootscore-child/s-pages-loop
  * Categories: bootscore
  * Block Types: core/query
  *
@@ -23,39 +23,41 @@ $items = get_pages(
 );
 ?>
 
-<!-- wp:group {"tagName":"section","className":"wp-block-group py-5 hide-wp-block-classes","layout":{"type":"default"}} -->
-<section class="wp-block-group py-5 hide-wp-block-classes">
+<!-- wp:group {"tagName":"section","className":"py-5 hide-wp-block-classes","layout":{"type":"default"}} -->
+<section class="py-5 hide-wp-block-classes">
 	<!-- wp:heading {"className":"display-5 fw-bold colour-last-word"} -->
-	<h2 class="wp-block-heading display-5 fw-bold colour-last-word">How can you <span class="text-primary">help</span></h2>
+	<h2 class="wp-block-heading display-5 fw-bold colour-last-word">
+		How can you <span class="text-primary">help</span>
+	</h2>
 	<!-- /wp:heading -->
 
 	<?php if ( $items ) : ?>
-		<!-- wp:group {"tagName":"section","className":"wp-block-group py-5","layout":{"type":"default"}} -->
-		<div class="wp-block-group py-5">
+		<!-- wp:group {"className":"container py-5","layout":{"type":"default"}} -->
+		<div class="container py-5">
 
 			<!-- wp:columns -->
 			<div class="wp-block-columns">
 				<?php foreach ( $items as $item ) : ?>
 					<!-- wp:column -->
 					<div class="wp-block-column">
-						<!-- wp:image {sizeSlug":"full","linkDestination":"none"} -->
+						<!-- wp:image {"sizeSlug":"full","linkDestination":"none"} -->
 						<figure class="wp-block-image size-full rounded">
-							<img
-								src="<?php echo esc_url( get_the_post_thumbnail_url( $item->ID, 'medium' ) ); ?>" alt="" />
+							<img src="<?php echo esc_url( get_the_post_thumbnail_url( $item->ID, 'medium' ) ); ?>" alt="" />
 						</figure>
 						<!-- /wp:image -->
+
 						<!-- wp:heading {"level":4} -->
 						<h4 class="wp-block-heading"><?php echo esc_html( get_the_title( $item->ID ) ); ?></h4>
 						<!-- /wp:heading -->
+
 						<!-- wp:paragraph -->
-						<p><?php echo esc_html( get_the_excerpt( $page->ID ) ); ?>
-						</p>
+						<p><?php echo esc_html( get_the_excerpt( $item->ID ) ); ?></p>
 						<!-- /wp:paragraph -->
-						 
+
 						<!-- wp:buttons -->
 						<div class="wp-block-buttons">
 							<!-- wp:button -->
-							<div class="wp-block-button icon-end-chevron-right btn-mini-primary">
+							<div class="wp-block-button icon-end-chevron-right btn-link">
 								<a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( get_permalink( $item->ID ) ); ?>">
 									Read more
 								</a>
