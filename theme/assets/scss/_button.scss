@@ -40,10 +40,3 @@
   --#{$prefix}btn-active-color: var(--#{$prefix}dark);
   --#{$prefix}btn-active-bg: #{$gray-200};
 }
-
-@include media-breakpoint-down(md) {
-  .fullwidth-mobile,
-  .btn-mobile-full-width {
-    width: 100%;
-  }
-}
