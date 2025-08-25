@@ -53,9 +53,6 @@
       font-weight: $font-weight-semibold;
       color: inherit;
     }
-    .wp-block-columns {
-      margin-bottom: 0;
-    }
   }
 
   .widget {
@@ -63,6 +60,7 @@
       gap: .5rem;
       justify-self: center;
       margin-bottom: 0;
+      line-height: 0;
     }
     .wp-block-social-links .wp-block-social-link-anchor {
       padding: 0;

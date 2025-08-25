@@ -178,11 +178,12 @@ add_filter( 'bootscore/class/header', 'header_bg_class' );
 
 /**
  * Removes the 'mb-3' class from block buttons content.
+ * Replaces "gap-1" class with "gap-2"
  *
  * @param string $block_content The original block content with classes.
  */
 function block_flush_button( $block_content ) {
-	return str_replace( 'mb-3', '', $block_content );
+	return str_replace( 'gap-1 mb-3', 'gap-2', $block_content );
 }
 add_filter( 'bootscore/block/buttons/content', 'block_flush_button', 10, 1 );
 
@@ -283,7 +284,7 @@ add_filter( 'wp_nav_menu_items', 'custom_language_switcher_dropdown', 10, 2 );
 function footer_container_class( $class_names, $context ) {
 
 	if ( 'footer-info' === $context ) {
-		return 'container d-flex flex-md-wrap flex-wrap-reverse justify-content-md-between justify-content-center align-content-stretch align-items-md-center';
+		return 'container d-flex flex-md-wrap flex-wrap-reverse justify-content-md-between justify-content-center align-content-stretch align-items-md-end';
 	}
 
 	return $class_names;
@@ -546,7 +547,8 @@ function footer_language_switcher( $output, $args ) {
 		$language_names   = pll_languages_list( [ 'fields' => 'name' ] );
 		$language_locales = pll_languages_list( [ 'fields' => 'locale' ] );
 
-		$custom_html  = '<div class="dropdown dropup">';
+		$custom_html  = '<div class="fw-bold text-start">Language</div>';
+		$custom_html .= '<div class="dropdown dropup">';
 		$custom_html .= '<button
             class="btn btn-outline-secondary rounded-1 dropdown-toggle icon-css icon-start icon-end align-items-center justify-content-between"
             style="min-width: 18rem" data-bs-display="static" type="button" data-bs-toggle="dropdown"
