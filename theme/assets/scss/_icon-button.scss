@@ -12,6 +12,7 @@
 
     .icon {
       flex-shrink: 0;
+      justify-content: center;
       @include transition($icon-link-icon-transition);
     }
   }

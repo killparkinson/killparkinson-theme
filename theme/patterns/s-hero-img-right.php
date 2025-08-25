@@ -33,7 +33,7 @@ defined( 'ABSPATH' ) || exit;
 				<div class="wp-block-group text-block w-full my-4">
 					<!-- wp:heading {"metadata":{"name":"display-5 fw-bold mb-2 colour-last-word"},"className":"display-5 fw-bold mb-2 colour-last-word"} -->
 					<h2 class="wp-block-heading display-5 fw-bold mb-2 colour-last-word">
-						Section with 
+						Section with
 						<span class="text-primary">hero</span>
 					</h2>
 					<!-- /wp:heading -->
@@ -61,20 +61,18 @@ defined( 'ABSPATH' ) || exit;
 
 					<!-- wp:buttons -->
 					<div class="wp-block-buttons">
-						<!-- wp:button {"className":"btn-secondary"} -->
-						<div class="wp-block-button btn-secondary">
+						<!-- wp:button {"className":"btn-secondary full-width-mobile-button"} -->
+						<div class="wp-block-button btn-secondary w-100 d-grid d-md-inline-block w-md-auto">
 							<a class="wp-block-button__link">Page Link</a>
 						</div>
 						<!-- /wp:button -->
-
-						<!-- wp:button {"className":"btn-outline-secondary"} -->
-						<div class="wp-block-button btn-outline-secondary icon-end-chevron-right">
+						<!-- wp:button {"className":"btn-outline-secondary full-width-mobile-button"} -->
+						<div class="wp-block-button btn-outline-secondary icon-end-chevron-right w-100 d-grid d-md-inline-block w-md-auto">
 							<a class="wp-block-button__link">Action Link</a>
 						</div>
 						<!-- /wp:button -->
 					</div>
 					<!-- /wp:buttons -->
-
 				</div>
 				<!-- /wp:group -->
 			</div>
