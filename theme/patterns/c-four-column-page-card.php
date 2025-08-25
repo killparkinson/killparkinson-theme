@@ -1,64 +1,82 @@
 <?php
+
 /**
- * Title: Kip - Page Loop
- * Slug: bootscore-child/c-four-column-page-card
- * Categories: bootscore
- * Block Types: core/query
- *
- * @package Bootscore Child
+ * Title: KiP - Four Column Page Card
+ * Slug: themeslug/c-four-column-page-card
+ * Categories: featured
  */
 
-// Exit if accessed directly.
-defined( 'ABSPATH' ) || exit;
-
-// Example page IDs.
-$page_ids = [ 168, 171, 174, 177 ];
-
-// Fetch pages.
-$items = get_pages(
+// Example items (can be replaced dynamically)
+$items = [
 	[
-		'include'     => $page_ids,
-		'sort_column' => 'post__in',
-	]
-);
+		'image' => get_parent_theme_file_uri('assets/img/default.jpg'),
+		'title' => 'Promote our initiative',
+		'text'  => 'Spread the word by following us and sharing our mission with your friends.',
+		'link'  => '#',
+		'link_text' => '/promote-our-initiative'
+	],
+	[
+		'image' => get_parent_theme_file_uri('assets/img/default.jpg'),
+		'title' => 'Collaborate',
+		'text'  => 'Partner with us as a doctor, therapist, medical clinic, journalist, etc.',
+		'link'  => '#',
+		'link_text' => '/collaborate'
+	],
+	[
+		'image' => get_parent_theme_file_uri('assets/img/default.jpg'),
+		'title' => 'Join our team',
+		'text'  => 'Become a part of our amazing team and support our cause.',
+		'link'  => '#',
+		'link_text' => '/join-our-team'
+	],
+	[
+		'image' => get_parent_theme_file_uri('assets/img/default.jpg'),
+		'title' => 'Donate',
+		'text'  => 'Contribute financially to support our research and operations.',
+		'link'  => '#',
+		'link_text' => '/donate',
+	],
+];
 ?>
 
-<!-- wp:group {"tagName":"section","className":"py-5 hide-wp-block-classes","layout":{"type":"default"}} -->
-<section class="py-5 hide-wp-block-classes">
+
+
+<!-- wp:group {"tagName":"section","className":"py-5 hide-wp-block-classes"} -->
+<section class="wp-block-group py-5 hide-wp-block-classes">
 	<!-- wp:heading {"className":"display-5 fw-bold colour-last-word"} -->
 	<h2 class="wp-block-heading display-5 fw-bold colour-last-word">
 		How can you <span class="text-primary">help</span>
 	</h2>
 	<!-- /wp:heading -->
 
-	<?php if ( $items ) : ?>
+	<?php if ($items) : ?>
 		<!-- wp:group {"className":"container py-5","layout":{"type":"default"}} -->
-		<div class="container py-5">
+		<div class="wp-block-group container py-5">
 
 			<!-- wp:columns -->
 			<div class="wp-block-columns">
-				<?php foreach ( $items as $item ) : ?>
+				<?php foreach ($items as $item) : ?>
 					<!-- wp:column -->
 					<div class="wp-block-column">
 						<!-- wp:image {"sizeSlug":"full","linkDestination":"none"} -->
 						<figure class="wp-block-image size-full rounded">
-							<img src="<?php echo esc_url( get_the_post_thumbnail_url( $item->ID, 'medium' ) ); ?>" alt="" />
+							<img src="https://dummyimage.com/300x200/6c757d/ffffff" alt="" />
 						</figure>
 						<!-- /wp:image -->
 
-						<!-- wp:heading {"level":4} -->
-						<h4 class="wp-block-heading"><?php echo esc_html( get_the_title( $item->ID ) ); ?></h4>
+						<!-- wp:heading {"level":4, "className":"fw-bold"} -->
+						<h4 class="wp-block-heading fw-bold"><?php echo esc_html($item['title']); ?></h4>
 						<!-- /wp:heading -->
 
 						<!-- wp:paragraph -->
-						<p><?php echo esc_html( get_the_excerpt( $item->ID ) ); ?></p>
+						<p><?php echo esc_html($item['text']); ?></p>
 						<!-- /wp:paragraph -->
 
 						<!-- wp:buttons -->
 						<div class="wp-block-buttons">
-							<!-- wp:button -->
-							<div class="wp-block-button icon-end-chevron-right btn-link">
-								<a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( get_permalink( $item->ID ) ); ?>">
+							<!-- wp:button {"className": "icon-end-chevron-right btn-sm btn-link fw-bold"} -->
+							<div class="wp-block-button icon-end-chevron-right btn-sm btn-link fw-bold">
+								<a class="wp-block-button__link wp-element-button" href="<?php echo esc_html($item['link_text']); ?> ">
 									Read more
 								</a>
 							</div>
