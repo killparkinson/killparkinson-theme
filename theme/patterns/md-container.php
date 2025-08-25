@@ -4,13 +4,13 @@
  * Slug: theme/md-container
  * Categories: bootscore
  * https://developer.wordpress.org/themes/features/block-patterns/
- * 
+ *
  * @package Bootscore
  * @version 6.2.0
  */
 
 // Exit if accessed directly
-defined('ABSPATH') || exit;
+defined( 'ABSPATH' ) || exit;
 
 ?>
 <!-- wp:group {"metadata":{"name":"l - Container - container hide-wp-block-classes","categories":["bootscore"],"patternName":"bootscore/l.container"},"className":"container hide-wp-block-classes","style":{"dimensions":{"width":"900px"}},"layout":{"type":"default"}} -->
