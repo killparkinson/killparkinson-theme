@@ -540,7 +540,7 @@ function footer_language_switcher( $output, $args ) {
 	$current_lang_name = pll_current_language( 'name' );
 	$language_slugs    = pll_languages_list();
 
-	$custom_html = ''; // initialize to avoid "undefined variable" issues
+	$custom_html = ''; // initialize to avoid "undefined variable" issues.
 
 	if ( ! empty( $language_slugs ) ) {
 		$language_names   = pll_languages_list( [ 'fields' => 'name' ] );
@@ -576,7 +576,7 @@ function footer_language_switcher( $output, $args ) {
 		$custom_html .= '</ul></div>';
 	}
 
-	return $custom_html ?: $output;
+	return $custom_html;
 }
 
 add_filter( 'pll_the_languages', 'footer_language_switcher', 10, 2 );
