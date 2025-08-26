@@ -42,7 +42,7 @@
 }
 
 .btn-link {
-  --bs-btn-font-weight: 600;
+  --bs-btn-font-weight: var(--#{$prefix}btn-font-weight);
   --bs-btn-padding-y: 0;
   text-decoration: none;
 }
