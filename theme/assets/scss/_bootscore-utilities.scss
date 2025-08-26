@@ -23,20 +23,16 @@ $utilities: map-merge(
         75: 75vh,
       ),
     ),
-    "padding-x": (
+    "width": (
+      property: width,
       responsive: true,
-      property: padding-right padding-left,
-      class: px,
+      class: w,
       values: (
-        0: 0,
-        1: $spacer * 0.25,
-        2: $spacer * 0.5,
-        3: $spacer,
-        4: $spacer * 1.5,
-        5: $spacer * 3,
-        6: $spacer * 3.5,
-        7: $spacer * 4,
-        8: $spacer * .5,
+        25: 25%,
+        50: 50%,
+        75: 75%,
+        100: 100%,
+        auto: auto,
       ),
     ),
   )
