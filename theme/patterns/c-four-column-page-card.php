@@ -14,7 +14,7 @@ $items = [
 		'image'     => get_theme_file_uri( 'assets/img/default.jpg' ),
 		'title'     => 'Promote our initiative',
 		'text'      => 'Spread the word by following us and sharing our mission with your friends.',
-		'link'      => '/prmote-our-initiative',
+		'link'      => '/promote-our-initiative',
 		'link_text' => 'Follow us',
 	],
 	[
@@ -77,9 +77,7 @@ $items = [
 						<div class="wp-block-buttons">
 							<!-- wp:button {"className": "icon-end-chevron-right"} -->
 							<div class="wp-block-button icon-end-chevron-right fw-bold btn-link">
-								<a class="wp-block-button__link wp-element-button" href="<?php echo esc_html( $item['link_text'] ); ?> ">
-									<?php echo esc_html( $item['link_text'] ); ?>
-								</a>
+								<a class="wp-block-button__link wp-element-button" href="<?php echo esc_html( $item['link'] ); ?> "><?php echo esc_html( $item['link_text'] ); ?></a>
 							</div>
 							<!-- /wp:button -->
 						</div>
