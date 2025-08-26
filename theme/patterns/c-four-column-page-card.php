@@ -2,7 +2,8 @@
 /**
  * Title: KiP - Four Column Page Card
  * Slug: themeslug/c-four-column-page-card
- * Categories: featured
+ * Categories: bootscore
+ * https://developer.wordpress.org/themes/features/block-patterns/
  *
  * @package Bootscore
  * @version 6.0.0
