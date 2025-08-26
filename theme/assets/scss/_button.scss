@@ -40,3 +40,9 @@
   --#{$prefix}btn-active-color: var(--#{$prefix}dark);
   --#{$prefix}btn-active-bg: #{$gray-200};
 }
+
+.btn-link {
+  --bs-btn-font-weight: 600;
+  --bs-btn-padding-y: 0;
+  text-decoration: none;
+}
