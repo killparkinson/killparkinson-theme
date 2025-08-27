@@ -15,6 +15,7 @@ require_once 'inc/helpers.php';
 require_once 'inc/icon-shortcode.php';
 require_once 'inc/block-button-icons.php';
 require_once 'inc/block-button-variations.php';
+require_once 'inc/menu-icons/menu-icons.php';
 
 /**
  * Enqueue scripts and styles
