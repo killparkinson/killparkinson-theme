@@ -12,19 +12,19 @@
 
   .nav-link {
     display: flex;
-    font-weight: 500;
-    margin: 0 calc(-1 * var(--#{$prefix}offcanvas-padding-x));
-    padding-left: var(--#{$prefix}offcanvas-padding-x);
     padding-right: var(--#{$prefix}offcanvas-padding-x);
+    padding-left: var(--#{$prefix}offcanvas-padding-x);
+    margin: 0 calc(-1 * var(--#{$prefix}offcanvas-padding-x));
+    font-weight: 500;
 
     .icon {
+      width: 2em;
+      height: 2em;
+      padding: .3em;
       color: $pink;
       background-color: $pink-50;
       border: 1px solid $pink-300;
       border-radius: 50%;
-      height: 2em;
-      width: 2em;
-      padding: 0.3em;
     }
   }
 }
@@ -32,10 +32,10 @@
 @include media-breakpoint-up(lg) {
   .navbar .nav-link {
     display: inline-flex;
-    font-weight: 400;
     margin: 0;
+    font-weight: 400;
 
-    .icon, ._icon {
+    .icon {
       display: none;
     }
   }
