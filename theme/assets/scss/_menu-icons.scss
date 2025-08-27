@@ -1,0 +1,17 @@
+.mi-preview.menu-item a > .icon {
+  height: 1em;
+}
+
+.mi-preview.menu-item a > * {
+  display: inline !important;
+}
+
+.menu-icons-wrap ._icon.icon {
+  height: 1em;
+  width: 1em;
+}
+
+.menu-icons-wrap .submitdelete,
+.menu-icons-wrap p a, .menu-icons-wrap p label {
+  display: inline !important;
+}
