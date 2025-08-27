@@ -10,10 +10,12 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
+require_once get_template_directory() . '/inc/scss-compiler.php';
 require_once 'inc/helpers.php';
 require_once 'inc/icon-shortcode.php';
 require_once 'inc/block-button-icons.php';
 require_once 'inc/block-button-variations.php';
+require_once 'inc/menu-icons/menu-icons.php';
 
 /**
  * Enqueue scripts and styles
@@ -36,6 +38,26 @@ function bootscore_child_enqueue_styles() {
 	wp_enqueue_script( 'custom-js', get_stylesheet_directory_uri() . '/assets/js/custom.js', array( 'jquery' ), $modificated_custom_js, false, true );
 }
 
+/**
+ * Enqueues the compiled admin CSS stylesheet for the Bootscore child theme.
+ *
+ * This function compiles the admin.scss file into CSS using a SCSS compiler,
+ * then enqueues the resulting admin.css file with a version query parameter
+ * based on the file's modification time to ensure caching is handled correctly.
+ */
+function bootscore_child_admin_enqueue_styles() {
+	// Compile the admin.scss file.
+	$scss_compiler_editor = new BootscoreScssCompiler();
+	$scss_compiler_editor->scssFile( '/assets/scss/admin.scss' )
+						->cssFile( '/assets/css/admin.css' )
+						->addModifiedCheckTheme()
+						->skipEnvironmentCheck()
+						->compile();
+	// admin.css.
+	$modified_bootscore_child_admin_css = gmdate( 'YmdHi', filemtime( get_stylesheet_directory() . '/assets/css/admin.css' ) );
+	wp_enqueue_style( 'admin-style', get_stylesheet_directory_uri() . '/assets/css/admin.css', array(), $modified_bootscore_child_admin_css );
+}
+add_action( 'admin_enqueue_scripts', 'bootscore_child_admin_enqueue_styles' );
 
 /**
  * Unregisters the core post excerpt block type from Gutenberg editor.

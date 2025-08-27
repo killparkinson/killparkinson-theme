@@ -1,0 +1,20 @@
+.mi-preview.menu-item a > .icon {
+  height: 1em;
+}
+
+.mi-preview.menu-item a > * {
+  /* stylelint-disable-next-line declaration-no-important */
+  display: inline !important;
+}
+
+.field-icon.menu-icons-wrap .icon {
+  width: 1em;
+  height: 1em;
+}
+
+.menu-icons-wrap .submitdelete,
+.menu-icons-wrap p a,
+.menu-icons-wrap p label {
+  /* stylelint-disable-next-line declaration-no-important */
+  display: inline !important;
+}

@@ -1,3 +1,11 @@
+a:has(.icon) {
+  display: inline-flex;
+  gap: .375rem;
+  align-items: center;
+  text-underline-offset: .25em;
+  backface-visibility: hidden;
+}
+
 .icon {
   width: 1em;
   height: 1em;
