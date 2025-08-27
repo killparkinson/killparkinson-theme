@@ -60,7 +60,6 @@ function my_remove_menu_icons_type( $types ) {
 	unset( $types['foundation-icons'] );
 	unset( $types['genericon'] );
 	unset( $types['image'] );
-	unset( $types['svg'] );
 
 	return $types;
 }
