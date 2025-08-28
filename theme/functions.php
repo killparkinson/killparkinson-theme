@@ -463,7 +463,7 @@ add_filter( 'bootscore/icon/comments', 'change_comments_icon' );
 function change_home_icon() {
 	return icon( 'home' );
 }
-// add_filter( 'bootscore/icon/home', 'change_home_icon' );
+add_filter( 'bootscore/icon/home', 'change_home_icon' );
 
 /**
  * Change to-top button icon
@@ -627,7 +627,7 @@ add_filter( 'wpseo_breadcrumb_separator', 'replace_breadcrumb_separator' );
 		if ( ! is_home() ) {
 			echo '<nav aria-label="breadcrumb" class="' . apply_filters( 'bootscore/class/breadcrumb/nav', 'overflow-x-auto text-nowrap mb-4 mt-2 py-2' ) . '">';
 			echo '<ol class="breadcrumb ' . apply_filters( 'bootscore/class/breadcrumb/ol', 'flex-nowrap mb-0' ) . '">';
-			echo '<li class="breadcrumb-item"><a class="' . apply_filters( 'bootscore/class/breadcrumb/item/link', '' ) . '" href="' . home_url() . '">' . '' . apply_filters( 'bootscore/icon/home', '' ) . '<span class="">' . __( 'Home', 'child-theme' ) . '</span>' . '</a></li>';
+			echo '<li class="breadcrumb-item"><a class="' . apply_filters( 'bootscore/class/breadcrumb/item/link', '' ) . '" href="' . home_url() . '">' . '' . '<span class="">' . __( 'Home', 'child-theme' ) . '</span>' . '</a></li>';
 			// display parent category names with links
 			if ( is_category() || is_single() ) {
 				$cat_IDs = wp_get_post_categories( get_the_ID() );
