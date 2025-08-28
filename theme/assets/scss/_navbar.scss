@@ -21,6 +21,10 @@
 
   .navbar-brand {
     height: 45px;
+
+    &:hover {
+      background-color: transparent;
+    }
   }
 }
 
