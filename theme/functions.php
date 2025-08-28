@@ -605,22 +605,6 @@ function footer_language_switcher( $output, $args ) {
 
 add_filter( 'pll_the_languages', 'footer_language_switcher', 10, 2 );
 
-
-/**
- * Replace the breadcrumbs separators.
- *
- * @param  string $output What it normally outputs.
- * @return string
- */
-function replace_breadcrumb_separator( string $output ): string {
-	$output = '  <svg class="icon">
-    <use href="/wp-content/themes/kp-theme/assets/fonts/icon.svg#chevron-right" />
-  </svg>';
-
-	return $output;
-}
-add_filter( 'wpseo_breadcrumb_separator', 'replace_breadcrumb_separator' );
-
 /**
  * Replace the breadcrumbs.
  */
