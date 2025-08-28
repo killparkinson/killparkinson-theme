@@ -12,6 +12,7 @@
 
   .nav-link {
     display: flex;
+    gap: 1rem;
     padding-right: var(--#{$prefix}offcanvas-padding-x);
     padding-left: var(--#{$prefix}offcanvas-padding-x);
     margin: 0 calc(-1 * var(--#{$prefix}offcanvas-padding-x));
