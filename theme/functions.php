@@ -463,7 +463,7 @@ add_filter( 'bootscore/icon/comments', 'change_comments_icon' );
 function change_home_icon() {
 	return icon( 'home' );
 }
-add_filter( 'bootscore/icon/home', 'change_home_icon' );
+// add_filter( 'bootscore/icon/home', 'change_home_icon' );
 
 /**
  * Change to-top button icon
@@ -604,3 +604,45 @@ function footer_language_switcher( $output, $args ) {
 }
 
 add_filter( 'pll_the_languages', 'footer_language_switcher', 10, 2 );
+
+
+/**
+ * Replace the breadcrumbs separators.
+ *
+ * @param  string $output What it normally outputs.
+ * @return string
+ */
+function replace_breadcrumb_separator( string $output ): string {
+	$output = '  <svg class="icon">
+    <use href="/wp-content/themes/kp-theme/assets/fonts/icon.svg#chevron-right" />
+  </svg>';
+
+	return $output;
+}
+add_filter( 'wpseo_breadcrumb_separator', 'replace_breadcrumb_separator' );
+
+
+	function the_breadcrumb() {
+
+		if ( ! is_home() ) {
+			echo '<nav aria-label="breadcrumb" class="' . apply_filters( 'bootscore/class/breadcrumb/nav', 'overflow-x-auto text-nowrap mb-4 mt-2 py-2' ) . '">';
+			echo '<ol class="breadcrumb ' . apply_filters( 'bootscore/class/breadcrumb/ol', 'flex-nowrap mb-0' ) . '">';
+			echo '<li class="breadcrumb-item"><a class="' . apply_filters( 'bootscore/class/breadcrumb/item/link', '' ) . '" href="' . home_url() . '">' . '' . apply_filters( 'bootscore/icon/home', '' ) . '<span class="">' . __( 'Home', 'child-theme' ) . '</span>' . '</a></li>';
+			// display parent category names with links
+			if ( is_category() || is_single() ) {
+				$cat_IDs = wp_get_post_categories( get_the_ID() );
+				foreach ( $cat_IDs as $cat_ID ) {
+					$cat = get_category( $cat_ID );
+					echo '<li class="breadcrumb-item lh-1 d-flex align-items-center"><a class="' . apply_filters( 'bootscore/class/breadcrumb/item/link', '' ) . '" href="' . get_term_link( $cat->term_id ) . '">' . $cat->name . '</a></li>';
+				}
+			}
+			// display current page name
+			if ( is_page() || is_single() ) {
+				echo '<li class="breadcrumb-item active lh-1 d-flex align-items-center" aria-current="page">' . get_the_title() . '</li>';
+			}
+			echo '</ol>';
+			echo '</nav>';
+		}
+	}
+
+	add_filter( 'breadcrumbs', 'breadcrumbs' );
