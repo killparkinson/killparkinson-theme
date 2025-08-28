@@ -13,7 +13,10 @@ defined( 'ABSPATH' ) || exit;
 
 get_header();
 ?>	
-	<div id="content" class="site-content <?php echo esc_html( apply_filters( 'bootscore/class/container', 'container', 'page-blank-with-container' ) ); ?>">
+	<div id="content" class="site-content <?php 	// phpcs:disable
+	echo esc_html( apply_filters( 'bootscore/class/container', 'container', 'page-blank-with-container' ) ); // phpcs:enable
+	?>
+">
 	<div id="primary" class="content-area">
 
 		<main id="main" class="site-main">
