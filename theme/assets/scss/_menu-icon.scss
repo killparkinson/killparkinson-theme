@@ -1,0 +1,15 @@
+.menu-icon-circle .icon{
+  width: 2em;
+  height: 2em;
+  padding: .3em;
+  color: $pink;
+  background-color: $pink-50;
+  border: 1px solid $pink-300;
+  border-radius: 50%;
+}
+
+@include media-breakpoint-up(lg) {
+  .menu-icon-lg-hidden .icon {
+    display: none;
+  }
+}
