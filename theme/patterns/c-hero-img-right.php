@@ -29,9 +29,13 @@ defined( 'ABSPATH' ) || exit;
 	<div class="wp-block-group col-lg-5"><!-- wp:group {"metadata":{"name":"h-100 d-flex align-items-center"},"className":"h-100 d-flex align-items-center","layout":{"type":"default"}} -->
 		<div class="wp-block-group h-100 d-flex align-items-center"><!-- wp:group {"metadata":{"name":"text-block"},"className":"text-block","layout":{"type":"default"}} -->
 			<div class="wp-block-group text-block">
-				<!-- wp:heading {"level":1, "metadata":{"name":"display-5 fw-bold mb-2 colour-last-word"},"className":"display-5 fw-bold mb-2 colour-last-word"} -->
-				<h1 class="wp-block-heading display-5 fw-bold mb-2 colour-last-word">Parkinson's<span class="text-primary">basics</span></h1>
+				<!-- wp:heading {"metadata":{"name":"display-5 fw-bold mb-2 colour-last-word"},"className":"display-5 fw-bold mb-2 colour-last-word"} -->
+				<h2 class="wp-block-heading display-5 fw-bold mb-2 colour-last-word">
+					Parkinson's
+					<span class="text-primary">basics</span>
+				</h2>
 				<!-- /wp:heading -->
+				 
 				<!-- wp:paragraph {"metadata":{"name":""},"className":"lead"} -->
 				<p>Parkinson's disease is a complex neurological condition affecting millions. Though its cause remains
 					unknown, understanding its symptoms and diagnosis is vital for early detection, effective
