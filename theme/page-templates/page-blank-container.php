@@ -18,7 +18,6 @@ get_header();
 	echo esc_html( apply_filters( 'bootscore/class/container', 'container', 'page-blank-with-container' ) );  // phpcs:ignore WordPress.NamingConventions.ValidHookName.UseUnderscores
 	?>
 	">
-?>">
 	<div id="primary" class="content-area">
 
 		<main id="main" class="site-main">
