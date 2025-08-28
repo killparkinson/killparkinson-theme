@@ -71,18 +71,27 @@ add_filter( 'menu_icons_types', 'my_remove_menu_icons_type' );
  * @param string  $markup  Menu item title markup.
  * @param integer $id      Menu item ID.
  * @param array   $meta    Menu item meta values.
- * @param string  $title   Menu item title.
  *
  * @return string
  */
-function my_menu_icons_override_markup( $markup, $id, $meta, $title ) {
-	if ( 'feather' !== $meta['type'] ) {
-		return $markup;
+function my_menu_icons_override_markup( $markup, $id, $meta ) {
+	if ( 'feather' === $meta['type'] ) {
+		$icon   = icon( $meta['icon'] );
+		$markup = preg_replace( '/<i[^>]*>.*?<\/i>/i', $icon, $markup );
+	} elseif ( 'svg' === $meta['type'] ) {
+		$markup = preg_replace( '/_svg/i', 'icon icon-svg', $markup );
 	}
-
-	$icon   = icon( $meta['icon'] );
-	$markup = preg_replace( '/<i[^>]*>.*?<\/i>/i', $icon, $markup );
 
 	return $markup;
 }
-add_filter( 'menu_icons_item_title', 'my_menu_icons_override_markup', 10, 4 );
+add_filter( 'menu_icons_item_title', 'my_menu_icons_override_markup', 10, 3 );
+
+/**
+ * Dequeues the extra CSS stylesheet for menu icons.
+ *
+ * @return void
+ */
+function dequeue_menu_icons_extra_css() {
+	wp_dequeue_style( 'menu-icons-extra' );
+}
+add_action( 'wp_enqueue_scripts', 'dequeue_menu_icons_extra_css' );
