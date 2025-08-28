@@ -23,7 +23,7 @@ get_header();
 		<main id="main" class="site-main">
 
 		<div class="entry-content">
-					<?php the_breadcrumb(); ?>
+			<?php the_breadcrumb(); ?>
 			<?php the_post(); ?>
 			<?php the_content(); ?>
 		</div>
