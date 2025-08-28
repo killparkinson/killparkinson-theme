@@ -1,6 +1,6 @@
 .navbar {
   .top-nav-widget .btn-primary {
-    padding: calc(2 * var(--#{$prefix}navbar-padding-y)) calc(2 * #{$btn-padding-x});
+    padding: calc(2.8 * var(--#{$prefix}navbar-padding-y)) calc(2 * #{$btn-padding-x});
     margin: calc(calc(-1 * var(--#{$prefix}navbar-padding-y) - var(--#{$prefix}border-width))) 0;
     font-weight: 700;
     border-radius: 0;
@@ -12,10 +12,19 @@
 
   .nav-link {
     display: flex;
+    gap: 1rem;
     padding-right: var(--#{$prefix}offcanvas-padding-x);
     padding-left: var(--#{$prefix}offcanvas-padding-x);
     margin: 0 calc(-1 * var(--#{$prefix}offcanvas-padding-x));
     font-weight: 500;
+  }
+
+  .navbar-brand {
+    height: 45px;
+
+    &:hover {
+      background-color: transparent;
+    }
   }
 }
 
@@ -38,12 +47,12 @@
 
   .navbar-expand-lg {
     .top-nav-widget .btn-primary {
-      padding: calc(2 * var(--#{$prefix}navbar-padding-y)) calc(3 * #{$btn-padding-x});
+      padding: calc(2.1 * var(--#{$prefix}navbar-padding-y)) calc(3 * #{$btn-padding-x});
     }
 
     .navbar-nav .nav-link {
-      padding-top: calc(2 * var(--#{$prefix}navbar-padding-y));
-      padding-bottom: calc(2 * var(--#{$prefix}navbar-padding-y));
+      padding-top: calc(2.1 * var(--#{$prefix}navbar-padding-y));
+      padding-bottom: calc(2.1 * var(--#{$prefix}navbar-padding-y));
       margin-top: calc(calc(-1 * var(--#{$prefix}navbar-padding-y) - var(--#{$prefix}border-width)));
       margin-bottom: calc(-1 * var(--#{$prefix}navbar-padding-y));
       border-bottom: 3px solid transparent;
