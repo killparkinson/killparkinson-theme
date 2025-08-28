@@ -15,9 +15,9 @@ defined( 'ABSPATH' ) || exit;
 ?>
 <!-- wp:group {"metadata":{"name":"l - Container - container hide-wp-block-classes",
 							"categories":["bootscore"],"patternName":"bootscore/l.container"},
-							"className":"container hide-wp-block-classes w-100 w-md-75 mx-auto",
+							"className":"container hide-wp-block-classes col-md-6 offset-md-3",
 							"layout":{"type":"default"}} -->
-<div class="wp-block-group w-100 w-md-75 mx-auto hide-wp-block-classes">
+<div class="wp-block-group col-md-6 offset-md-3 hide-wp-block-classes">
 	<!-- wp:paragraph {"className":"placeholder col-12 placeholder-lg bg-primary w-100 h-100"} -->
 	<p class="placeholder placeholder col-12 placeholder-lg">This is a <code>container</code></p>
 	<!-- /wp:paragraph -->
