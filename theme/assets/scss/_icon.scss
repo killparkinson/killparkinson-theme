@@ -10,14 +10,11 @@ a:has(.icon) {
   width: 1em;
   height: 1em;
   vertical-align: -.125em;
-
-  &svg {
-    fill: none;
-    stroke: currentcolor;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    stroke-width: 2;
-  }
+  fill: none;
+  stroke: currentcolor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
 }
 
 .icon-lg {
