@@ -604,3 +604,48 @@ function footer_language_switcher( $output, $args ) {
 }
 
 add_filter( 'pll_the_languages', 'footer_language_switcher', 10, 2 );
+
+/**
+ * Replace the breadcrumbs.
+ */
+function the_breadcrumb() {
+	if ( is_home() ) {
+		return;
+	}
+
+	// phpcs:ignore WordPress.NamingConventions.ValidHookName.UseUnderscores
+	$nav_classes = apply_filters( 'bootscore/class/breadcrumb/nav', 'overflow-x-auto text-nowrap mb-4 mt-2 py-2' );
+	// phpcs:ignore WordPress.NamingConventions.ValidHookName.UseUnderscores
+	$ol_classes = apply_filters( 'bootscore/class/breadcrumb/ol', 'flex-nowrap mb-0' );
+	// phpcs:ignore WordPress.NamingConventions.ValidHookName.UseUnderscores
+	$link_class = apply_filters( 'bootscore/class/breadcrumb/item/link', '' );
+
+	echo '<nav aria-label="breadcrumb" class="' . esc_html( $nav_classes ) . '">';
+	echo '<ol class="breadcrumb ' . esc_html( $ol_classes ) . '">';
+	echo '<li class="breadcrumb-item">
+		<a class="' . esc_attr( $link_class ) . '" href="' . esc_url( home_url() ) . '">
+			<span>' . esc_html__( 'Home', 'child-theme' ) . '</span>
+		</a>
+	</li>';
+
+	// display parent category names with links.
+	if ( is_category() || is_single() ) {
+		$cat_ids = wp_get_post_categories( get_the_ID() );
+		foreach ( $cat_ids as $cat_id ) {
+			$cat = get_category( $cat_id );
+			echo '<li class="breadcrumb-item lh-1 d-flex align-items-center">
+				<a class="' . esc_attr( $link_class ) . '" href="' . esc_url( get_term_link( $cat->term_id ) ) . '">
+					' . esc_html( $cat->name ) . '
+				</a>
+			</li>';
+		}
+	}
+
+	// display current page name.
+	if ( is_page() || is_single() ) {
+		echo '<li class="breadcrumb-item active lh-1 d-flex align-items-center" aria-current="page">' . esc_html( get_the_title() ) . '</li>';
+	}
+
+	echo '</ol>';
+	echo '</nav>';
+}
