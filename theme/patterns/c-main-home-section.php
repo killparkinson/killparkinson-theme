@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: KiP - Main Home Section
- * Slug: theme/main-home-section
+ * Slug: theme/c-main-home-section
  * Categories: bootscore
  * https://developer.wordpress.org/themes/features/block-patterns/
  *
