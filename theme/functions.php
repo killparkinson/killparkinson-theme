@@ -624,6 +624,7 @@ add_filter( 'wpseo_breadcrumb_separator', 'replace_breadcrumb_separator' );
 /**
  * Replace the breadcrumbs.
  */
+// phpcs:disable
 function the_breadcrumb() {
 
 	if ( ! is_home() ) {
@@ -656,5 +657,5 @@ function the_breadcrumb() {
 		echo '</nav>';
 	}
 }
-
-	add_filter( 'breadcrumbs', 'breadcrumbs' );
+// phpcs:enable
+add_filter( 'breadcrumbs', 'breadcrumbs' );
