@@ -621,28 +621,40 @@ function replace_breadcrumb_separator( string $output ): string {
 }
 add_filter( 'wpseo_breadcrumb_separator', 'replace_breadcrumb_separator' );
 
+/**
+ * Replace the breadcrumbs.
+ */
+function the_breadcrumb() {
 
-	function the_breadcrumb() {
+	if ( ! is_home() ) {
+		echo '<nav aria-label="breadcrumb" class="' . esc_html( apply_filters( 'bootscore/class/breadcrumb/nav', 'overflow-x-auto text-nowrap mb-4 mt-2 py-2' ) ) . '">';
+		echo '<ol class="breadcrumb ' . esc_html( apply_filters( 'bootscore/class/breadcrumb/ol', 'flex-nowrap mb-0' ) ) . '">';
+		echo '<li class="breadcrumb-item">
+        <a class="' . esc_attr( apply_filters( 'bootscore/class/breadcrumb/item/link', '' ) ) . '" href="' . esc_url( home_url() ) . '">
+            <span>' . esc_html__( 'Home', 'child-theme' ) . '</span>
+        </a>
+      </li>';
 
-		if ( ! is_home() ) {
-			echo '<nav aria-label="breadcrumb" class="' . apply_filters( 'bootscore/class/breadcrumb/nav', 'overflow-x-auto text-nowrap mb-4 mt-2 py-2' ) . '">';
-			echo '<ol class="breadcrumb ' . apply_filters( 'bootscore/class/breadcrumb/ol', 'flex-nowrap mb-0' ) . '">';
-			echo '<li class="breadcrumb-item"><a class="' . apply_filters( 'bootscore/class/breadcrumb/item/link', '' ) . '" href="' . home_url() . '">' . '' . '<span class="">' . __( 'Home', 'child-theme' ) . '</span>' . '</a></li>';
-			// display parent category names with links
-			if ( is_category() || is_single() ) {
-				$cat_IDs = wp_get_post_categories( get_the_ID() );
-				foreach ( $cat_IDs as $cat_ID ) {
-					$cat = get_category( $cat_ID );
-					echo '<li class="breadcrumb-item lh-1 d-flex align-items-center"><a class="' . apply_filters( 'bootscore/class/breadcrumb/item/link', '' ) . '" href="' . get_term_link( $cat->term_id ) . '">' . $cat->name . '</a></li>';
-				}
+		// display parent category names with links.
+		if ( is_category() || is_single() ) {
+			$cat_ids = wp_get_post_categories( get_the_ID() );
+			foreach ( $cat_ids as $cat_id ) {
+				$cat = get_category( $cat_id );
+				echo '<li class="breadcrumb-item lh-1 d-flex align-items-center">
+                <a class="' . esc_attr( apply_filters( 'bootscore/class/breadcrumb/item/link', '' ) ) . '" href="' . esc_url( get_term_link( $cat->term_id ) ) . '">
+                    ' . esc_html( $cat->name ) . '
+                </a>
+              </li>';
 			}
-			// display current page name
-			if ( is_page() || is_single() ) {
-				echo '<li class="breadcrumb-item active lh-1 d-flex align-items-center" aria-current="page">' . get_the_title() . '</li>';
-			}
-			echo '</ol>';
-			echo '</nav>';
 		}
+
+		// display current page name.
+		if ( is_page() || is_single() ) {
+			echo '<li class="breadcrumb-item active lh-1 d-flex align-items-center" aria-current="page">' . esc_html( get_the_title() ) . '</li>';
+		}
+		echo '</ol>';
+		echo '</nav>';
 	}
+}
 
 	add_filter( 'breadcrumbs', 'breadcrumbs' );
