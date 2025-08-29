@@ -1,0 +1,36 @@
+.rounded-dot-image {
+  --#{$prefix}rounded-dot-width: 24rem;
+  --#{$prefix}rounded-dot-height: 27.125rem;
+  --#{$prefix}rounded-dot-bg: #{$pink-50};
+  --#{$prefix}rounded-dot-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='449.898' viewBox='0 0 105.833 119.036' xmlns:v='https://vecta.io/nano'%3E%3Cpath d='M0 0v66.187c.037 29.247 23.564 52.79 52.806 52.849h.387c29.16-.148 52.597-23.648 52.641-52.834V0z'/%3E%3C/svg%3E");
+
+  position: relative;
+  width: var(--#{$prefix}rounded-dot-width);
+  height: var(--#{$prefix}rounded-dot-height);
+
+  mask-image: var(--#{$prefix}rounded-dot-mask);
+  mask-repeat: no-repeat;
+  mask-size: 100% 100%;
+
+  &::after {
+    position: absolute;
+    top: calc(var(--#{$prefix}rounded-dot-height) - var(--#{$prefix}rounded-dot-width));
+    right: 0;
+    bottom: 0;
+    left: 0;
+    content: "";
+    background-color: var(--#{$prefix}rounded-dot-bg);
+    border-radius: 50%;
+  }
+
+  img {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+  }
+
+  &.rounded-dot-image-sm {
+    --#{$prefix}rounded-dot-width: 19rem;
+    --#{$prefix}rounded-dot-height: 22.125rem;
+  }
+}
