@@ -1,0 +1,33 @@
+.editor-styles-wrapper {
+  .editor-post-title {
+    text-align: center;
+  }
+
+  .is-root-container > .wp-block[data-type],
+  .editor-post-title {
+    max-width: map-get($container-max-widths, "sm");
+    padding-right: calc(#{$grid-gutter-width} * .5);
+    padding-left: calc(#{$grid-gutter-width} * .5);
+
+    &.row {
+      margin-right: calc(-.5 * #{$grid-gutter-width});
+      margin-left: calc(-.5 * #{$grid-gutter-width});
+    }
+
+    @include media-breakpoint-up(md) {
+      max-width: map-get($container-max-widths, "md");
+    }
+
+    @include media-breakpoint-up(lg) {
+      max-width: map-get($container-max-widths, "lg");
+    }
+
+    @include media-breakpoint-up(xl) {
+      max-width: map-get($container-max-widths, "xl");
+    }
+
+    @include media-breakpoint-up(xxl) {
+      max-width: map-get($container-max-widths, "xxl");
+    }
+  }
+}
