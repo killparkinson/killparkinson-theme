@@ -13,8 +13,8 @@
 defined( 'ABSPATH' ) || exit;
 
 ?>
-<!-- wp:group {"metadata":{"name":"c - Hero image right - row mb-3 hide-wp-block-classes","categories":["bootscore"],"patternName":"bootscore/hero-img-right"},"className":"row h-100 mb-3 hide-wp-block-classes","layout":{"type":"default"}} -->
-<div class="wp-block-group row min-vh-75 mb-3 mt-6 hide-wp-block-classes">
+<!-- wp:group {"metadata":{"name":"c - KiP - Main Home Section","categories":["bootscore"],"patternName":"bootscore/hero-img-right"},"className":"row min-vh-75 my-5 hide-wp-block-classes","layout":{"type":"default"}} -->
+<div class="wp-block-group row min-vh-75 my-5 hide-wp-block-classes">
 	<!-- wp:group {"metadata":{"name":"col-lg-6 order-lg-2"},"className":"col-lg-6 order-lg-2","layout":{"type":"default"}} -->
 	<div class="wp-block-group col-lg-6 order-lg-2">
 		<!-- wp:group {"metadata":{"name":"h-100 d-flex align-items-center"},"className":"h-100 d-flex align-items-center justify-content-end","layout":{"type":"default"}} -->
