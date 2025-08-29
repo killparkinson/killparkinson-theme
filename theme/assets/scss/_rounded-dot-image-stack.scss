@@ -1,0 +1,89 @@
+.rounded-dot-image-stack {
+  .rounded-dot-image {
+    --#{$prefix}rounded-dot-width: 13rem;
+    --#{$prefix}rounded-dot-height: 15.125rem;
+
+    img {
+      transform: translateY(.3rem);
+    }
+  }
+
+  .rounded-dot-image-sm {
+    --#{$prefix}rounded-dot-width: 9rem;
+    --#{$prefix}rounded-dot-height: 10.125rem;
+  }
+}
+
+@include media-breakpoint-up(sm) {
+  .rounded-dot-image-stack {
+    .rounded-dot-image {
+      --#{$prefix}rounded-dot-width: 16rem;
+      --#{$prefix}rounded-dot-height: 18.125rem;
+
+      img {
+        transform: translateY(0);
+      }
+    }
+
+    .rounded-dot-image-sm {
+      --#{$prefix}rounded-dot-width: 12rem;
+      --#{$prefix}rounded-dot-height: 14.125rem;
+    }
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .rounded-dot-image-stack {
+    .rounded-dot-image {
+      --#{$prefix}rounded-dot-width: 18rem;
+      --#{$prefix}rounded-dot-height: 20.125rem;
+    }
+
+    .rounded-dot-image-sm {
+      --#{$prefix}rounded-dot-width: 14rem;
+      --#{$prefix}rounded-dot-height: 16.125rem;
+    }
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .rounded-dot-image-stack {
+    .rounded-dot-image {
+      --#{$prefix}rounded-dot-width: 19rem;
+      --#{$prefix}rounded-dot-height: 21.125rem;
+    }
+
+    .rounded-dot-image-sm {
+      --#{$prefix}rounded-dot-width: 13rem;
+      --#{$prefix}rounded-dot-height: 15.125rem;
+    }
+  }
+}
+
+@include media-breakpoint-up(xl) {
+  .rounded-dot-image-stack {
+    .rounded-dot-image {
+      --#{$prefix}rounded-dot-width: 22rem;
+      --#{$prefix}rounded-dot-height: 25.125rem;
+    }
+
+    .rounded-dot-image-sm {
+      --#{$prefix}rounded-dot-width: 15rem;
+      --#{$prefix}rounded-dot-height: 17.125rem;
+    }
+  }
+}
+
+@include media-breakpoint-up(xxl) {
+  .rounded-dot-image-stack {
+    .rounded-dot-image {
+      --#{$prefix}rounded-dot-width: 24rem;
+      --#{$prefix}rounded-dot-height: 27.125rem;
+    }
+
+    .rounded-dot-image-sm {
+      --#{$prefix}rounded-dot-width: 17rem;
+      --#{$prefix}rounded-dot-height: 20.125rem;
+    }
+  }
+}
