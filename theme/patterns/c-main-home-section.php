@@ -48,8 +48,8 @@ defined( 'ABSPATH' ) || exit;
 	<div class="wp-block-group col-xl-6">
 		<!-- wp:group {"metadata":{"name":"h-100 d-flex align-items-center"},"className":"h-100 d-flex align-items-center","layout":{"type":"default"}} -->
 		<div class="wp-block-group h-100 d-flex align-items-center">
-			<!-- wp:group {"metadata":{"name":"text-block"},"className":"text-block","layout":{"type":"default"}} -->
-			<div class="wp-block-group text-block">
+			<!-- wp:group -->
+			<div class="wp-block-group">
 
 				<!-- wp:heading {"metadata":{"name":"display-5 fw-bold mb-2"},"className":"display-5 fw-bold"} -->
 				<h2 class="wp-block-heading display-5 fw-bold mb-2">Let’s kill Parkinson's by providing our <span
