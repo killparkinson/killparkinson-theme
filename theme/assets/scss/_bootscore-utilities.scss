@@ -3,6 +3,15 @@
   https://getbootstrap.com/docs/5.3/utilities/api/
 */
 
+$position-values: (
+  0: 0,
+  25: 25%,
+  50: 50%,
+  75: 75%,
+  100: 100%,
+  auto: auto,
+);
+
 $utilities: map-merge(
   $utilities,
   (
@@ -33,5 +42,31 @@ $utilities: map-merge(
         auto: auto,
       ),
     ),
+    "top": (
+      property: top,
+      responsive: true,
+      values: (
+        0: 0,
+        20: 20%,
+        25: 25%,
+        40: 40%,
+        50: 50%,
+        60: 60%,
+        75: 75%,
+        100: 100%,
+      )
+    ),
+    "start": (
+      property: left,
+      class: start,
+      responsive: true,
+      values: $position-values
+    ),
+    "end": (
+      property: right,
+      class: end,
+      responsive: true,
+      values: $position-values
+    )
   )
 );
