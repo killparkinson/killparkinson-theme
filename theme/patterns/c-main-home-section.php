@@ -17,28 +17,26 @@ defined( 'ABSPATH' ) || exit;
 <div class="wp-block-group row min-vh-75 my-5 hide-wp-block-classes">
 	<!-- wp:group {"metadata":{"name":"col-lg-6 order-lg-2"},"className":"col-lg-6 order-lg-2","layout":{"type":"default"}} -->
 	<div class="wp-block-group col-lg-6 order-lg-2">
-		<!-- wp:group {"metadata":{"name":"h-100 d-flex align-items-center"},"className":"h-100 d-flex align-items-center justify-content-end","layout":{"type":"default"}} -->
-		<div class="wp-block-group d-flex align-items-center justify-content-end relative main-section-img-container">
-			<!-- wp:group {"className":"main-section-img-first rounded-circle"} -->
-			<div class="wp-block-group main-section-img-first rounded-circle"">
-				<!-- wp:image {"sizeSlug":"large","className":"rounded-circle mb-0"} -->
-				<figure class="wp-block-image size-large rounded-circle mb-0 "><img
-						src="http://localhost:8080/wp-content/uploads/2025/08/52e5b36d2ace146e7fa001b2becd8b853aec7f32.png"
-						alt="" /></figure>
+		<!-- wp:group {"metadata":{"name":"position-relative h-100 rounded-dot-image-stack","layout":{"type":"default"}} -->
+		<div class="wp-block-group position-relative h-100 rounded-dot-image-stack">
+			<!-- wp:group {"className":"position-absolute top-75 top-lg-60 start-0 translate-middle-y ms-md-4 ms-lg-3 z-1"} -->
+			<div class="wp-block-group position-absolute top-75 top-lg-60 start-0 translate-middle-y ms-md-4 ms-lg-3 z-1">
+				<!-- wp:image {"sizeSlug":"large","className":"rounded-dot-image mb-0"} -->
+				<figure class="wp-block-image size-large rounded-dot-image mb-0">
+					<img src="<?php echo esc_url( get_theme_file_uri( '/assets/img/rounded-dot-image_1.avif' ) ); ?>" alt="">
+				</figure>
 				<!-- /wp:image -->
 			</div>
 			<!-- /wp:group -->
-			<!-- wp:group {"className":"main-section-img-second"} -->
-			<div class="wp-block-group main-section-img-second rounded-circle"">
-				<!-- wp:image {"sizeSlug":"large","className":"rounded-circle mb-0 bg-"} -->
-				<figure class="wp-block-image size-large rounded-circle mb-0"><img
-						src="http://localhost:8080/wp-content/uploads/2025/08/52e5b36d2ace146e7fa001b2becd8b853aec7f32.png"
-						alt="" /></figure>
+			<!-- wp:group {"className":" position-absolute top-50 top-lg-25 end-0 translate-middle-y me-md-5 me-lg-0"} -->
+			<div class="wp-block-group position-absolute top-40 top-md-40 top-lg-25 end-0 translate-middle-y me-md-5 me-lg-0">
+				<!-- wp:image {"sizeSlug":"large","className":"rounded-dot-image rounded-dot-image-sm mb-0 d-inline-flex align-items-end"} -->
+				<figure class="wp-block-image size-large rounded-dot-image rounded-dot-image-sm mb-0 d-inline-flex align-items-end">
+					<img src="<?php echo esc_url( get_theme_file_uri( '/assets/img/rounded-dot-image_2.avif' ) ); ?>" alt="">
+				</figure>
 				<!-- /wp:image -->
 			</div>
-
 			<!-- /wp:group -->
-
 		</div>
 		<!-- /wp:group -->
 	</div>
