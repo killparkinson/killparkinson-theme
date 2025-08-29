@@ -15,8 +15,8 @@ defined( 'ABSPATH' ) || exit;
 ?>
 <!-- wp:group {"metadata":{"name":"c - Hero image right - row mb-3 hide-wp-block-classes","categories":["bootscore"],"patternName":"bootscore/hero-img-right"},"className":"row h-100 mb-3 hide-wp-block-classes","layout":{"type":"default"}} -->
 <div class="wp-block-group row min-vh-75 mb-3 mt-6 hide-wp-block-classes">
-	<!-- wp:group {"metadata":{"name":"col-lg-6 mb-3 mb-lg-0 order-lg-2"},"className":"col-lg-6 mb-3 mb-lg-0 order-lg-2","layout":{"type":"default"}} -->
-	<div class="wp-block-group col-xl-6 mt-3 mt-lg-5 mb-3 mb-lg-0 order-xl-2">
+	<!-- wp:group {"metadata":{"name":"col-lg-6 order-lg-2"},"className":"col-lg-6 order-lg-2","layout":{"type":"default"}} -->
+	<div class="wp-block-group col-lg-6 order-lg-2">
 		<!-- wp:group {"metadata":{"name":"h-100 d-flex align-items-center"},"className":"h-100 d-flex align-items-center justify-content-end","layout":{"type":"default"}} -->
 		<div class="wp-block-group d-flex align-items-center justify-content-end relative main-section-img-container">
 			<!-- wp:group {"className":"main-section-img-first rounded-circle"} -->
@@ -45,7 +45,7 @@ defined( 'ABSPATH' ) || exit;
 	<!-- /wp:group -->
 
 	<!-- wp:group {"metadata":{"name":"col-lg-6"},"className":"col-lg-6","layout":{"type":"default"}} -->
-	<div class="wp-block-group col-xl-6">
+	<div class="wp-block-group col-lg-6">
 		<!-- wp:group {"metadata":{"name":"h-100 d-flex align-items-center"},"className":"h-100 d-flex align-items-center","layout":{"type":"default"}} -->
 		<div class="wp-block-group h-100 d-flex align-items-center">
 			<!-- wp:group -->
