@@ -63,7 +63,7 @@ defined( 'ABSPATH' ) || exit;
 				<div class="wp-block-buttons">
 					<!-- wp:button {"className":"btn-primary"} -->
 					<div class="wp-block-button btn-primary">
-						<a class="wp-block-button__link">Primary Button</a>
+						<a class="wp-block-button__link" href="#">Primary Button</a>
 					</div>
 					<!-- /wp:button -->
 				</div>
