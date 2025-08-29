@@ -44,8 +44,8 @@ defined( 'ABSPATH' ) || exit;
 
 	<!-- wp:group {"metadata":{"name":"col-lg-6"},"className":"col-lg-6","layout":{"type":"default"}} -->
 	<div class="wp-block-group col-lg-6">
-		<!-- wp:group {"metadata":{"name":"h-100 d-flex align-items-center"},"className":"h-100 d-flex align-items-center","layout":{"type":"default"}} -->
-		<div class="wp-block-group h-100 d-flex align-items-center">
+		<!-- wp:group {"metadata":{"name":"h-100 d-flex align-items-center"},"className":"h-100 d-flex align-items-center mt-sm-5 mt-lg-0","layout":{"type":"default"}} -->
+		<div class="wp-block-group h-100 d-flex align-items-center mt-sm-5 mt-lg-0">
 			<!-- wp:group -->
 			<div class="wp-block-group">
 
