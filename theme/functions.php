@@ -649,3 +649,11 @@ function the_breadcrumb() {
 	echo '</ol>';
 	echo '</nav>';
 }
+
+//Remove page title on homepage.
+function remove_page_title() {
+   if(is_front_page()) {
+		   return;
+   }
+}
+add_filter( 'the_title', 'remove_page_title' );
