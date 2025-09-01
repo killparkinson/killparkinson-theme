@@ -650,6 +650,7 @@ function the_breadcrumb() {
 	echo '</nav>';
 }
 
+//Remove page title on homepage.
 function remove_page_title() {
    if(is_front_page()) {
 		   return;
