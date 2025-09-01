@@ -53,7 +53,7 @@ $items = [
 
 	<?php if ( $items ) : ?>
 		<!-- wp:group {"className":"container py-5","layout":{"type":"default"}} -->
-		<div class="wp-block-group container py-5">
+		<div class="wp-block-group py-5">
 
 			<!-- wp:columns -->
 			<div class="wp-block-columns">
