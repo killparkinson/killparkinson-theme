@@ -58,8 +58,8 @@ $items = [
 			<!-- wp:columns -->
 			<div class="wp-block-columns">
 				<?php foreach ( $items as $item ) : ?>
-					<!-- wp:column {"className":"d-flex flex-column"} -->
-					<div class="wp-block-column d-flex flex-column">
+					<!-- wp:column {"className":"d-flex flex-column position-relative"} -->
+					<div class="wp-block-column d-flex flex-column position-relative">
 						<!-- wp:image {"sizeSlug":"full","linkDestination":"none"} -->
 						<figure class="wp-block-image size-full rounded">
 							<img src="https://dummyimage.com/300x200/6c757d/ffffff" alt="" />
@@ -76,7 +76,7 @@ $items = [
 
 						<!-- wp:group -->
 						<div class="wp-block-group">
-							<!-- wp:navigation-link {"label":"<?php echo esc_html( $item['link_text'] ); ?>","url":"<?php echo esc_url( $item['link'] ); ?>","className":"icon-end-chevron-right link-underline link-underline-opacity-0 fw-fw-semibold"} /-->
+							<!-- wp:navigation-link {"label":"<?php echo esc_html( $item['link_text'] ); ?>","url":"<?php echo esc_url( $item['link'] ); ?>","className":"icon-end-chevron-right link-underline link-underline-opacity-0 fw-fw-semibold stretched-link"} /-->
 						</div>
 						<!-- /wp:group -->
 
