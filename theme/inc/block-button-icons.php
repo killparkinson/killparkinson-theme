@@ -37,19 +37,8 @@ function block_button_icons( $block_content ) {
 
 			$class_names = $class_matches[1];
 
-			// find all icon-start-* and icon-end-* classes.
-			preg_match_all( '/icon-(start|end)-([a-zA-Z0-9\-_]+)/', $class_names, $icon_matches, PREG_SET_ORDER );
-
-			if ( empty( $icon_matches ) ) {
-				return $matches[0];
-			}
-
-			// remove icon-*-* classes from div and collect position classes for a tag.
-			$positions = [];
-			foreach ( $icon_matches as $match ) {
-				$position    = $match[1];
-				$positions[] = 'icon-' . $position;
-			}
+			// create icon svg relative to their positions.
+			$icon_svg = icon_position_svg( $class_names );
 
 			// remove all icon-start-* and icon-end-* classes from div.
 			$cleaned_class_names = preg_replace( '/\s*icon-(start|end)-[a-zA-Z0-9\-_]+/', '', $class_names );
@@ -59,36 +48,23 @@ function block_button_icons( $block_content ) {
 			$a_pattern     = '/(<a[^>]*class=")([^"]*)(".*?>)(.*?)(<\/a>)/is';
 			$inner_content = preg_replace_callback(
 				$a_pattern,
-				function ( $a_matches ) use ( $icon_matches, $positions ) {
+				function ( $a_matches ) use ( $icon_svg ) {
 					$opening_a_start = $a_matches[1];
 					$a_classes       = $a_matches[2];
 					$opening_a_end   = $a_matches[3];
 					$text            = $a_matches[4];
 					$closing_a       = $a_matches[5];
 
-					// add position classes to a tag.
-					$unique_positions = array_unique( $positions );
-					$a_classes       .= ' ' . implode( ' ', $unique_positions );
+					if ( '' !== $icon_svg['start'] ) {
+						$a_classes .= ' icon-start';
+					}
 
-					$start_icons = '';
-					$end_icons   = '';
-
-					// build SVG icons for start and end positions.
-					foreach ( $icon_matches as $match ) {
-						$position  = $match[1];
-						$icon_name = $match[2];
-
-						$icon_svg = icon( $icon_name );
-
-						if ( 'start' === $position ) {
-							$start_icons .= $icon_svg;
-						} else {
-							$end_icons .= $icon_svg;
-						}
+					if ( '' !== $icon_svg['end'] ) {
+						$a_classes .= ' icon-end';
 					}
 
 					// inject icons at the start and end of the text.
-					$text = $start_icons . $text . $end_icons;
+					$text = $icon_svg['start'] . $text . $icon_svg['end'];
 
 					return $opening_a_start . $a_classes . $opening_a_end . $text . $closing_a;
 				},
