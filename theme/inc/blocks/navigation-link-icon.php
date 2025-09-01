@@ -22,7 +22,7 @@ function add_navigation_link_icon( $block_content, $block ) {
 	$attributes  = '';
 	$title       = $block_attrs['title'];
 	$rel         = $block_attrs['rel'];
-	$class_name  = $block_attrs['className'];
+	$class_names  = $block_attrs['className'];
 	$icon_start  = '';
 	$icon_end    = '';
 
@@ -34,16 +34,20 @@ function add_navigation_link_icon( $block_content, $block ) {
 		$attributes .= ' rel="' . esc_attr( $rel ) . '"';
 	}
 
-	if ( isset( $class_name ) && '' !== $class_name ) {
-		$icon_svg = icon_position_svg( $class_name );
+	if ( isset( $class_names ) && '' !== $class_names ) {
+		// remove icon position classes.
+		$class_name = preg_replace( '/\s*icon-(start|end)-[a-zA-Z0-9\-_]+/', '', $class_names );
 
-		// append icon svg.
+		// create icon svg markup.
+		$icon_svg   = icon_position_svg( $class_names );
 		$icon_start = $icon_svg['start'];
-		$icon_end = $icon_svg['end'];
+		$icon_end   = $icon_svg['end'];
 
-		// prepare icon link class.
-		$icon_class_name = ( '' !== $icon_svg['start'] || '' !== $icon_svg['end'] ) ? ' icon-link' : '';
-		$attributes     .= ' class="wp-block-navigation-link__content' . $icon_class_name . '"';
+		if ( '' !== $icon_start || '' !== $icon_end ) {
+			$class_name .= ' icon-link';
+		}
+
+		$attributes .= ' class="wp-block-navigation-link__content' . $class_name . '"';
 	} else {
 		$attributes .= ' class="wp-block-navigation-link__content"';
 	}
