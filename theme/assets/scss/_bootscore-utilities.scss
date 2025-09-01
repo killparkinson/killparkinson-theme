@@ -2,6 +2,22 @@
   Use this file to add your own custom utility classes.
   https://getbootstrap.com/docs/5.3/utilities/api/
 */
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: $spacer * 0.25,
+  2: $spacer * 0.5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 2,
+  6: $spacer * 2.5,
+  7: $spacer * 3,
+  8: $spacer * 3.5,
+  9: $spacer * 4.5,
+  10: $spacer * 5,
+  11: $spacer * 5.5,
+  12: $spacer * 6,
+);
 
 $utilities: map-merge(
   $utilities,
@@ -10,7 +26,9 @@ $utilities: map-merge(
       property: border,
       responsive: true,
       values: (
-        null: var(--#{$prefix}border-width) var(--#{$prefix}border-style) var(--#{$prefix}border-color), 0: 0,
+        null: var(--#{$prefix}border-width) var(--#{$prefix}border-style)
+          var(--#{$prefix}border-color),
+        0: 0,
       ),
     ),
     "min-viewport-height": (
@@ -32,6 +50,13 @@ $utilities: map-merge(
         100: 100%,
         auto: auto,
       ),
+    ),
+
+    "padding-y": (
+      responsive: true,
+      property: padding-top padding-bottom,
+      class: py,
+      values: $spacers,
     ),
   )
 );
