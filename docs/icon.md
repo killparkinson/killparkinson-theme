@@ -132,6 +132,8 @@ icon-start-envelope icon-end-arrow-right
 
 ##### Block pattern
 
+###### wp:buttons
+
 ```html
 <!-- wp:buttons -->
 <div class="wp-block-buttons">
@@ -146,7 +148,7 @@ icon-start-envelope icon-end-arrow-right
 <!-- /wp:buttons -->
  ```
 
-#### Output (rendered HTML):
+Output (rendered HTML):
 
 ```html
 <a class="wp-block-button__link icon-start icon-end" href="#">
@@ -155,3 +157,23 @@ icon-start-envelope icon-end-arrow-right
   <svg>...</svg> <!-- arrow-right icon -->
 </a>
 ```
+###### wp:navigation-link
+
+```html
+<!-- wp:navigation-link {
+  "label": "Hello world",
+  "url": "/hello-world",
+  "className": "icon-end-chevron-right"
+} /-->
+ ```
+
+Output (rendered HTML):
+
+```html
+<a href="/hello-world" class="wp-block-navigation-link__content icon-link">
+  Hello world
+  <svg>...</svg> <!-- chevron-right icon -->
+</a>
+```
+
+
