@@ -53,13 +53,13 @@ $items = [
 
 	<?php if ( $items ) : ?>
 		<!-- wp:group {"className":"container py-5","layout":{"type":"default"}} -->
-		<div class="wp-block-group container py-5">
+		<div class="wp-block-group py-5">
 
 			<!-- wp:columns -->
 			<div class="wp-block-columns">
 				<?php foreach ( $items as $item ) : ?>
-					<!-- wp:column -->
-					<div class="wp-block-column">
+					<!-- wp:column {"className":"d-flex flex-column position-relative"} -->
+					<div class="wp-block-column d-flex flex-column position-relative">
 						<!-- wp:image {"sizeSlug":"full","linkDestination":"none"} -->
 						<figure class="wp-block-image size-full rounded">
 							<img src="https://dummyimage.com/300x200/6c757d/ffffff" alt="" />
@@ -70,18 +70,16 @@ $items = [
 						<h4 class="wp-block-heading fw-bold"><?php echo esc_html( $item['title'] ); ?></h4>
 						<!-- /wp:heading -->
 
-						<!-- wp:paragraph -->
-						<p><?php echo esc_html( $item['text'] ); ?></p>
+						<!-- wp:paragraph {"className":"flex-grow-1"} -->
+						<p class="flex-grow-1"><?php echo esc_html( $item['text'] ); ?></p>
 						<!-- /wp:paragraph -->
-						<!-- wp:buttons -->
-						<div class="wp-block-buttons">
-							<!-- wp:button {"className": "icon-end-chevron-right"} -->
-							<div class="wp-block-button icon-end-chevron-right fw-bold btn-link">
-								<a class="wp-block-button__link wp-element-button" href="<?php echo esc_html( $item['link'] ); ?> "><?php echo esc_html( $item['link_text'] ); ?></a>
-							</div>
-							<!-- /wp:button -->
+
+						<!-- wp:group -->
+						<div class="wp-block-group">
+							<!-- wp:navigation-link {"label":"<?php echo esc_html( $item['link_text'] ); ?>","url":"<?php echo esc_url( $item['link'] ); ?>","className":"icon-end-chevron-right link-underline link-underline-opacity-0 fw-fw-semibold stretched-link"} /-->
 						</div>
-						<!-- /wp:buttons -->
+						<!-- /wp:group -->
+
 					</div>
 					<!-- /wp:column -->
 				<?php endforeach; ?>
