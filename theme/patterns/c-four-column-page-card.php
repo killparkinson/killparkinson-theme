@@ -58,8 +58,8 @@ $items = [
 			<!-- wp:columns -->
 			<div class="wp-block-columns">
 				<?php foreach ( $items as $item ) : ?>
-					<!-- wp:column -->
-					<div class="wp-block-column">
+					<!-- wp:column {"className":"d-flex flex-column"} -->
+					<div class="wp-block-column d-flex flex-column">
 						<!-- wp:image {"sizeSlug":"full","linkDestination":"none"} -->
 						<figure class="wp-block-image size-full rounded">
 							<img src="https://dummyimage.com/300x200/6c757d/ffffff" alt="" />
@@ -70,8 +70,8 @@ $items = [
 						<h4 class="wp-block-heading fw-bold"><?php echo esc_html( $item['title'] ); ?></h4>
 						<!-- /wp:heading -->
 
-						<!-- wp:paragraph -->
-						<p><?php echo esc_html( $item['text'] ); ?></p>
+						<!-- wp:paragraph {"className":"flex-grow-1"} -->
+						<p class="flex-grow-1"><?php echo esc_html( $item['text'] ); ?></p>
 						<!-- /wp:paragraph -->
 
 						<!-- wp:group -->
