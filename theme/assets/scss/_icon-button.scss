@@ -9,10 +9,10 @@
   &.icon-end {
     display: flex;
     gap: var(--#{$prefix}btn-icon-gap);
+    justify-content: center;
 
     .icon {
       flex-shrink: 0;
-      justify-content: center;
       @include transition($icon-link-icon-transition);
     }
   }
