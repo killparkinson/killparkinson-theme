@@ -76,7 +76,7 @@ $items = [
 
 						<!-- wp:group -->
 						<div class="wp-block-group">
-							<!-- wp:navigation-link {"label":"<?php echo esc_html( $item['link_text'] ); ?>","url":"<?php echo esc_url( $item['link'] ); ?>","className":"icon-end-chevron-right link-underline link-underline-opacity-0 fw-fw-semibold stretched-link"} /-->
+							<!-- wp:navigation-link {"label":"<?php echo esc_html( $item['link_text'] ); ?>","url":"<?php echo esc_url( $item['link'] ); ?>","className":"icon-end-chevron-right link-underline link-underline-opacity-0 fw-semibold stretched-link"} /-->
 						</div>
 						<!-- /wp:group -->
 
