@@ -73,15 +73,13 @@ $items = [
 						<!-- wp:paragraph -->
 						<p><?php echo esc_html( $item['text'] ); ?></p>
 						<!-- /wp:paragraph -->
-						<!-- wp:buttons -->
-						<div class="wp-block-buttons">
-							<!-- wp:button {"className": "icon-end-chevron-right"} -->
-							<div class="wp-block-button icon-end-chevron-right fw-bold btn-link">
-								<a class="wp-block-button__link wp-element-button" href="<?php echo esc_html( $item['link'] ); ?> "><?php echo esc_html( $item['link_text'] ); ?></a>
-							</div>
-							<!-- /wp:button -->
+
+						<!-- wp:group -->
+						<div class="wp-block-group">
+							<!-- wp:navigation-link {"label":"<?php echo esc_html( $item['link_text'] ); ?>","url":"<?php echo esc_url( $item['link'] ); ?>","className":"icon-end-chevron-right link-underline link-underline-opacity-0 fw-fw-semibold"} /-->
 						</div>
-						<!-- /wp:buttons -->
+						<!-- /wp:group -->
+
 					</div>
 					<!-- /wp:column -->
 				<?php endforeach; ?>
