@@ -18,11 +18,23 @@
  * @return string Modified or original title
  */
 function page_titles( $title, $post_id = null ) {
-	if (
-		is_front_page() ||
-		3583 === $post_id // contact EN page.
-	) {
+	// prevent removal in admin.
+	if ( is_admin() ) {
+		return $title;
+	}
 
+	// if no post context, return title (e.g., widgets, menus).
+	if ( ! $post_id || ! in_the_loop() ) {
+		return $title;
+	}
+
+	if (
+		is_page() &&
+		(
+			is_front_page() ||
+			3583 === $post_id
+		)
+	) {
 		return '';
 	}
 
