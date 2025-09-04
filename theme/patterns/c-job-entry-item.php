@@ -29,16 +29,7 @@ defined( 'ABSPATH' ) || exit;
 
 	</div>
 	<!-- /wp:group -->
-
-	<!-- wp:buttons -->
-	<div class="wp-block-buttons">
-	<!-- wp:button {"className":"btn-link icon-end-external-link"} -->
-	<div class="wp-block-button btn-link icon-end-external-link">
-		<a class="wp-block-button__link wp-element-button">Apply now</a>
-	</div>
-	<!-- /wp:button -->
-	</div>
-	<!-- /wp:buttons -->
+	<!-- wp:navigation-link {"label":"Apply now","className":"icon-end-external-link link-underline link-underline-opacity-0 fw-fw-semibold stretched-link"} /-->
 </div>
 <!-- /wp:group -->
 
