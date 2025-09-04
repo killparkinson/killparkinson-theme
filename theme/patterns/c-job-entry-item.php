@@ -15,29 +15,29 @@ defined( 'ABSPATH' ) || exit;
 <!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between","alignItems":"center"}} -->
 <div class="wp-block-group">
 
-  <!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","alignItems":"center","gap":"0.5rem"}} -->
-  <div class="wp-block-group">
+	<!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","alignItems":"center","gap":"0.5rem"}} -->
+	<div class="wp-block-group">
 
-    <!-- wp:heading {"level":5} -->
-    <h5 class="wp-block-heading">Data Analyst</h5>
-    <!-- /wp:heading -->
+	<!-- wp:heading {"level":5} -->
+	<h5 class="wp-block-heading">Data Analyst</h5>
+	<!-- /wp:heading -->
 
-    <!-- wp:paragraph {"className":"badge bg-primary ms-2"} -->
-    <span class="badge bg-light border text-dark py-1">Full-time</span>
-    <!-- /wp:paragraph -->
+	<!-- wp:paragraph {"className":"badge bg-primary ms-2"} -->
+	<span class="badge bg-light border text-dark py-1">Full-time</span>
+	<!-- /wp:paragraph -->
 
-  </div>
-  <!-- /wp:group -->
+	</div>
+	<!-- /wp:group -->
 
-  <!-- wp:buttons -->
-  <div class="wp-block-buttons">
-    <!-- wp:button {"className":"btn-link icon-end-external-link"} -->
-    <div class="wp-block-button btn-link icon-end-external-link">
-      <a class="wp-block-button__link wp-element-button">Apply now</a>
-    </div>
-    <!-- /wp:button -->
-  </div>
-  <!-- /wp:buttons -->
+	<!-- wp:buttons -->
+	<div class="wp-block-buttons">
+	<!-- wp:button {"className":"btn-link icon-end-external-link"} -->
+	<div class="wp-block-button btn-link icon-end-external-link">
+		<a class="wp-block-button__link wp-element-button">Apply now</a>
+	</div>
+	<!-- /wp:button -->
+	</div>
+	<!-- /wp:buttons -->
 
 </div>
 <!-- /wp:group -->
