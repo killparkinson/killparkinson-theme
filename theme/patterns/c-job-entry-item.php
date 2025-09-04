@@ -12,10 +12,11 @@
 defined( 'ABSPATH' ) || exit;
 ?>
 
-<!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between","alignItems":"center"}} -->
+<!-- wp:group {"tagName":"section", "metadata":{"name":"c - KIP Hero jumbotron","categories":["bootscore","call-to-action"],"patternName":"bootscore/c-kip-hero-jumbotron"},"className":"mb-3 p-4 p-md-5 text-center bg-body-tertiary rounded-3 hide-wp-block-classes","layout":{"type":"default"}} -->
+<section class="wp-block-group py-2 hide-wp-block-classes">
+<!-- wp:group {"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between","alignItems":"center"}} -->
 <div class="wp-block-group">
-
-	<!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","alignItems":"center","gap":"0.5rem"}} -->
+	<!-- wp:group {"layout":{"type":"flex","flexWrap":"wrap","alignItems":"center","gap":"0.5rem"}} -->
 	<div class="wp-block-group">
 
 	<!-- wp:heading {"level":5} -->
@@ -38,10 +39,10 @@ defined( 'ABSPATH' ) || exit;
 	<!-- /wp:button -->
 	</div>
 	<!-- /wp:buttons -->
-
 </div>
 <!-- /wp:group -->
 
 <!-- wp:paragraph -->
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. This is the job description area where details go.</p>
 <!-- /wp:paragraph -->
+</section>
