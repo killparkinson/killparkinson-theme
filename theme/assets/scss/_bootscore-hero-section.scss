@@ -4,6 +4,10 @@
   height: 100%;
   min-height: 350px;
 
+  @include media-breakpoint-up(md) {
+    min-height: 450px;
+
+  }
   > img {
     position: absolute;
     width: 100%;
