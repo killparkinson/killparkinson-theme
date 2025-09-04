@@ -17,7 +17,7 @@ defined( 'ABSPATH' ) || exit;
 <!-- wp:group {"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between","alignItems":"center"}} -->
 <div class="wp-block-group">
 	<!-- wp:group {"layout":{"type":"flex","flexWrap":"wrap","alignItems":"center","gap":"0.5rem"}} -->
-	<div class="wp-block-group">
+	<div class="wp-block-group py-2">
 
 	<!-- wp:heading {"level":5} -->
 	<h5 class="wp-block-heading">Data Analyst</h5>
