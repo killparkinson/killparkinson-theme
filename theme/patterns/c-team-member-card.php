@@ -13,8 +13,8 @@ defined( 'ABSPATH' ) || exit;
 ?>
 
 <!-- wp:group {"metadata":{"categories":["bootscore"],"patternName":"theme/c-team-member-card","name":"KiP -  Team Member Card"},"className":"d-flex align-items-center gap-5","style":{"spacing":{"blockGap":"2rem"}}} -->
-<div class="wp-block-group d-flex align-items-center gap-5"><!-- wp:image {"sizeSlug":"large","linkDestination":"none","className":"rounded-circle"} -->
-<figure class="wp-block-image size-large rounded-circle"><img src="http://localhost:8080/wp-content/uploads/2025/09/7f12ea1300756f144a0fb5daaf68dbfc01103a46-2.png" alt="Marco Hamburger"/></figure>
+<div class="wp-block-group d-flex flex-wrap align-items-center gap-5"><!-- wp:image {"sizeSlug":"large","linkDestination":"none","className":"rounded-circle"} -->
+<figure class="wp-block-image size-large md-rounded-circle"><img src="http://localhost:8080/wp-content/uploads/2025/09/7f12ea1300756f144a0fb5daaf68dbfc01103a46-2.png" alt="Marco Hamburger"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"0.5rem"}}} -->
