@@ -29,21 +29,14 @@ function icon( $name ) {
  */
 function icon_position_svg( $class_names ) {
 	// find all icon-start-* and icon-end-* classes.
-	preg_match_all( '/icon-(start|end)-([a-zA-Z0-9\-_]+)/', $class_names, $icon_matches, PREG_SET_ORDER );
-
+	preg_match_all( '/icon(?:-(start|end))?-([a-zA-Z0-9\-_]+)/', $class_names, $icon_matches, PREG_SET_ORDER );
 	$icon_svg = array(
 		'start' => '',
 		'end'   => '',
 	);
-
-	if ( empty( $icon_matches ) ) {
-		return $icon_svg;
+	foreach ( $icon_matches as $m ) {
+		$pos               = ! empty( $m[1] ) ? $m[1] : 'start';
+		$icon_svg[ $pos ] .= icon( $m[2] );
 	}
-
-	foreach ( $icon_matches as $match ) {
-		// append the icon to the appropriate position ('start' or 'end').
-		$icon_svg[ $match[1] ] .= icon( $match[2] );
-	}
-
 	return $icon_svg;
 }
