@@ -39,10 +39,4 @@ function icon_position_svg( $class_names ) {
 		$icon_svg[ $pos ] .= icon( $m[2] );
 	}
 	return $icon_svg;
-	foreach ( $icon_matches as $match ) {
-		// append the icon to the appropriate position ('start' or 'end').
-		$icon_svg[ $match[1] ] .= icon( $match[2] );
-	}
-
-	return $icon_svg;
 }
