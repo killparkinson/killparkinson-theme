@@ -40,9 +40,9 @@ function block_button_icons( $block_content ) {
 			// create icon svg relative to their positions.
 			$icon_svg = icon_position_svg( $class_names );
 
-			// Remove all icon-* classes from wrapper (start, end, or plain).
-			$cleaned_class_names = preg_replace( '/\s*icon(?:-(start|end))?-[a-zA-Z0-9\-_]+/', '', $class_names );
-			$full_div            = str_replace( $class_names, trim( $cleaned_class_names ), $full_div );
+			// remove all icon-start-* and icon-end-* classes from div.
+			$cleaned_class_names = preg_replace( '/\s*icon-(start|end)-[a-zA-Z0-9\-_]+/', '', $class_names );
+			$full_div            = str_replace( $class_names, $cleaned_class_names, $full_div );
 
 			// extract the <a> tag.
 			$a_pattern     = '/(<a[^>]*class=")([^"]*)(".*?>)(.*?)(<\/a>)/is';
@@ -52,30 +52,21 @@ function block_button_icons( $block_content ) {
 					$opening_a_start = $a_matches[1];
 					$a_classes       = $a_matches[2];
 					$opening_a_end   = $a_matches[3];
-					$text            = trim( $a_matches[4] );
+					$text            = $a_matches[4];
 					$closing_a       = $a_matches[5];
 
-					$start = $icon_svg['start'];
-					$end   = $icon_svg['end'];
-
-					if ( '' !== $start ) {
+					if ( '' !== $icon_svg['start'] ) {
 						$a_classes .= ' icon-start';
 					}
-					if ( '' !== $end ) {
+
+					if ( '' !== $icon_svg['end'] ) {
 						$a_classes .= ' icon-end';
 					}
 
-					if ( '' === $text ) {
-						// If you used icon-{name}, it’s in $start by default.
-						// If someone used only icon-end-*, still render it.
-						if ( '' !== $start || '' !== $end ) {
-							$text = $start . $end;
-						}
-					} else {
-						$text = $start . $text . $end;
-					}
+					// inject icons at the start and end of the text.
+					$text = $icon_svg['start'] . $text . $icon_svg['end'];
 
-					return $opening_a_start . trim( $a_classes ) . $opening_a_end . $text . $closing_a;
+					return $opening_a_start . $a_classes . $opening_a_end . $text . $closing_a;
 				},
 				$inner_content
 			);
