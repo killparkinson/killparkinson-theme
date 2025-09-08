@@ -28,7 +28,7 @@ defined( 'ABSPATH' ) || exit;
 			</div>
 			<!-- /wp:group -->
 			<!-- wp:group {"metadata":{"name":"col-lg-6"},"className":"col-lg-6","layout":{"type":"default"}} -->
-			<div class="wp-block-group col-lg-6 d-flex align-items-center p-md-4 w-full">
+			<div class="wp-block-group col-lg-6 d-flex align-items-center p-md-5 w-full">
 				<!-- wp:group {"metadata":{"name":"text-block"},"className":"text-block py-6","layout":{"type":"default"}} -->
 				<div class="wp-block-group text-block w-full my-4">
 					<!-- wp:heading {"metadata":{"name":"display-5 fw-bold mb-2 colour-last-word"},"className":"display-5 fw-bold mb-2 colour-last-word"} -->
