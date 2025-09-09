@@ -12,9 +12,9 @@
 defined( 'ABSPATH' ) || exit;
 ?>
 
-<!-- wp:group {"metadata":{"categories":["bootscore"],"patternName":"theme/c-team-member-card","name":"KiP -  Team Member Card"},"className":"d-flex align-items-center gap-5","style":{"spacing":{"blockGap":"2rem"}}} -->
-<div class="wp-block-group d-flex flex-wrap align-items-center gap-5"><!-- wp:image {"id":3706,"width":"300px","sizeSlug":"full","linkDestination":"none","className":"rounded-circle"} -->
-<figure class="wp-block-image size-large is-resized rounded-circle"><img src="https://dummyimage.com/300x300/6c757d/ffffff" alt="" class="wp-image-3706" style="width:300px"/></figure>
+<!-- wp:group {"metadata":{"categories":["bootscore"],"patternName":"theme/c-team-member-card","name":"KiP -  Team Member Card"},"className":"d-flex flex-wrap align-items-center gap-5","style":{"spacing":{"blockGap":"2rem"}}} -->
+<div class="wp-block-group d-flex flex-wrap align-items-center gap-5"><!-- wp:image {"id":3706,"width":"300px","sizeSlug":"full","linkDestination":"none","className":"size-large rounded-circle"} -->
+<figure class="wp-block-image size-large rounded-circle"><img src="https://dummyimage.com/300x300/6c757d/ffffff" alt="" class="wp-image-3706" style="width:300px"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"0.5rem"}}} -->
