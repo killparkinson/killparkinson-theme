@@ -41,7 +41,7 @@ function block_button_icons( $block_content ) {
 			$icon_svg = icon_position_svg( $class_names );
 
 			// remove all icon-start-* and icon-end-* classes from div.
-			$cleaned_class_names = preg_replace( '/\s*icon-(start|end)-[a-zA-Z0-9\-_]+/', '', $class_names );
+			$cleaned_class_names = preg_replace( '/\s*icon-(start|end|only)-[a-zA-Z0-9\-_]+/', '', $class_names );
 			$full_div            = str_replace( $class_names, $cleaned_class_names, $full_div );
 
 			// extract the <a> tag.
@@ -55,16 +55,20 @@ function block_button_icons( $block_content ) {
 					$text            = $a_matches[4];
 					$closing_a       = $a_matches[5];
 
-					if ( '' !== $icon_svg['start'] ) {
-						$a_classes .= ' icon-start';
-					}
+					if ( '' !== $icon_svg['only'] ) {
+						$text = $icon_svg['only'] . '<span class="visually-hidden">' . $text . '</span>';
+					} else {
+						if ( '' !== $icon_svg['start'] ) {
+							$a_classes .= ' icon-start';
+						}
 
-					if ( '' !== $icon_svg['end'] ) {
-						$a_classes .= ' icon-end';
-					}
+						if ( '' !== $icon_svg['end'] ) {
+							$a_classes .= ' icon-end';
+						}
 
-					// inject icons at the start and end of the text.
-					$text = $icon_svg['start'] . $text . $icon_svg['end'];
+						// inject icons at the start and end of the text.
+						$text = $icon_svg['start'] . $text . $icon_svg['end'];
+					}
 
 					return $opening_a_start . $a_classes . $opening_a_end . $text . $closing_a;
 				},
