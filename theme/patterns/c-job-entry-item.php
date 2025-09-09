@@ -15,7 +15,7 @@ defined( 'ABSPATH' ) || exit;
 <!-- wp:group {"tagName":"section", "metadata":{"name":"c - KIP Hero jumbotron","categories":["bootscore","call-to-action"],"patternName":"bootscore/c-kip-hero-jumbotron"},"className":"mb-3 p-4 p-md-5 text-center bg-body-tertiary rounded-3 hide-wp-block-classes","layout":{"type":"default"}} -->
 <section class="wp-block-group py-2 hide-wp-block-classes">
 <!-- wp:group {"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between","alignItems":"center"}} -->
-<div class="wp-block-group">
+<div class="wp-block-group position-relative">
 	<!-- wp:group {"layout":{"type":"flex","flexWrap":"wrap","alignItems":"center","gap":"0.5rem"}} -->
 	<div class="wp-block-group py-2">
 
