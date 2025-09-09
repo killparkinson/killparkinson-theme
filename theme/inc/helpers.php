@@ -21,7 +21,7 @@ function icon( $name ) {
 /**
  * Extracts icon position SVG elements from CSS class names.
  *
- * This function parses CSS class names to find icon-start-* and icon-end-* classes,
+ * This function parses CSS class names to find icon-only-*, icon-start-* and icon-end-* classes,
  * then generates corresponding SVG icons using the icon() helper function.
  *
  * @param string $class_names CSS class names to parse for icon positions.
@@ -29,11 +29,12 @@ function icon( $name ) {
  */
 function icon_position_svg( $class_names ) {
 	// find all icon-start-* and icon-end-* classes.
-	preg_match_all( '/icon-(start|end)-([a-zA-Z0-9\-_]+)/', $class_names, $icon_matches, PREG_SET_ORDER );
+	preg_match_all( '/icon-(start|end|only)-([a-zA-Z0-9\-_]+)/', $class_names, $icon_matches, PREG_SET_ORDER );
 
 	$icon_svg = array(
 		'start' => '',
 		'end'   => '',
+		'only'  => '',
 	);
 
 	if ( empty( $icon_matches ) ) {
@@ -41,7 +42,7 @@ function icon_position_svg( $class_names ) {
 	}
 
 	foreach ( $icon_matches as $match ) {
-		// append the icon to the appropriate position ('start' or 'end').
+		// append the icon to the appropriate position.
 		$icon_svg[ $match[1] ] .= icon( $match[2] );
 	}
 
