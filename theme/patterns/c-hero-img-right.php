@@ -34,7 +34,7 @@ defined( 'ABSPATH' ) || exit;
 				<!-- /wp:heading -->
 				 
 				<!-- wp:paragraph {"metadata":{"name":""},"className":"lead"} -->
-				<p class="lead">Parkinson's disease is a complex neurological condition affecting millions. Though its cause remains unknown, understanding its symptoms and diagnosis is vital for early detection, effectivemanagement, and better quality of life. </p>
+				<p>Parkinson's disease is a complex neurological condition affecting millions. Though its cause remains unknown, understanding its symptoms and diagnosis is vital for early detection, effectivemanagement, and better quality of life. </p>
 				<!-- /wp:paragraph -->
 
 				<!-- wp:buttons -->
