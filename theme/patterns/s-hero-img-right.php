@@ -32,15 +32,11 @@ defined( 'ABSPATH' ) || exit;
 				<!-- wp:group {"metadata":{"name":"text-block"},"className":"text-block py-6","layout":{"type":"default"}} -->
 				<div class="wp-block-group text-block w-full my-4">
 					<!-- wp:heading {"metadata":{"name":"display-5 fw-bold mb-2 colour-last-word"},"className":"display-5 fw-bold mb-2 colour-last-word"} -->
-					<h2 class="wp-block-heading display-5 fw-bold mb-2 colour-last-word">
-						Section with
-						<span class="text-primary">hero</span>
-					</h2>
+					<h2 class="wp-block-heading display-5 fw-bold mb-2 colour-last-word">Section with <span class="text-primary">hero</span></h2>
 					<!-- /wp:heading -->
 
 					<!-- wp:paragraph {"metadata":{"name":"lead"},"className":"lead"} -->
-					<p class="lead">This section features a two-column hero with a right-aligned image and CTA
-						buttons wrapped in a container. Use it on the page-blanktemplate.</p>
+					<p>This section features a two-column hero with a right-aligned image and CTA buttons wrapped in a container. Use it on the page-blanktemplate.</p>
 					<!-- /wp:paragraph -->
 
 					<!-- wp:list -->
