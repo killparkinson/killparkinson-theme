@@ -98,6 +98,7 @@ The system supports adding icons to buttons by using special class names on the 
 
 - `icon-start-{icon-name}` – Adds an icon **before** the button text.
 - `icon-end-{icon-name}` – Adds an icon **after** the button text.
+- `icon-only-{icon-name}` – Adds **only** the icon and visually hide the button text.
 
 These classes are parsed and the corresponding SVG icons are injected into the button’s anchor (`<a>`) tag automatically.
 
@@ -109,6 +110,7 @@ These classes are parsed and the corresponding SVG icons are injected into the b
 |---------------------------|------------------------------------|
 | `icon-start-{name}`       | Places the icon before the text    |
 | `icon-end-{name}`         | Places the icon after the text     |
+| `icon-only-{name}`        | Display only the icon and visually hide the text     |
 
 Multiple icons are supported. For example:
 
@@ -130,9 +132,9 @@ class="icon-start-download icon-end-external-link"
 icon-start-envelope icon-end-arrow-right
 ```
 
-##### Block pattern
+#### Block pattern
 
-###### wp:buttons
+##### wp:buttons
 
 ```html
 <!-- wp:buttons -->
@@ -157,7 +159,7 @@ Output (rendered HTML):
   <svg>...</svg> <!-- arrow-right icon -->
 </a>
 ```
-###### wp:navigation-link
+##### wp:navigation-link
 
 ```html
 <!-- wp:navigation-link {
