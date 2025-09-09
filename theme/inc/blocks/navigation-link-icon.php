@@ -22,9 +22,10 @@ function add_navigation_link_icon( $block_content, $block ) {
 	$attributes  = '';
 	$title       = $block_attrs['title'];
 	$rel         = $block_attrs['rel'];
-	$class_names  = $block_attrs['className'];
+	$class_names = $block_attrs['className'];
 	$icon_start  = '';
 	$icon_end    = '';
+	$icon_only   = '';
 
 	if ( isset( $title ) && '' !== $title ) {
 		$attributes .= ' title="' . esc_attr( $title ) . '"';
@@ -36,20 +37,25 @@ function add_navigation_link_icon( $block_content, $block ) {
 
 	if ( isset( $class_names ) && '' !== $class_names ) {
 		// remove icon position classes.
-		$class_name = preg_replace( '/\s*icon-(start|end)-[a-zA-Z0-9\-_]+/', '', $class_names );
+		$class_name = preg_replace( '/\s*icon-(start|end|only)-[a-zA-Z0-9\-_]+/', '', $class_names );
 
 		// create icon svg markup.
 		$icon_svg   = icon_position_svg( $class_names );
 		$icon_start = $icon_svg['start'];
 		$icon_end   = $icon_svg['end'];
+		$icon_only  = $icon_svg['only'];
 
-		if ( '' !== $icon_start || '' !== $icon_end ) {
+		if ( '' !== $icon_start || '' !== $icon_end || '' !== $icon_only ) {
 			$class_name .= ' icon-link';
 		}
 
 		$attributes .= ' class="wp-block-navigation-link__content' . $class_name . '"';
 	} else {
 		$attributes .= ' class="wp-block-navigation-link__content"';
+	}
+
+	if ( '' !== $icon_only ) {
+		return '<a href="' . esc_url( $block_attrs['url'] ) . '"' . $attributes . ' aria-label="' .  esc_attr( $block_attrs['label'] ) . '">' . $icon_only . '</a>';
 	}
 
 	return '<a href="' . esc_url( $block_attrs['url'] ) . '"' . $attributes . '>' . $icon_start . esc_html( $block_attrs['label'] ) . $icon_end . '</a>';
