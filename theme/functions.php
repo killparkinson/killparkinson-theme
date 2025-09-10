@@ -617,7 +617,7 @@ function the_breadcrumb() {
 	// phpcs:ignore WordPress.NamingConventions.ValidHookName.UseUnderscores
 	$nav_classes = apply_filters( 'bootscore/class/breadcrumb/nav', 'overflow-x-auto text-nowrap mb-4 mt-2 py-2' );
 	// phpcs:ignore WordPress.NamingConventions.ValidHookName.UseUnderscores
-	$ol_classes = apply_filters( 'bootscore/class/breadcrumb/ol', 'flex-nowrap mb-0' );
+	$ol_classes = apply_filters( 'bootscore/class/breadcrumb/ol', 'mb-0' );
 	// phpcs:ignore WordPress.NamingConventions.ValidHookName.UseUnderscores
 	$link_class = apply_filters( 'bootscore/class/breadcrumb/item/link', '' );
 
@@ -650,3 +650,53 @@ function the_breadcrumb() {
 	echo '</ol>';
 	echo '</nav>';
 }
+
+
+function kip_custom_comment( $comment, $args, $depth ) {
+	$tag = ( $args['style'] === 'ol' ) ? 'li' : 'div';
+	?>
+	<<?php echo $tag; ?> <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
+		<div class="comment-body border-bottom pt-2">
+			<div class="d-md-flex gap-2 align-items-center">
+			<div class="comment-author vcard text-base">
+	<?php printf( '<b class="fn">%s</b>', get_comment_author() ); ?>
+			</div>
+
+	<div class="comment-meta commentmetadata d-md-flex">
+	<?php
+		printf(
+			esc_html__( '%s ago', 'bootscore' ),
+			human_time_diff( get_comment_time( 'U' ), current_time( 'timestamp' ) )
+		);
+	?>
+	<?php edit_comment_link( esc_html__( '(Edit)', 'bootscore' ), '  ', '' ); ?>
+</div>
+			</div>
+			<div class="comment-text">
+				<?php comment_text(); ?>
+			</div>
+		</div>
+	<?php
+}
+
+// Add custom classses on the comment form section
+add_filter( 'comment_form_defaults', function( $defaults ) {
+    $defaults['class_container'] = 'comment-respon rounded border border-2 border-primary bg-primary-subtle p-4';
+    return $defaults;
+});
+
+//Reorder comment form fields
+add_filter('comment_form_fields', function($fields) {
+    $new_fields = [];
+
+    $new_fields['author'] = $fields['author'];
+    $new_fields['email'] = $fields['email'];
+
+    $new_fields['comment'] = $fields['comment'];
+
+    if ( isset($fields['cookies']) ) {
+        $new_fields['cookies'] = $fields['cookies'];
+    }
+
+    return $new_fields;
+});
