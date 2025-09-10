@@ -91,42 +91,42 @@ if ( post_password_required() ) {
 
 <?php
 comment_form(
-    array(
-        'id_submit'         => 'commentsubmit',
-        'title_reply'       => __( 'Add a comment', 'bootscore' ),
-        'title_reply_to'    => __( 'Leave a Comment to %s', 'bootscore' ),
-        'cancel_reply_link' => __( 'Cancel', 'bootscore' ),
-        'label_submit'      => __( 'Post Comment', 'bootscore' ),
-        'class_submit'      => 'btn btn-secondary',
+	array(
+		'id_submit'         => 'commentsubmit',
+		'title_reply'       => __( 'Add a comment', 'bootscore' ),
+		'title_reply_to'    => __( 'Leave a Comment to %s', 'bootscore' ),
+		'cancel_reply_link' => __( 'Cancel', 'bootscore' ),
+		'label_submit'      => __( 'Post Comment', 'bootscore' ),
+		'class_submit'      => 'btn btn-secondary',
 
-        // Custom Bootstrap fields
-        'fields'            => apply_filters(
-            'comment_form_default_fields',
-            array(
-                'author' =>
-                    '<div class="row order-3">
+		// Custom Bootstrap fields
+		'fields'            => apply_filters(
+			'comment_form_default_fields',
+			array(
+				'author' =>
+					'<div class="row order-3">
                         <div class="col-md-6 mb-3">
                             <label for="author">' . __( 'Name', 'bootscore' ) . ' <span class="text-danger">*</span></label>
                             <input id="author" class="form-control" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30" />
                         </div>',
 
-                'email'  =>
-                        '<div class="col-md-6 mb-3">
+				'email'  =>
+						'<div class="col-md-6 mb-3">
                             <label for="email">' . __( 'Email', 'bootscore' ) . ' <span class="text-danger">*</span></label>
                             <input id="email" class="form-control" name="email" type="email" value="' . esc_attr( $commenter['comment_author_email'] ) . '" size="30" />
                         </div>
                     </div>', // close row
-            )
-        ),
-				        // Comment textarea field
-        'comment_field'     => '
+			)
+		),
+		// Comment textarea field
+		'comment_field'     => '
             <div class="mb-3">
                 <label for="comment">' . __( 'Comment', 'bootscore' ) . ' <span class="text-danger">*</span></label>
                 <textarea id="comment" class="form-control" name="comment" rows="5" aria-required="true"></textarea>
             </div>
         ',
 
-    )
+	)
 );
 ?>
 

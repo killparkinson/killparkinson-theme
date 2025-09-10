@@ -680,23 +680,29 @@ function kip_custom_comment( $comment, $args, $depth ) {
 }
 
 // Add custom classses on the comment form section
-add_filter( 'comment_form_defaults', function( $defaults ) {
-    $defaults['class_container'] = 'comment-respon rounded border border-2 border-primary bg-primary-subtle p-4';
-    return $defaults;
-});
+add_filter(
+	'comment_form_defaults',
+	function ( $defaults ) {
+		$defaults['class_container'] = 'comment-respon rounded border border-2 border-primary bg-primary-subtle p-4';
+		return $defaults;
+	}
+);
 
-//Reorder comment form fields
-add_filter('comment_form_fields', function($fields) {
-    $new_fields = [];
+// Reorder comment form fields
+add_filter(
+	'comment_form_fields',
+	function ( $fields ) {
+		$new_fields = [];
 
-    $new_fields['author'] = $fields['author'];
-    $new_fields['email'] = $fields['email'];
+		$new_fields['author'] = $fields['author'];
+		$new_fields['email']  = $fields['email'];
 
-    $new_fields['comment'] = $fields['comment'];
+		$new_fields['comment'] = $fields['comment'];
 
-    if ( isset($fields['cookies']) ) {
-        $new_fields['cookies'] = $fields['cookies'];
-    }
+		if ( isset( $fields['cookies'] ) ) {
+			$new_fields['cookies'] = $fields['cookies'];
+		}
 
-    return $new_fields;
-});
+		return $new_fields;
+	}
+);

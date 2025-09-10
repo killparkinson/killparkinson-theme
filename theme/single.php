@@ -11,7 +11,7 @@ defined( 'ABSPATH' ) || exit;
 get_header();
 ?>
 
-<div id="content" class="site-content <?php echo apply_filters( 'bootscore/class/container', 'container', 'single-sidebar-none' ); ?> <?php echo apply_filters( 'bootscore/class/content/spacer', 'pt-3 pb-5', 'single-sidebar-none' ); ?>">
+<div id="content" class="site-content <?php echo esc_attr( apply_filters( 'bootscore/class/container', 'container', 'single-sidebar-none' ) ); ?> <?php echo esc_attr( apply_filters( 'bootscore/class/content/spacer', 'pt-3 pb-5', 'single-sidebar-none' ) ); ?>">
 	<div id="primary" class="content-area">
 	
 	<?php do_action( 'bootscore_after_primary_open', 'single-sidebar-none' ); ?>
@@ -35,12 +35,9 @@ get_header();
 		<div class="author-box d-flex align-items-center">
 			<?php echo get_avatar( get_the_author_meta( 'ID' ), 48, '', '', [ 'class' => 'rounded-circle me-2' ] ); ?>
 				<h6 class="mb-1">
-			<?php echo get_the_author_meta( 'first_name' ) . ' ' . get_the_author_meta( 'last_name' ); ?>
+			<?php echo esc_attr( get_the_author_meta( 'first_name' ) . ' ' . get_the_author_meta( 'last_name' ) ); ?>
 			</h6>       
 		</div>
-
-		
-
 		<div class="entry-featured-image my-4">
 			<?php bootscore_post_thumbnail( 'large' ); ?>
 		</div>
@@ -57,7 +54,7 @@ get_header();
 		<div class="author-box d-flex align-items-center pt-4 mt-5">
 			<?php echo get_avatar( get_the_author_meta( 'ID' ), 48, '', '', [ 'class' => 'rounded-circle me-3' ] ); ?>
 		<div>
-		<?php echo get_the_author_meta( 'first_name' ) . ' ' . get_the_author_meta( 'last_name' ); ?>
+		<?php echo esc_attr( get_the_author_meta( 'first_name' ) . ' ' . get_the_author_meta( 'last_name' ) ); ?>
 			<p class="small text-muted mb-0"><?php the_author_meta( 'email' ); ?></p>
 			</div>
 		</div>
