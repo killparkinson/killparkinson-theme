@@ -195,7 +195,7 @@ function render_custom_post_excerpt( $attributes ) {
  * Header position and bg
  */
 function header_bg_class() {
-	return 'position-relative bg-body border-bottom';
+	return 'sticky-top bg-body border-bottom';
 }
 add_filter( 'bootscore/class/header', 'header_bg_class' );
 
