@@ -195,9 +195,17 @@ function render_custom_post_excerpt( $attributes ) {
  * Header position and bg
  */
 function header_bg_class() {
-	return 'sticky-top bg-body border-bottom';
+	return 'sticky-top bg-body';
 }
 add_filter( 'bootscore/class/header', 'header_bg_class' );
+
+/**
+ * Header navbar border bottom
+ */
+function header_navbar_border_bottom() {
+	return 'border-bottom navbar-expand-lg';
+}
+add_filter( 'bootscore/class/header/navbar/breakpoint', 'header_navbar_border_bottom' );
 
 /**
  * Removes the 'mb-3' class from block buttons content.
