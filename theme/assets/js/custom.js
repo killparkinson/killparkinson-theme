@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   topSentinel.style.height = '1px';
 
   // insert the sentinel as the first child of the header element
-  page.insertBefore(sentinel, masthead);
+  page.insertBefore(topSentinel, masthead);
 
   // add shadow to navbar after scrolling.
   const observer = new IntersectionObserver(
