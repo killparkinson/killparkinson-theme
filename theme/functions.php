@@ -203,7 +203,7 @@ add_filter( 'bootscore/class/header', 'header_bg_class' );
  * Header navbar border bottom
  */
 function header_navbar_border_bottom() {
-	return 'border-bottom navbar-expand-lg';
+	return 'border-bottom shadow-transition navbar-expand-lg';
 }
 add_filter( 'bootscore/class/header/navbar/breakpoint', 'header_navbar_border_bottom' );
 
