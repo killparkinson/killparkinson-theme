@@ -1,11 +1,4 @@
 .navbar {
-  .top-nav-widget .btn-primary {
-    padding: calc(2.8 * var(--#{$prefix}navbar-padding-y)) calc(2 * #{$btn-padding-x});
-    margin: calc(calc(-1 * var(--#{$prefix}navbar-padding-y) - var(--#{$prefix}border-width))) 0;
-    font-weight: 700;
-    border-radius: 0;
-  }
-
   .nav-toggler {
     border: 0;
   }
@@ -46,10 +39,6 @@
   }
 
   .navbar-expand-lg {
-    .top-nav-widget .btn-primary {
-      padding: calc(2.1 * var(--#{$prefix}navbar-padding-y)) calc(3 * #{$btn-padding-x});
-    }
-
     .navbar-nav .nav-link {
       padding-top: calc(2.1 * var(--#{$prefix}navbar-padding-y));
       padding-bottom: calc(2.1 * var(--#{$prefix}navbar-padding-y));
