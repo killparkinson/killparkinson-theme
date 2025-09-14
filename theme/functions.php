@@ -17,6 +17,7 @@ require_once 'inc/block-button-icons.php';
 require_once 'inc/block-button-variations.php';
 require_once 'inc/menu-icons/menu-icons.php';
 require_once 'inc/blocks/navigation-link-icon.php';
+require_once 'inc/blocks/details-icon.php';
 
 /**
  * Enqueue scripts and styles
