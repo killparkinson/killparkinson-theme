@@ -1,23 +1,22 @@
 <?php
 /**
- * Navigation Link Icon Block Extension
+ * Details Icon Block Extension
  *
  * @package Bootscore Child
  */
 
 /**
- * Adds icon support to navigation link blocks.
+ * Adds icon support to details link blocks.
  *
- * This function modifies the output of core/navigation-link blocks to include
+ * This function modifies the output of core/details blocks to include
  * icons before or after the link text based on the block's className attribute.
  * It processes the icon positioning and adds appropriate CSS classes for styling.
  *
  * @param string $block_content The block content being rendered.
- * @param array  $block         The full block data including attributes.
  *
  * @return string Modified block content with icons included.
  */
-function add_details_icon( $block_content, $block ) {
+function add_details_icon( $block_content ) {
 	// pattern to match the details block.
 	$pattern = '/(<details class="[^"]*"[^>]*>)(.*?)(<\/details>)/is';
 
@@ -43,18 +42,18 @@ function add_details_icon( $block_content, $block ) {
 			// remove all icon-start-* and icon-end-* classes from div.
 			$cleaned_class_names = preg_replace( '/\s*icon-(start|end|only)-[a-zA-Z0-9\-_]+/', '', $class_names );
 			$open_details        = str_replace( $class_names, $cleaned_class_names, $open_details );
-		
+
 			// extract the <a> tag.
 			$summary_pattern = '/(<summary)(>)(.*?)(<\/summary>)/is';
 			$inner_content   = preg_replace_callback(
-			$summary_pattern,
+				$summary_pattern,
 				function ( $matches ) use ( $icon_svg ) {
 					$opening_summary       = $matches[1];
 					$opening_summary_arrow = $matches[2];
 					$text                  = $matches[3];
 					$closing_summary       = $matches[4];
 					$summary_classes       = '';
-					
+
 					if ( '' !== $icon_svg['only'] ) {
 						$text = $icon_svg['only'] . '<span class="visually-hidden">' . $text . '</span>';
 					} elseif ( '' !== $icon_svg['start'] || '' !== $icon_svg['end'] ) {
