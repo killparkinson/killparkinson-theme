@@ -20,7 +20,7 @@ defined( 'ABSPATH' ) || exit;
 	<!-- wp:group {"className":" hide-wp-block-classes h-100 d-flex flex-column position-relative border-0","layout":{"type":"default"}} -->
 	<div class="wp-block-group h-100 d-flex flex-column position-relative">
 
-		<!-- wp:post-featured-image {"className":"mb-3","aspectRatio":"4/3"} /-->
+		<!-- wp:post-featured-image {"className":"mb-3 rounded","aspectRatio":"4/3"} /-->
 
 		<!-- wp:group {"className":"d-flex gap-2 align-items-center mb-2 flex-wrap","layout":{"type":"default"}} -->
 		<div class="wp-block-group d-flex gap-2 align-items-center mb-2 flex-wrap">
@@ -36,7 +36,7 @@ defined( 'ABSPATH' ) || exit;
 
 		<!-- wp:post-title {"className":"h5 mb-2"} /-->
 
-		<!-- wp:post-excerpt {"showMoreOnNewLine":true,"className":"flex-grow-1 d-flex flex-column justify-content-between","showMoreOnNewLineClassName":"mb-0","moreText":"<?php echo esc_html__( 'Read more', 'bootscore-child' ); ?>","moreTextSuffix":"<i class=\"ms-2 fa-solid fa-chevron-right\"></i>","moreTextClassName":"stretched-link","excerptLength":50} /-->
+		<!-- wp:post-excerpt {"showMoreOnNewLine":true,"className":"flex-grow-1 d-flex flex-column justify-content-between","showMoreOnNewLineClassName":"mb-0","moreText":"<?php echo esc_html__( 'Read more', 'bootscore-child' ); ?>","moreTextSuffix":"<i class=\"ms-2 fa-solid fa-chevron-right\"></i>","moreTextClassName":"stretched-link","excerptLength":80} /-->
 
 	</div>
 	<!-- /wp:group -->
