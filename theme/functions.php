@@ -692,7 +692,7 @@ function kip_custom_comment( $comment, $args, $depth ) {
 add_filter(
 	'comment_form_defaults',
 	function ( $defaults ) {
-		$defaults['class_container'] = 'comment-respon rounded border border-2 border-primary bg-primary-subtle p-4';
+		$defaults['class_container'] = 'comment-response rounded border border-2 border-secondary bg-light p-4';
 		return $defaults;
 	}
 );
