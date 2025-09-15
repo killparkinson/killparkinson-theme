@@ -1,0 +1,15 @@
+
+
+.pagination{
+  color: inherit;
+  text-decoration: none;
+.page-numbers, .prev-next{
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  color: inherit;
+  &.current{
+    background-color: $primary;
+    color: white;
+  }
+}
+}
