@@ -111,7 +111,7 @@ defined( 'ABSPATH' ) || exit;
 				"moreText": "<?php esc_html_e( 'Read more', 'bootscore-child' ); ?>",
 				"moreTextSuffix": "<i class=\"ms-2 fa-solid fa-chevron-right\"></i>",
 				"moreTextClassName": "stretched-link",
-				"excerptLength": 50
+				"excerptLength": 80
 			} /-->
 			</div>
 			<!-- /wp:group -->
