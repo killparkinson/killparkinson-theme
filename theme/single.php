@@ -25,8 +25,11 @@ get_header();
 		<div class="d-flex justify-content-between align">
 		<div class="d-flex align-items-center gap-2">
 			<?php bootscore_category_badge(); ?>
+		<p>
 			<?php echo do_blocks( '<!-- wp:post-time-to-read /-->' ); ?>
 			<?php echo esc_html__( 'read', 'bootscore-child' ); ?>
+		</p>
+
 		</div>
 
 
