@@ -10,10 +10,17 @@
 
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
+$accordion_id = 'accordion_' . uniqid();
 ?>
 
+<!-- wp:group {"metadata":{"name":"l - Container - container hide-wp-block-classes",
+							"categories":["bootscore"],"patternName":"bootscore/l.container"},
+							"className":"container hide-wp-block-classes col-md-8 offset-md-2",
+							"layout":{"type":"default"}} -->
+<div class="wp-block-group col-md-8 offset-md-2 hide-wp-block-classes">
+
 <!-- wp:group {"metadata":{"categories":["bootscore"],"patternName":"theme/c-team-member-card","name":"KiP -  Team Member Card"},"className":"d-flex flex-wrap align-items-center gap-5","style":{"spacing":{"blockGap":"2rem"}}} -->
-<div class="wp-block-group d-flex flex-wrap align-items-center gap-5"><!-- wp:image {"id":3706,"width":"300px","sizeSlug":"full","linkDestination":"none","className":"size-large rounded-circle"} -->
+<div class="wp-block-group d-flex flex-wrap align-items-center gap-5 mb-4"><!-- wp:image {"id":3706,"width":"300px","sizeSlug":"full","linkDestination":"none","className":"size-large rounded-circle"} -->
 <figure class="wp-block-image size-full is-resized size-large rounded-circle"><img src="https://dummyimage.com/300x300/6c757d/ffffff" alt="" class="wp-image-3706" style="width:300px"/></figure>
 <!-- /wp:image -->
 
@@ -35,3 +42,86 @@ defined( 'ABSPATH' ) || exit;
 <!-- /wp:buttons --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
+
+<!-- wp:group {"className":"accordion accordion-details mb-3 hide-wp-block-classes"} -->
+<div class="wp-block-group accordion accordion-details mb-3 hide-wp-block-classes">
+	<!-- wp:group {"className":"amb-3 hide-wp-block-classes"} -->
+	<div class="wp-block-group mb-3 hide-wp-block-classes">
+		<!-- wp:details {"className":"accordion-item icon-start-logo","name":"<?php echo esc_attr( $accordion_id ); ?>"} -->
+		<details class="wp-block-details accordion-item accordion-icon-primary icon-start-kp-logo" name="<?php echo esc_attr( $accordion_id ); ?>">
+			<summary>About me</summary>
+			<!-- wp:group {"className":"accordion-collapse hide-wp-block-classes"} -->
+			<div class="wp-block-group accordion-collapse hide-wp-block-classes">
+				<!-- wp:group {"className":"accordion-inner hide-wp-block-classes"} -->
+				<div class="wp-block-group accordion-inner hide-wp-block-classes">
+					<!-- wp:group {"className":"accordion-body hide-wp-block-classes"} -->
+					<div class="wp-block-group accordion-body hide-wp-block-classes">
+						<!-- wp:paragraph {"placeholder":"Type / to add a hidden block"} -->
+						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio nulla possimus obcaecati hic cumque amet totam, labore placeat. Laudantium consequatur expedita nihil ipsam at porro!</p>
+						<!-- /wp:paragraph -->
+					</div>
+					<!-- /wp:group -->
+				</div>
+				<!-- /wp:group -->
+			</div>
+			<!-- /wp:group -->
+		</details>
+		<!-- /wp:details -->
+	</div>
+	<!-- /wp:group -->
+
+	<!-- wp:group {"className":"amb-3 hide-wp-block-classes"} -->
+	<div class="wp-block-group mb-3 hide-wp-block-classes">
+		<!-- wp:details {"className":"accordion-item icon-start-logo","name":"<?php echo esc_attr( $accordion_id ); ?>"} -->
+		<details class="wp-block-details accordion-item accordion-icon-primary icon-start-kp-logo" name="<?php echo esc_attr( $accordion_id ); ?>">
+			<summary>Parkinson’s & I</summary>
+			<!-- wp:group {"className":"accordion-collapse hide-wp-block-classes"} -->
+			<div class="wp-block-group accordion-collapse hide-wp-block-classes">
+				<!-- wp:group {"className":"accordion-inner hide-wp-block-classes"} -->
+				<div class="wp-block-group accordion-inner hide-wp-block-classes">
+					<!-- wp:group {"className":"accordion-body hide-wp-block-classes"} -->
+					<div class="wp-block-group accordion-body hide-wp-block-classes">
+						<!-- wp:paragraph {"placeholder":"Type / to add a hidden block"} -->
+						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio nulla possimus obcaecati hic cumque amet totam, labore placeat. Laudantium consequatur expedita nihil ipsam at porro!</p>
+						<!-- /wp:paragraph -->
+					</div>
+					<!-- /wp:group -->
+				</div>
+				<!-- /wp:group -->
+			</div>
+			<!-- /wp:group -->
+		</details>
+		<!-- /wp:details -->
+	</div>
+	<!-- /wp:group -->
+
+	<!-- wp:group {"className":"amb-3 hide-wp-block-classes"} -->
+	<div class="wp-block-group mb-3 hide-wp-block-classes">
+		<!-- wp:details {"className":"accordion-item icon-start-logo","name":"<?php echo esc_attr( $accordion_id ); ?>"} -->
+		<details class="wp-block-details accordion-item accordion-icon-primary icon-start-kp-logo" name="<?php echo esc_attr( $accordion_id ); ?>">
+			<summary>My role in Kill Parkinson</summary>
+			<!-- wp:group {"className":"accordion-collapse hide-wp-block-classes"} -->
+			<div class="wp-block-group accordion-collapse hide-wp-block-classes">
+				<!-- wp:group {"className":"accordion-inner hide-wp-block-classes"} -->
+				<div class="wp-block-group accordion-inner hide-wp-block-classes">
+					<!-- wp:group {"className":"accordion-body hide-wp-block-classes"} -->
+					<div class="wp-block-group accordion-body hide-wp-block-classes">
+						<!-- wp:paragraph {"placeholder":"Type / to add a hidden block"} -->
+						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio nulla possimus obcaecati hic cumque amet totam, labore placeat. Laudantium consequatur expedita nihil ipsam at porro!</p>
+						<!-- /wp:paragraph -->
+					</div>
+					<!-- /wp:group -->
+				</div>
+				<!-- /wp:group -->
+			</div>
+			<!-- /wp:group -->
+		</details>
+		<!-- /wp:details -->
+	</div>
+	<!-- /wp:group -->
+</div>
+<!-- /wp:group -->
+
+</div>
+<!-- /wp:group -->
+
