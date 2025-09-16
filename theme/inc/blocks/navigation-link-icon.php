@@ -55,7 +55,7 @@ function add_navigation_link_icon( $block_content, $block ) {
 	}
 
 	if ( '' !== $icon_only ) {
-		return '<a href="' . esc_url( $block_attrs['url'] ) . '"' . $attributes . ' aria-label="' .  esc_attr( $block_attrs['label'] ) . '">' . $icon_only . '</a>';
+		return '<a href="' . esc_url( $block_attrs['url'] ) . '"' . $attributes . ' aria-label="' . esc_attr( $block_attrs['label'] ) . '">' . $icon_only . '</a>';
 	}
 
 	return '<a href="' . esc_url( $block_attrs['url'] ) . '"' . $attributes . '>' . $icon_start . esc_html( $block_attrs['label'] ) . $icon_end . '</a>';
