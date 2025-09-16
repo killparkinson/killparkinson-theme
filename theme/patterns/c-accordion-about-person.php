@@ -17,7 +17,7 @@ $accordion_id = 'accordion_' . uniqid();
 	<!-- wp:group {"className":"amb-3 hide-wp-block-classes"} -->
 	<div class="wp-block-group mb-3 hide-wp-block-classes">
 		<!-- wp:details {"className":"accordion-item icon-start-logo","name":"<?php echo esc_attr( $accordion_id ); ?>"} -->
-		<details class="wp-block-details accordion-item accordion-icon-primary icon-start-logo" name="<?php echo esc_attr( $accordion_id ); ?>">
+		<details class="wp-block-details accordion-item accordion-icon-primary icon-start-kp-logo" name="<?php echo esc_attr( $accordion_id ); ?>">
 			<summary>About me</summary>
 			<!-- wp:group {"className":"accordion-collapse hide-wp-block-classes"} -->
 			<div class="wp-block-group accordion-collapse hide-wp-block-classes">
@@ -42,7 +42,7 @@ $accordion_id = 'accordion_' . uniqid();
 	<!-- wp:group {"className":"amb-3 hide-wp-block-classes"} -->
 	<div class="wp-block-group mb-3 hide-wp-block-classes">
 		<!-- wp:details {"className":"accordion-item icon-start-logo","name":"<?php echo esc_attr( $accordion_id ); ?>"} -->
-		<details class="wp-block-details accordion-item accordion-icon-primary icon-start-logo" name="<?php echo esc_attr( $accordion_id ); ?>">
+		<details class="wp-block-details accordion-item accordion-icon-primary icon-start-kp-logo" name="<?php echo esc_attr( $accordion_id ); ?>">
 			<summary>Parkinson’s & I</summary>
 			<!-- wp:group {"className":"accordion-collapse hide-wp-block-classes"} -->
 			<div class="wp-block-group accordion-collapse hide-wp-block-classes">
@@ -67,7 +67,7 @@ $accordion_id = 'accordion_' . uniqid();
 	<!-- wp:group {"className":"amb-3 hide-wp-block-classes"} -->
 	<div class="wp-block-group mb-3 hide-wp-block-classes">
 		<!-- wp:details {"className":"accordion-item icon-start-logo","name":"<?php echo esc_attr( $accordion_id ); ?>"} -->
-		<details class="wp-block-details accordion-item accordion-icon-primary icon-start-logo" name="<?php echo esc_attr( $accordion_id ); ?>">
+		<details class="wp-block-details accordion-item accordion-icon-primary icon-start-kp-logo" name="<?php echo esc_attr( $accordion_id ); ?>">
 			<summary>My role in Kill Parkinson</summary>
 			<!-- wp:group {"className":"accordion-collapse hide-wp-block-classes"} -->
 			<div class="wp-block-group accordion-collapse hide-wp-block-classes">
