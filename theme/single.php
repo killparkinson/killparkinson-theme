@@ -27,9 +27,10 @@ get_header();
 			<?php bootscore_category_badge(); ?>
 		<p>
 			<?php echo do_blocks( '<!-- wp:post-time-to-read /-->' ); ?>
+		</p>
+		<p>
 			<?php echo esc_html__( 'read', 'bootscore-child' ); ?>
 		</p>
-
 		</div>
 
 
