@@ -24,7 +24,13 @@ get_header();
 
 		<header class="entry-header mb-4">
 		<div class="d-flex justify-content-between align">
+		<div class="d-flex align-items-center gap-2">
 			<?php bootscore_category_badge(); ?>
+			<?php echo do_blocks( '<!-- wp:post-time-to-read /-->' ); ?>
+			<p><?php echo esc_html__( 'read', 'bootscore-child' ); ?></p>
+		</div>
+
+
 		<span class="post-date"><?php echo get_the_date( 'j M Y' ); ?></span>
 		</div>
 		
@@ -34,9 +40,9 @@ get_header();
 		
 		<div class="author-box d-flex align-items-center">
 			<?php echo get_avatar( get_the_author_meta( 'ID' ), 48, '', '', [ 'class' => 'rounded-circle me-2' ] ); ?>
-				<h6 class="mb-1">
+		<h6 class="mb-1">
 			<?php echo esc_attr( get_the_author_meta( 'first_name' ) . ' ' . get_the_author_meta( 'last_name' ) ); ?>
-			</h6>       
+		</h6>     
 		</div>
 		<div class="entry-featured-image my-4">
 			<?php bootscore_post_thumbnail( 'large' ); ?>
