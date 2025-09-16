@@ -21,13 +21,12 @@ get_header();
 	<main id="main" class="site-main">
 
 		<?php the_post(); ?>
-
 		<header class="entry-header mb-4">
 		<div class="d-flex justify-content-between align">
 		<div class="d-flex align-items-center gap-2">
 			<?php bootscore_category_badge(); ?>
 			<?php echo do_blocks( '<!-- wp:post-time-to-read /-->' ); ?>
-			<p><?php echo esc_html__( 'read', 'bootscore-child' ); ?></p>
+			<?php echo esc_html__( 'read', 'bootscore-child' ); ?>
 		</div>
 
 
