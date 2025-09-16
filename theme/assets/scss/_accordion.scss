@@ -1,4 +1,16 @@
 .accordion-details {
+  .accordion-icon-primary {
+    summary .icon {
+      box-sizing: content-box;
+      padding: .3rem;
+      overflow: initial;
+      color: $primary;
+      background-color: $pink-50;
+      border: 1px solid $primary;
+      border-radius: 50%;
+    }
+  }
+
   .accordion-item {
     border-bottom: 0;
 
