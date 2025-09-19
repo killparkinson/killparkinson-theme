@@ -41,12 +41,10 @@ defined( 'ABSPATH' ) || exit;
 
 	<!-- /wp:post-template -->
 
-<!-- wp:query-pagination {"className":"hide-wp-block-classes pagination justify-content-center mt-4"} -->
-	<!-- wp:query-pagination-previous {"label":"Previous","className":"prev-next icon-start-chevron-left"} /-->
-	<!-- wp:query-pagination-numbers {"className":"d-flex"} /-->
-	<!-- wp:query-pagination-next {"label":"Next", "className":"prev-next icon-end-chevron-right"} /-->
-<!-- /wp:query-pagination -->
-
-
+	<!-- wp:query-pagination {"className":"hide-wp-block-classes pagination justify-content-center mt-4"} -->
+		<!-- wp:query-pagination-previous {"label":"Previous","className":"prev-next icon-start-chevron-left"} /-->
+		<!-- wp:query-pagination-numbers {"className":"d-flex"} /-->
+		<!-- wp:query-pagination-next {"label":"Next", "className":"prev-next icon-end-chevron-right"} /-->
+	<!-- /wp:query-pagination -->
 </div>
 <!-- /wp:query -->
