@@ -36,7 +36,7 @@ defined( 'ABSPATH' ) || exit;
 
 		<!-- wp:post-title {"className":"h5 mb-2"} /-->
 
-		<!-- wp:post-excerpt {"showMoreOnNewLine":true,"className":"flex-grow-1 d-flex flex-column justify-content-between","showMoreOnNewLineClassName":"mb-0","moreText":"<?php echo esc_html__( 'Read more', 'bootscore-child' ); ?>","moreTextSuffix":"<i class=\"ms-2 fa-solid fa-chevron-right\"></i>","moreTextClassName":"stretched-link","excerptLength":80} /-->
+		<!-- wp:post-excerpt {"showMoreOnNewLine":true,"className":"flex-grow-1 d-flex flex-column justify-content-between","showMoreOnNewLineClassName":"mb-0","moreText":"<?php echo esc_html__( 'Read more', 'bootscore-child' ); ?>","moreTextSuffix":"<svg class=\"icon\"><use href=\"<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/fonts/icon.svg#chevron-right\" aria-hidden=\"true\"></use></svg>","moreTextClassName":"stretched-link icon-link","excerptLength":80} /-->
 
 	</div>
 	<!-- /wp:group -->
