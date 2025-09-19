@@ -34,7 +34,7 @@ function add_pagination_link_icon( $block_content, $block ) {
 		return $block_content;
 	}
 
-	$href        = $matches[2];
+	$href        = $matches[1];
 	$block_attrs = $block['attrs'];
 	$attributes  = '';
 	$label       = $block_attrs['label'];
