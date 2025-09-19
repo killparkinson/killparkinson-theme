@@ -10,9 +10,7 @@
 defined( 'ABSPATH' ) || exit;
 ?>
 
-
-
-<!-- wp:query {"query":{"perPage":0,"pages":0,"postType":"post","order":"desc","orderBy":"date","inherit":false},"layout":{"type":"default"}, "className":"hide-wp-block-classes"} -->
+<!-- wp:query {"query":{"perPage":6,"pages":0,"postType":"post","order":"desc","orderBy":"date","inherit":false},"layout":{"type":"default"}, "className":"hide-wp-block-classes"} -->
 <div class="wp-block-query hide-wp-block-classes alignwide mb-3">
 
 	<!-- wp:post-template {"layout":{"type":"grid","columnCount":3}} -->
