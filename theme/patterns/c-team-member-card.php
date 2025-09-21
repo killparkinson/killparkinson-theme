@@ -20,25 +20,27 @@ $accordion_id = 'accordion_' . uniqid();
 <div class="wp-block-group col-md-8 offset-md-2 hide-wp-block-classes">
 
 <!-- wp:group {"metadata":{"categories":["bootscore"],"patternName":"theme/c-team-member-card","name":"KiP -  Team Member Card"},"className":"d-flex flex-wrap align-items-center gap-5","style":{"spacing":{"blockGap":"2rem"}}} -->
-<div class="wp-block-group d-flex flex-wrap align-items-center gap-5 mb-4"><!-- wp:image {"id":3706,"width":"300px","sizeSlug":"full","linkDestination":"none","className":"size-large rounded-circle"} -->
-<figure class="wp-block-image size-full is-resized size-large rounded-circle"><img src="https://dummyimage.com/300x300/6c757d/ffffff" alt="" class="wp-image-3706" style="width:300px"/></figure>
+<div class="wp-block-group d-flex flex-wrap align-items-center gap-5 mb-4"><!-- wp:image {"width":"250px","sizeSlug":"full","linkDestination":"none","className":"size-large rounded-circle"} -->
+<figure class="wp-block-image size-full is-resized size-large rounded-circle"><img src="https://dummyimage.com/250x250/6c757d/ffffff" alt="" style="width:250px"/></figure>
 <!-- /wp:image -->
+
+
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"0.5rem"}}} -->
 <div class="wp-block-group"><!-- wp:heading {"level":4,"className":"mb-1"} -->
-<h4 class="wp-block-heading mb-1">Marco Hamburger</h4>
+<h4 class="wp-block-heading mb-1">Team Member</h4>
 <!-- /wp:heading -->
-
 <!-- wp:paragraph {"className":"mb-2 lead"} -->
-<p class="mb-2 lead">Initiator &amp; Managing Director</p>
+<p class="mb-2 lead">Role</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:buttons -->
-<div class="wp-block-buttons"><!-- wp:navigation-link {"label":"Linkedin","url":"/hello-world","className":"icon-only-linkedin border-circle border p-2 border-secondary rounded-circle text-secondary"} /-->
+<div class="wp-block-buttons">
+<!-- wp:navigation-link {"label":"Linkedin","opensInNewTab":true,"url":"https://www.linkedin.com/in/","className":"icon-only-linkedin border-circle border p-2 border-secondary rounded-circle text-secondary"} /-->
 
-<!-- wp:navigation-link {"label":"Email","url":"/hello-world","className":"icon-only-mail border-circle border p-2 border-secondary rounded-circle text-secondary"} /-->
+<!-- wp:navigation-link {"label":"Email","opensInNewTab":true,"url":"mailto:","className":"icon-only-mail border-circle border p-2 border-secondary rounded-circle text-secondary"} /-->
 
-<!-- wp:navigation-link {"label":"Website","url":"/","kind":"custom","className":"icon-only-globe border-circle border p-2 border-secondary rounded-circle text-secondary"} /--></div>
+<!-- wp:navigation-link {"label":"Website","opensInNewTab":true,"url":"/","kind":"custom","className":"icon-only-globe border-circle border p-2 border-secondary rounded-circle text-secondary"} /--></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
