@@ -654,7 +654,7 @@ function the_breadcrumb() {
 
 	// display current page name.
 	if ( is_page() || is_single() ) {
-		echo '<li class="breadcrumb-item active lh-1 d-flex align-items-center" aria-current="page">' . esc_html( get_the_title() ) . '</li>';
+		echo '<li class="breadcrumb-item active lh-1 d-md-flex d-none align-items-center" aria-current="page">' . esc_html( get_the_title() ) . '</li>';
 	}
 
 	echo '</ol>';
