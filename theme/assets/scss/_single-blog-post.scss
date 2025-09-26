@@ -1,0 +1,13 @@
+@media  (max-width: 768px) {
+  .author-avatar {
+    width: 32px;
+  }
+
+  .addtoany_shortcode {
+    flex-grow: 1;
+    .addtoany_list {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}

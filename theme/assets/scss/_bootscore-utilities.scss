@@ -22,6 +22,19 @@ $utilities: map-merge(
         null: var(--#{$prefix}border-width) var(--#{$prefix}border-style) var(--#{$prefix}border-color), 0: 0,
       ),
     ),
+    "fw": (
+      property: font-weight,
+      responsive: true,
+      values: (
+        light: 300,
+        normal: 400,
+        medium: 500,
+        semibold: 600,
+        bold: 700,
+        bolder: 800,
+        black: 900,
+      ),
+    ),
     "min-viewport-height": (
       property: min-height,
       class: min-vh,
