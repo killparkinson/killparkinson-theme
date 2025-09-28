@@ -30,9 +30,9 @@ get_header();
 			$read_text = esc_html__( 'Read', 'bootscore-child' );
 			?>
 			<div class="my-5">
-		<?php
-echo do_blocks(
-  '
+			<?php
+			echo do_blocks(
+				'
 <!-- wp:query {"query":{"inherit":true},"layout":{"type":"grid","columnCount":3}} -->
   <!-- wp:post-template -->
     <!-- wp:group {"className":"card h-100 d-flex flex-column position-relative"} -->
@@ -56,8 +56,8 @@ echo do_blocks(
   <!-- /wp:query-pagination -->
 <!-- /wp:query -->
 '
-);
-?>
+			);
+			?>
 
 			</div>
 			<?php do_action( 'bootscore_after_loop_item', 'archive' ); ?>
