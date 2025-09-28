@@ -343,13 +343,13 @@ add_filter( 'bootscore/class/footer/columns', 'add_footer_class', 10, 2 );
 function footer_col_class( $class_names, $location ) {
 
 	if ( 'footer-1' === $location ) {
-		return 'col-12 col-lg-3 order-1 order-md-1';
+		return 'col-12 col-lg-2 order-1 order-md-1';
 	}
 	if ( 'footer-2' === $location ) {
-		return 'col-12 col-lg-6 pt-4 order-3 order-md-2';
+		return 'col-12 col-lg-6 order-3 order-md-2';
 	}
 	if ( 'footer-3' === $location ) {
-		return 'col-12 col-lg-3 pt-4 order-2 order-md-3';
+		return 'col-12 col-lg-4 order-2 order-md-3';
 	}
 
 	if ( 'footer-4' === $location ) {

@@ -1,5 +1,5 @@
 .bootscore-footer {
-  background-color: $pink-50;
+  background-color: $bg-footer;
 
   .border-top {
     border-color: $gray-900;
@@ -7,7 +7,7 @@
 
   .widgettitle {
     font-size: 1.3rem;
-    font-weight: 700;
+    font-weight: $font-weight-semibold;
   }
 
   .menu-our-initiave-container {
@@ -16,11 +16,13 @@
 
   .menu-item {
     a {
-      font-weight: $font-weight-semibold;
+      font-weight: $font-weight-medium;
       color: inherit;
-
+      text-decoration: none;
       &:hover {
-        background-color: $gray-200;
+        font-weight: $font-weight-semibold;
+        text-decoration: underline;
+
       }
     }
   }
@@ -50,8 +52,14 @@
       }
     }
     .menu-item > a {
-      font-weight: $font-weight-semibold;
+      font-weight: $font-weight-medium;
       color: inherit;
+      text-decoration: none;
+      &:hover {
+        font-weight: $font-weight-semibold;
+        text-decoration: underline;
+
+      }
     }
   }
 
