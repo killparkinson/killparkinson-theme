@@ -317,7 +317,7 @@ add_filter( 'wp_nav_menu_items', 'custom_language_switcher_dropdown', 10, 2 );
 function footer_container_class( $class_names, $context ) {
 
 	if ( 'footer-info' === $context ) {
-		return 'container d-flex flex-md-wrap flex-wrap-reverse justify-content-md-between justify-content-center align-content-stretch align-items-md-end';
+		return 'container d-flex border-top py-5 mb-4 border-secondary flex-md-wrap flex-wrap-reverse justify-content-md-between justify-content-center align-content-stretch align-items-md-end';
 	}
 
 	return $class_names;
@@ -328,7 +328,7 @@ add_filter( 'bootscore/class/container', 'footer_container_class', 10, 2 );
  * Change footer column wrapper classes
  */
 function add_footer_class() {
-	return 'pt-5 pb-4';
+	return 'py-5 mt-4';
 }
 add_filter( 'bootscore/class/footer/columns', 'add_footer_class', 10, 2 );
 
@@ -363,7 +363,7 @@ add_filter( 'bootscore/class/footer/col', 'footer_col_class', 10, 2 );
  * Custom classes for footer info
  */
 function add_footer_info_class() {
-	return 'text-body-secondary border-top py-4 text-center';
+	return 'text-body-secondary text-center';
 }
 add_filter( 'bootscore/class/footer/info', 'add_footer_info_class', 10, 2 );
 
