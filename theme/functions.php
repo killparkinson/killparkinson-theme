@@ -716,3 +716,13 @@ add_filter(
 		return $new_fields;
 	}
 );
+
+// Replace "minutes" with "min"
+add_filter( 'render_block', function( $block_content, $block ) {
+    if ( $block['blockName'] === 'post-time-to-read' ) {
+        $block_content = str_replace( 'minutes', 'min', $block_content );
+        $block_content = str_replace( 'minute', 'min', $block_content );
+    }
+    return $block_content;
+}, 10, 2 );
+
