@@ -29,7 +29,7 @@ get_header();
 			<?php echo do_blocks( '<!-- wp:post-time-to-read {"className": "mb-3"} /-->' ); ?>
 			<p>
 			<?php echo esc_html__( ' read', 'bootscore-child' ); ?>
-			</p>
+		</p>
 			</div>
 
 		</div>
