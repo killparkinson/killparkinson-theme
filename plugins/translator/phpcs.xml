@@ -1,7 +1,0 @@
-<?xml version="1.0"?>
-<ruleset name="KPStandard">
-  <description>WordPress with space indent.</description>
-    <rule ref="WordPress">
-      <exclude name="Universal.Arrays.DisallowShortArraySyntax"/>
-    </rule>
-</ruleset>
