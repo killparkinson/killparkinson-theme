@@ -1,4 +1,5 @@
 services:
+
   wordpress:
     image: wordpress:latest
     restart: always
@@ -23,7 +24,6 @@ services:
       - wordpress:/var/www/html
       - ./bootscore:/var/www/html/wp-content/themes/bootscore
       - ./theme:/var/www/html/wp-content/themes/kp-theme
-      - ./plugins/translator:/var/www/html/wp-content/plugins/translator
 
   db:
     image: mysql:8.0
@@ -32,7 +32,7 @@ services:
       MYSQL_DATABASE: exampledb
       MYSQL_USER: exampleuser
       MYSQL_PASSWORD: examplepass
-      MYSQL_RANDOM_ROOT_PASSWORD: "1"
+      MYSQL_RANDOM_ROOT_PASSWORD: '1'
     volumes:
       - db:/var/lib/mysql
 
