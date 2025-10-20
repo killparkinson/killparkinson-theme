@@ -296,10 +296,8 @@ function custom_language_switcher_dropdown( $items, $args ) {
 					$lang_post_id = pll_get_post( $post_id, $slug );
 					$lang_url     = get_permalink( $lang_post_id );
 				} elseif ( is_author() ) {
-					$user = get_queried_object();
-
 					// Polylang does not provide a method to get the language url for authors.
-					$lang_url = get_author_posts_url( $user->ID );
+					$lang_url = pll_home_url( $slug );
 				} else {
 						// Get the current term object.
 					$term = get_queried_object();
