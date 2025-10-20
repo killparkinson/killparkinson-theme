@@ -304,11 +304,10 @@ function custom_language_switcher_dropdown( $items, $args ) {
 						// Get the current term object.
 					$term = get_queried_object();
 
-					if ( $term ) {
+					if ( ! empty( $term->term_id ) ) {
 						$term_id  = pll_get_term( $term->term_id, $slug );
 						$lang_url = get_term_link( $term_id );
 					} else {
-
 						// Fallback for non-post contexts like front page.
 						$lang_url = pll_home_url( $slug );
 					}
