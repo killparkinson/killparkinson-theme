@@ -272,6 +272,11 @@ function custom_language_switcher_dropdown( $items, $args ) {
 		if ( ! empty( $language_slugs ) ) {
 			$language_names   = pll_languages_list( array( 'fields' => 'name' ) );
 			$language_locales = pll_languages_list( array( 'fields' => 'locale' ) );
+			$post_id          = get_the_ID();
+
+			if ( is_front_page() || ! is_singular( 'post' ) ) {
+				$post_id = null;
+			}
 
 			$custom_html  = '<li id="top-language-switcher" class="mx-n3 px-3 pt-3 border-top mx-lg-0 p-lg-0 border-lg-0">';
 			$custom_html .= '<div class="dropdown dropup dropdown-lg">';
@@ -287,9 +292,31 @@ function custom_language_switcher_dropdown( $items, $args ) {
 				$lang_name   = esc_attr( $language_names[ $key ] );
 				$lang_locale = esc_attr( $language_locales[ $key ] );
 
+				if ( $post_id ) {
+					$lang_post_id = pll_get_post( $post_id, $slug );
+					$lang_url     = get_permalink( $lang_post_id );
+				} elseif ( is_author() ) {
+					$user = get_queried_object();
+
+					// Polylang does not provide a method to get the language url for authors.
+					$lang_url = get_author_posts_url( $user->ID );
+				} else {
+						// Get the current term object.
+					$term = get_queried_object();
+
+					if ( $term ) {
+						$term_id  = pll_get_term( $term->term_id, $slug );
+						$lang_url = get_term_link( $term_id );
+					} else {
+
+						// Fallback for non-post contexts like front page.
+						$lang_url = pll_home_url( $slug );
+					}
+				}
+
 				// display the language switcher item with flag and name.
 				$custom_html .= '<li>';
-				$custom_html .= '<a lang="' . $lang_locale . '" hreflang="' . $lang_locale . '" class="dropdown-item' . $is_current . '" href="' . pll_home_url( $slug ) . '" title="' . $lang_name . '">';
+				$custom_html .= '<a lang="' . $lang_locale . '" hreflang="' . $lang_locale . '" class="dropdown-item' . $is_current . '" href="' . $lang_url . '" title="' . $lang_name . '">';
 				$custom_html .= '<span class="flag flag-' . strtoupper( $slug ) . ' flag-round flag-lg me-2"></span>';
 				$custom_html .= $lang_name;
 				$custom_html .= '</a>';
