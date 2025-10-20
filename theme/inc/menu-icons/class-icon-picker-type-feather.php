@@ -11,6 +11,15 @@
 class Icon_Picker_Type_Feather extends Icon_Picker_Type_Font {
 
 	/**
+	 * The Feather icon svg path.
+	 *
+	 * @since  0.1.0
+	 * @access protected
+	 * @var    string
+	 */
+	protected $icon = '';
+
+	/**
 	 * Icon type ID
 	 *
 	 * @since  0.1.0
