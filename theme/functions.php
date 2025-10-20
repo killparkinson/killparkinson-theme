@@ -274,7 +274,7 @@ function custom_language_switcher_dropdown( $items, $args ) {
 			$language_locales = pll_languages_list( array( 'fields' => 'locale' ) );
 			$post_id          = get_the_ID();
 
-			if ( is_front_page() || ! is_singular( 'post' ) ) {
+			if ( is_front_page() || ( ! is_page() && ! is_single() ) ) {
 				$post_id = null;
 			}
 
